@@ -11,12 +11,13 @@ const Header = () => (
 );
 
 const StyledHeader = styled.div`
+  background: ${({theme}) => theme.color.dark};
   width: 100%;
   padding: 1%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: absolute;
+  position: fixed;
   border-bottom: 2px solid ${({ theme }) => theme.color.dark};
 `;
 
