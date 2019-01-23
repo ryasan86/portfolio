@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import { PageWrap } from './../components/common';
+import { SectionWrap } from './../components/common';
 
-const Intro = () => (
-  <IntroWrap>
-    <div>
-      <LargeText>HELLO</LargeText>
-      <MediumText>I'M RYAN</MediumText>
-      <SmallText>I'M A WEB DEVELOPER</SmallText>
-    </div>
-  </IntroWrap>
-);
+class Intro extends Component {
+  render = () => {
+    return (
+      <IntroWrap blue={this.props.blue}>
+        <div>
+          <LargeText>HELLO</LargeText>
+          <MediumText>I'M RYAN</MediumText>
+          <SmallText>I'M A WEB DEVELOPER</SmallText>
+        </div>
+      </IntroWrap>
+    );
+  };
+}
 
-const IntroWrap = styled(PageWrap)`
+const IntroWrap = styled(SectionWrap)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ theme }) => theme.color.primary};
+  background: ${({ blue, theme }) => blue ? theme.color.secondary : theme.color.primary};
   color: ${({ theme }) => theme.color.light};
+  margin-bottom: 30vh;
 `;
 
 const Text = styled.div`
