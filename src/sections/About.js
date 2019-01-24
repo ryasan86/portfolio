@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { SectionWrap } from './../components/common';
+// components
+import {
+  SectionWrap,
+  ScrollFooter,
+  ScrollFooterButton
+} from './../components/common';
 
 class About extends Component {
   render = () => {
     return (
       <AboutWrap blue={this.props.blue}>
         <LargeText>About</LargeText>
+        <ScrollFooter>
+          <ScrollFooterButton to="Projects" />
+        </ScrollFooter>
       </AboutWrap>
     );
   };
@@ -16,13 +24,14 @@ const AboutWrap = styled(SectionWrap)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ blue, theme }) => blue ? theme.color.secondary : theme.color.primary};
-  color: ${({ theme }) => theme.color.light};
+  background: ${({ blue, theme }) =>
+    blue ? theme.secondary : theme.primary};
+  color: ${({ theme }) => theme.light};
   margin-bottom: 30%;
 `;
 
 const Text = styled.div`
-  color: ${({ theme }) => theme.color.light};
+  color: ${({ theme }) => theme.light};
 `;
 
 const LargeText = styled(Text)`

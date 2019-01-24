@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { BG_1, BG_2, SECTIONS } from './constants';
 import { amountScrolled } from './utils';
 // components
-import Header from './components/Header';
+import Header from './components/ui/Header';
 
 class App extends Component {
   state = { bg: '' };
@@ -49,7 +49,7 @@ const AppWrap = styled.div`
 const Parallax = styled.div`
   z-index: -1;
   background-color: #05070a;
-  background-image: url(${({ bg }) => bg});
+  background: url(${({ bg }) => bg}) center center;
   height: 100%;
   width: 100%;
   position: fixed;

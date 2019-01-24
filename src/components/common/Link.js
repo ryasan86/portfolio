@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link as ScrollLink } from 'react-scroll';
 import { flexCenter } from './../../utils/flexCenter';
 
-const Link = ({ to, activeClass, linkstyles }) => {
+const Link = ({ to, children, activeClass, linkstyles }) => {
   return (
     <StyledLink
       to={to}
@@ -13,14 +13,14 @@ const Link = ({ to, activeClass, linkstyles }) => {
       activeClass={activeClass}
       linkstyles={linkstyles}
     >
-      {to}
+      {children}
     </StyledLink>
   );
 };
 
 const StyledLink = styled(ScrollLink)`
   ${flexCenter}
-  color: ${({ theme }) => theme.color.light};
+  color: ${({ theme }) => theme.light};
   cursor: pointer;
   height: 100%;
   ${({ linkstyles }) => linkstyles}

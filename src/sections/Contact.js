@@ -16,12 +16,12 @@ const ContactWrap = styled(SectionWrap)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${({ blue, theme }) => blue ? theme.color.secondary : theme.color.primary};
-  color: ${({ theme }) => theme.color.light};
+  background: ${({ blue, theme }) => blue ? theme.secondary : theme.primary};
+  color: ${({ theme }) => theme.light};
 `;
 
 const Text = styled.div`
-  color: ${({ theme }) => theme.color.light};
+  color: ${({ theme }) => theme.light};
 `;
 
 const LargeText = styled(Text)`

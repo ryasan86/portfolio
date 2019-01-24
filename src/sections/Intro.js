@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { flexCenter } from './../utils';
 // components
-import { SectionWrap, ScrollFooter } from './../components/common';
+import {
+  SectionWrap,
+  ScrollFooter,
+  ScrollFooterButton
+} from './../components/common';
 
 class Intro extends Component {
   render = () => {
@@ -13,7 +17,9 @@ class Intro extends Component {
           <MediumText data-aos="fade-left">I'M RYAN</MediumText>
           <SmallText data-aos="fade-right">I'M A WEB DEVELOPER</SmallText>
         </div>
-        <ScrollFooter />
+        <ScrollFooter>
+          <ScrollFooterButton to="About" />
+        </ScrollFooter>
       </IntroWrap>
     );
   };
@@ -21,13 +27,13 @@ class Intro extends Component {
 
 const IntroWrap = styled(SectionWrap)`
   ${flexCenter};
-  background: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.light};
+  background: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.light};
   margin-bottom: 30%;
 `;
 
 const Text = styled.div`
-  color: ${({ theme }) => theme.color.light};
+  color: ${({ theme }) => theme.light};
 `;
 
 const LargeText = styled(Text)`
