@@ -57,7 +57,7 @@ const ProjectsWrap = styled(SectionWrap)`
   color: ${({ theme }) => theme.mainFontColor};
   margin-bottom: 30%;
   position: relative;
-  overflow-y: scroll;
+  overflow-x: scroll;
 `;
 
 export default Projects;
