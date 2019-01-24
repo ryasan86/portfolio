@@ -27,7 +27,11 @@ class Intro extends Component {
 
 const IntroWrap = styled(SectionWrap)`
   ${flexCenter};
-  background: ${({ theme }) => theme.primary};
+  background: linear-gradient(
+    to right,
+    #48c9b0,
+    ${({ theme }) => theme.primary}
+  );
   color: ${({ theme }) => theme.light};
   margin-bottom: 30%;
 `;

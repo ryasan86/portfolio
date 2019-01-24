@@ -2,80 +2,62 @@
     "projects": [
         {
             "title": "Restaurant Menu",
-            "imageUrl": "https://i.postimg.cc/pdyLQcDF/restaurant.jpg",
-            "url": "react | styled components",
+            "imgUrl": "https://i.postimg.cc/pdyLQcDF/restaurant.jpg",
+            "deployUrl": "react | styled components",
             "description": "react | styled components"
         },
         {
             "title": "Simon Says",
-            "imageUrl": "https://i.postimg.cc/BQr02vHg/simon.jpg",
-            "url": "https://ryasan86.github.io/simon",
+            "imgUrl": "https://i.postimg.cc/BQr02vHg/simon.jpg",
+            "deployUrl": "https://ryasan86.github.io/simon",
             "description": "react | redux"
         },
         {
             "title": "Masonry Tiles",
-            "imageUrl": "https://i.postimg.cc/2yZvkTDf/masonry.jpg",
-            "url": "https://ryasan86.github.io/masonry",
+            "imgUrl": "https://i.postimg.cc/2yZvkTDf/masonry.jpg",
+            "deployUrl": "https://ryasan86.github.io/masonry",
             "description": "react"
         },
         {
             "title": "Street Fighter Selection",
-            "imageUrl": "https://i.postimg.cc/13NbQ4T8/street-fighter.jpg",
-            "url": "https://ryasan86.github.io/street_fighter_selection",
+            "imgUrl": "https://i.postimg.cc/13NbQ4T8/street-fighter.jpg",
+            "deployUrl": "https://ryasan86.github.io/street_fighter_selection",
             "description": "react | styled components"
         },
         {
             "title": "Drum Kit",
-            "imageUrl": "https://s15.postimg.cc/mj0w5wmu3/drum_machine.png",
-            "url": "https://ryasan86.github.io/drum_machine",
+            "imgUrl": "https://s15.postimg.cc/mj0w5wmu3/drum_machine.png",
+            "deployUrl": "https://ryasan86.github.io/drum_machine",
             "description": "react"
         },
         {
             "title": "Tic Tac Toe",
-            "imageUrl": "https://i.postimg.cc/7LdWjggx/tictactoe.jpg",
-            "url": "https://ryasan86.github.io/tic_tac_toe",
+            "imgUrl": "https://i.postimg.cc/7LdWjggx/tictactoe.jpg",
+            "deployUrl": "https://ryasan86.github.io/tic_tac_toe",
             "description": "react"
         },
         {
             "title": "PokeDex",
-            "imageUrl": "https://s20.postimg.cc/hbej6k5t9/pokemon.jpg",
-            "url": "http://138.68.245.105",
+            "imgUrl": "https://s20.postimg.cc/hbej6k5t9/pokemon.jpg",
+            "deployUrl": "http://138.68.245.105",
             "description": "react | redux | nodejs | express"
         },
         {
             "title": "NotReddit",
-            "imageUrl": "https://s20.postimg.cc/4bw6qfxot/notreddit.jpg",
-            "url": "http://138.68.245.105:3000",
-            "description": "react | redux | nodejs | sql | firebase"
-        },
-        {
-            "title": "SpotiFight",
-            "imageUrl": "https://s20.postimg.cc/mo3dl243x/spotifight.jpg",
-            "url": "http://spotifight.us",
-            "description": "react | redux | passportjs | sql"
+            "imgUrl": "https://s20.postimg.cc/4bw6qfxot/notreddit.jpg",
+            "deployUrl": "http://138.68.245.105:3000",
+            "description": "react | redux | sql | firebase"
         },
         {
             "title": "Snake",
-            "imageUrl": "https://s15.postimg.cc/v7806ripn/snake.png",
-            "url": "https://ryasan86.github.io/snake",
+            "imgUrl": "https://s15.postimg.cc/v7806ripn/snake.png",
+            "deployUrl": "https://ryasan86.github.io/snake",
             "description": "react"
         },
         {
-            "title": "Twitch Clone",
-            "imageUrl": "https://s20.postimg.cc/5majishh9/twitch.jpg",
-            "url": "https://ryasan86.github.io/twitch",
-            "description": "angular2+ | rxjs"
-        },
-        {
-            "title": "Markdown Previewer",
-            "imageUrl": "https://s20.postimg.cc/6h251tlbx/markdown_previewer.jpg",
-            "url": "https://codepen.io/ryasan86/pen/wXqOwG",
-            "description": "react | markedjs"
-        },
-        {
             "title": "Nintendo Switch",
-            "imageUrl": "    https://s20.postimg.cc/owhndenbx/nintendo_switch.png",
-            "url": "https://codepen.io/ryasan86/pen/zaVXgz",
+            "imgUrl": "https://i.postimg.cc/HxHXVPYD/nintendo-switch.jpg",
+            "deployUrl": "https://codepen.io/ryasan86/pen/zaVXgz",
             "description": "scss images | pug"
         }
     ]

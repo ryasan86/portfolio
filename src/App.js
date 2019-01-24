@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { BG_1, BG_2, SECTIONS } from './constants';
 import { amountScrolled } from './utils';
 // components
-import Header from './components/ui/Header';
+import Header from './components/Header';
 
 class App extends Component {
   state = { bg: '' };

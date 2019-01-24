@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { SECTIONS as NavLinks } from './../../constants';
+import { SECTIONS as NavLinks } from './../constants';
 // components
-import { Link } from './../common';
+import { Link } from './common';
 
 const Header = () => (
   <StyledHeader data-aos="slide-right">
