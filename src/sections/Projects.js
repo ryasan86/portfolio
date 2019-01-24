@@ -18,7 +18,7 @@ const ProjectsWrap = styled(SectionWrap)`
   align-items: center;
   background: ${({ blue, theme }) => blue ? theme.color.secondary : theme.color.primary};
   color: ${({ theme }) => theme.color.light};
-  margin-bottom: 30vh;
+  margin-bottom: 30%;
 `;
 
 const Text = styled.div`

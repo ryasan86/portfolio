@@ -1,43 +1,39 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 // import Waypoint from 'react-waypoint';
-import { BG_1, BG_2 } from './constants';
+import { BG_1, BG_2, SECTIONS } from './constants';
 import { amountScrolled } from './utils';
 // components
 import Header from './components/Header';
-import Intro from './sections/Intro';
-import About from './sections/About';
-import Projects from './sections/Projects';
-import Contact from './sections/Contact';
-
-const SECTIONS = [
-  { id: 'one', Component: Intro, scrollPct: 0, bg: BG_1 },
-  { id: 'two', Component: About, scrollPct: 30, bg: BG_2 },
-  { id: 'three', Component: Projects, scrollPct: 60, bg: BG_1 },
-  { id: 'four', Component: Contact, scrollPct: 90, bg: BG_2 }
-];
 
 class App extends Component {
   state = { bg: '' };
 
-  changeParallaxBG = (scrollPct, bg) => {
-    if (scrollPct === amountScrolled()) this.setState({ bg });
+  componentDidMount = () => {
+    window.addEventListener('scroll', this.listenForBGChange);
+  };
+
+  listenForBGChange = () => {
+    const scrollPct = amountScrolled();
+    const { bg } = this.state;
+    if (scrollPct <= 31 && bg !== BG_1) {
+      this.setState({ bg: BG_1 });
+    } else if (scrollPct > 31 && scrollPct <= 65 && bg !== BG_2) {
+      this.setState({ bg: BG_2 });
+    } else if (scrollPct > 65 && scrollPct <= 100 && bg !== BG_1) {
+      this.setState({ bg: BG_1 });
+    }
   };
 
   render = () => {
     return (
       <AppWrap>
         <Header />
-        <Parallax />
-        {SECTIONS.map(({ id, scrollPct, bg, Component }, i) => {
+        <Parallax bg={this.state.bg} />
+        {SECTIONS.map(({ section, Component }, i) => {
           return (
-            <Section key={i} id={id}>
-              <Component
-                blue={i % 2}
-                scrollPct={scrollPct}
-                bg={bg}
-                changeParallaxBG={this.changeParallaxBG}
-              />
+            <Section key={i} id={section}>
+              <Component blue={i % 2} />
             </Section>
           );
         })}
@@ -53,7 +49,7 @@ const AppWrap = styled.div`
 const Parallax = styled.div`
   z-index: -1;
   background-color: #05070a;
-  background-image: url(${BG_1});
+  background-image: url(${({ bg }) => bg});
   height: 100%;
   width: 100%;
   position: fixed;
