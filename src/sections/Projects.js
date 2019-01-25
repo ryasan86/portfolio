@@ -36,10 +36,9 @@ class Projects extends Component {
 const ProjectsContent = styled(SectionContent)`
   ${flexCenter};
   width: 100%;
-  top: 10%;
   position: absolute;
   flex-direction: column;
-  padding-left: 20px;
+  padding: 0 0 10% 1%;
 `;
 
 const TitleContainer = styled.div`
@@ -56,8 +55,6 @@ const ProjectsWrap = styled(SectionWrap)`
   background: ${({ theme }) => theme.light};
   color: ${({ theme }) => theme.mainFontColor};
   margin-bottom: 30%;
-  position: relative;
-  overflow-x: scroll;
 `;
 
 export default Projects;

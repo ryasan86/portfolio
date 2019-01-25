@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import data from './../data.json';
 // components
+import SkillsTable from './../components/SkillsTable';
 import {
   SectionWrap,
   ScrollFooter,
-  ScrollFooterButton
+  ScrollFooterButton,
+  SectionContent
 } from './../components/common';
 
 class About extends Component {
   render = () => {
     return (
-      <AboutWrap blue={this.props.blue}>
-        <LargeText>About</LargeText>
+      <AboutWrap>
+        <AboutContent>
+          <SummaryContainer>
+            <h3>Summary</h3>
+            <p>{data.summary}</p>
+          </SummaryContainer>
+
+          <SkillsContainer>
+            <SkillsTable />
+          </SkillsContainer>
+        </AboutContent>
         <ScrollFooter>
           <ScrollFooterButton to="Projects" />
         </ScrollFooter>
@@ -20,25 +32,29 @@ class About extends Component {
   };
 }
 
-const AboutWrap = styled(SectionWrap)`
+const SummaryContainer = styled.div`
+  width: 60%;
+  padding: 10%;
+`;
+
+const SkillsContainer = styled.div`
+  width: 40%;
+  height: 100%;
+  background: ${({ theme }) => theme.dark};
+  color: ${({ theme }) => theme.light};
+  padding: 2% 7%;
+`;
+
+const AboutContent = styled(SectionContent)`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: ${({ blue, theme }) =>
-    blue ? theme.secondary : theme.primary};
-  color: ${({ theme }) => theme.light};
+  width: 100%;
+  top: 50px;
+`;
+
+const AboutWrap = styled(SectionWrap)`
+  background: ${({ theme }) => theme.light};
+  color: ${({ theme }) => theme.mainFontColor};
   margin-bottom: 30%;
-`;
-
-const Text = styled.div`
-  color: ${({ theme }) => theme.light};
-`;
-
-const LargeText = styled(Text)`
-  font-size: 7em;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-  padding-left: 0px;
 `;
 
 export default About;

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const SectionContent = styled.div`
-  top: 50px;
-  position: relative;
+  bottom: 0;
+  position: absolute;
+  height: calc(100% - 50px);
 `;
 
 export { SectionContent };
