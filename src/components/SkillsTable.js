@@ -5,58 +5,59 @@ import styled from 'styled-components';
 const SkillsStyledTable = () => {
   return (
     <StyledTable>
-      <tr>
-        <BraceTd>{'['}</BraceTd>
-        <td />
-        <td />
-        <td />
-        <td />
-      </tr>
-      {data.skills.map(({ name, value }, i) => {
-        return (
-          <Fragment>
-            <tr>
-              <EmptyTd />
-              <BraceTd>{'{'}</BraceTd>
-              <EmptyTd />
-              <EmptyTd />
-              <EmptyTd />
-            </tr>
-            <tr>
-              <EmptyTd />
-              <EmptyTd />
-              <StyledTd>"name":"{name}",</StyledTd>
-              <EmptyTd />
-              <EmptyTd />
-            </tr>
-            <tr>
-              <EmptyTd />
-              <EmptyTd />
-              <StyledTd>"value": {value}</StyledTd>
-              <EmptyTd />
-              <EmptyTd />
-            </tr>
-            <tr>
-              <EmptyTd />
-              <BraceTd>{i < data.skills.length - 1 ? '},' : '}'}</BraceTd>
-              <EmptyTd />
-              <EmptyTd />
-              <EmptyTd />
-            </tr>
-          </Fragment>
-        );
-      })}
-      <tr>
-        <BraceTd>{']'}</BraceTd>
-        <EmptyTd />
-        <EmptyTd />
-        <EmptyTd />
-        <EmptyTd />
-      </tr>
+      <tbody>
+        <tr>
+          <BraceTd>{'['}</BraceTd>
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        {data.skills.map(({ name, value }, i) => {
+          return (
+            <Fragment key={i}>
+              <tr>
+                <EmptyTd />
+                <BraceTd>{'{'}</BraceTd>
+                <EmptyTd />
+                <EmptyTd />
+                <EmptyTd />
+              </tr>
+              <tr>
+                <EmptyTd />
+                <EmptyTd />
+                <StyledTd>"name":"{name}",</StyledTd>
+                <EmptyTd />
+                <EmptyTd />
+              </tr>
+              <tr>
+                <EmptyTd />
+                <EmptyTd />
+                <StyledTd>"value": {value}</StyledTd>
+                <EmptyTd />
+                <EmptyTd />
+              </tr>
+              <tr>
+                <EmptyTd />
+                <BraceTd>{i < data.skills.length - 1 ? '},' : '}'}</BraceTd>
+                <EmptyTd />
+                <EmptyTd />
+                <EmptyTd />
+              </tr>
+            </Fragment>
+          );
+        })}
+        <tr>
+          <BraceTd>{']'}</BraceTd>
+          <EmptyTd />
+          <EmptyTd />
+          <EmptyTd />
+          <EmptyTd />
+        </tr>
+      </tbody>
     </StyledTable>
   );
 };
-
 
 const StyledTable = styled.table`
   font-family: 'Segoe UI', sans-serif;

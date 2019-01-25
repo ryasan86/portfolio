@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { flexCenter } from './../utils';
 // components
 import {
-  SectionWrap,
+  Section,
   ScrollFooter,
   ScrollFooterButton
 } from './../components/common';
@@ -11,7 +11,7 @@ import {
 class Intro extends Component {
   render = () => {
     return (
-      <IntroWrap>
+      <IntroSection id={this.props.id}>
         <div>
           <LargeText data-aos="fade-down">HELLO</LargeText>
           <MediumText data-aos="fade-left">I'M RYAN</MediumText>
@@ -20,12 +20,12 @@ class Intro extends Component {
         <ScrollFooter>
           <ScrollFooterButton to="About" />
         </ScrollFooter>
-      </IntroWrap>
+      </IntroSection>
     );
   };
 }
 
-const IntroWrap = styled(SectionWrap)`
+const IntroSection = styled(Section)`
   ${flexCenter};
   background: linear-gradient(
     to right,

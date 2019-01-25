@@ -4,7 +4,7 @@ import data from './../data.json';
 // components
 import SkillsTable from './../components/SkillsTable';
 import {
-  SectionWrap,
+  Section,
   ScrollFooter,
   ScrollFooterButton,
   SectionContent
@@ -13,7 +13,7 @@ import {
 class About extends Component {
   render = () => {
     return (
-      <AboutWrap>
+      <AboutSection id={this.props.id}>
         <AboutContent>
           <SummaryContainer data-aos="fade-up">
             <h3>Summary</h3>
@@ -26,10 +26,22 @@ class About extends Component {
         <ScrollFooter>
           <ScrollFooterButton to="Projects" />
         </ScrollFooter>
-      </AboutWrap>
+      </AboutSection>
     );
   };
 }
+
+const AboutSection = styled(Section)`
+  background: ${({ theme }) => theme.light};
+  color: ${({ theme }) => theme.mainFontColor};
+  margin-bottom: 20%;
+`;
+
+const AboutContent = styled(SectionContent)`
+  display: flex;
+  width: 100%;
+  top: 50px;
+`;
 
 const SummaryContainer = styled.div`
   width: 60%;
@@ -43,18 +55,6 @@ const SkillsContainer = styled.div`
   color: ${({ theme }) => theme.light};
   padding: 2% 7%;
   overflow-y: scroll;
-`;
-
-const AboutContent = styled(SectionContent)`
-  display: flex;
-  width: 100%;
-  top: 50px;
-`;
-
-const AboutWrap = styled(SectionWrap)`
-  background: ${({ theme }) => theme.light};
-  color: ${({ theme }) => theme.mainFontColor};
-  margin-bottom: 20%;
 `;
 
 export default About;

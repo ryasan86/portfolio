@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { SectionWrap } from './../components/common';
+import { flexCenter } from './../utils';
+// components
+import { Section } from './../components/common';
 
 class Contact extends Component {
   render = () => {
     return (
-      <ContactWrap blue={this.props.blue}>
+      <ContactSection id={this.props.id}>
         <LargeText>Contact</LargeText>
-      </ContactWrap>
+      </ContactSection>
     );
   };
 }
 
-const ContactWrap = styled(SectionWrap)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: ${({ blue, theme }) => blue ? theme.secondary : theme.primary};
+const ContactSection = styled(Section)`
+  ${flexCenter}
+  background: ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.light};
 `;
 

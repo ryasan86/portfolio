@@ -1,5 +1,5 @@
 export * from './Logo';
-export * from './SectionWrap';
+export * from './Section';
 export * from './ScrollFooter';
 export * from './Link';
 export * from './ScrollFooterButton';

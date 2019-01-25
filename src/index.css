@@ -27,7 +27,7 @@ a:visited {
   width: 0px;
 }
 
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   border-radius: 5px;
 }
 
@@ -38,4 +38,4 @@ a:visited {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #48c9b0;
-}
+} */

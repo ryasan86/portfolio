@@ -30,13 +30,9 @@ class App extends Component {
       <AppWrap>
         <Header />
         <Parallax bg={this.state.bg} />
-        {SECTIONS.map(({ section, Component }, i) => {
-          return (
-            <Section key={i} id={section}>
-              <Component blue={i % 2} />
-            </Section>
-          );
-        })}
+        {SECTIONS.map(({ section, Component }, i) => (
+          <Component id={section} key={i} />
+        ))}
       </AppWrap>
     );
   };
@@ -56,10 +52,6 @@ const Parallax = styled.div`
   top: 0;
   filter: blur(2px);
   -webkit-filter: blur(2px);
-  /* filter: ${({ blur }) => (blur ? 'blur(2px)' : 'none')}; */
-  /* -webkit-filter: ${({ blur }) => (blur ? 'blur(2px)' : 'none')}; */
 `;
-
-const Section = styled.section``;
 
 export default App;
