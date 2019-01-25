@@ -44,7 +44,6 @@ const ProjectsContent = styled(SectionContent)`
   ${flexCenter};
   flex-direction: column;
   padding: 0 0 10% 1%;
-
   position: relative;
   top: 50px;
 `;

@@ -16,7 +16,7 @@ class Contact extends Component {
 
 const ContactSection = styled(Section)`
   ${flexCenter}
-  background: ${({ theme }) => theme.primary};
+  background: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.light};
 `;
 

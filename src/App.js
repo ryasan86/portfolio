@@ -1,35 +1,35 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 // import Waypoint from 'react-waypoint';
-import { BG_1, BG_2, BG_3, SECTIONS } from './constants';
+import { BG_1, BG_2, SECTIONS } from './constants';
 import { amountScrolled } from './utils';
 // components
 import Header from './components/Header';
 
 class App extends Component {
-  state = { bg: '' };
+  state = { bg: '', bgStyle: '' };
 
   componentDidMount = () => {
     window.addEventListener('scroll', this.listenForBGChange);
   };
 
+  // change parallax background depending on how far down user has scrolled
   listenForBGChange = () => {
     const scrollPct = amountScrolled();
     const { bg } = this.state;
-    if (scrollPct <= 31 && bg !== BG_1) {
-      this.setState({ bg: BG_1 });
-    } else if (scrollPct > 31 && scrollPct <= 65 && bg !== BG_2) {
-      this.setState({ bg: BG_2 });
-    } else if (scrollPct > 65 && scrollPct <= 100 && bg !== BG_3) {
-      this.setState({ bg: BG_3 });
+    if (scrollPct <= 36 && bg !== BG_1) {
+      this.setState({ bg: BG_1.imgUrl, bgStyle: BG_1.bgStyle });
+    } else if (scrollPct > 36 && bg !== BG_2) {
+      this.setState({ bg: BG_2.imgUrl, bgStyle: BG_2.bgStyle });
     }
   };
 
   render = () => {
+    const { bg, bgStyle } = this.state;
     return (
       <AppWrap>
         <Header />
-        <Parallax bg={this.state.bg} />
+        <Parallax bg={bg} bgStyle={bgStyle} />
         {SECTIONS.map(({ section, Component }, i) => (
           <Component id={section} key={i} />
         ))}
@@ -50,8 +50,7 @@ const Parallax = styled.div`
   width: 100%;
   position: fixed;
   top: 0;
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
+  ${({ bgStyle }) => bgStyle}
 `;
 
 export default App;

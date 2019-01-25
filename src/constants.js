@@ -10,10 +10,15 @@ const SECTIONS = [
   { section: 'Contact', Component: Contact }
 ];
 
+const BG_1 = {
+  imgUrl: 'https://i.postimg.cc/1tYMscJb/codeBG2.png',
+  bgStyle: `background-repeat: repeat;
+            filter: blur(2px);
+            -webkit-filter: blur(2px);`
+};
+const BG_2 = {
+  imgUrl: 'https://i.postimg.cc/4xLDYVbB/14904338619-e4ed845776-b.jpg',
+  bgStyle: 'background-repeat: no-repeat;'
+};
 
-// const BG_1 = 'https://i.postimg.cc/PxgRDwKD/codeBG.png';
-const BG_1 = 'https://via.placeholder.com/1366x768';
-const BG_2 = 'https://via.placeholder.com/1366x768';
-const BG_3 = 'https://via.placeholder.com/1366x768';
-
-export { BG_1, BG_2, BG_3,SECTIONS };
+export { BG_1, BG_2, SECTIONS };

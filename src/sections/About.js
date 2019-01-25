@@ -34,7 +34,9 @@ class About extends Component {
 const AboutSection = styled(Section)`
   background: ${({ theme }) => theme.light};
   color: ${({ theme }) => theme.mainFontColor};
-  margin-bottom: 20%;
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 20%;
+  }
 `;
 
 const AboutContent = styled(SectionContent)`
@@ -46,6 +48,7 @@ const AboutContent = styled(SectionContent)`
 const SummaryContainer = styled.div`
   width: 60%;
   padding: 10%;
+  overflow-y: scroll;
 `;
 
 const SkillsContainer = styled.div`

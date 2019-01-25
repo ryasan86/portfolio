@@ -66,8 +66,8 @@ const StyledTable = styled.table`
 
 const StyledTd = styled.td`
   color: ${({ theme }) => theme.primary};
-  font-size: 0.8em;
-  font-weight: bold;
+  font-size: 0.78em;
+  font-weight: bolder;
 `;
 
 const BraceTd = styled.td`

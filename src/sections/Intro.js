@@ -33,7 +33,9 @@ const IntroSection = styled(Section)`
     ${({ theme }) => theme.primary}
   );
   color: ${({ theme }) => theme.light};
-  margin-bottom: 20%;
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 20%;
+  }
 `;
 
 const Text = styled.div`
@@ -41,24 +43,36 @@ const Text = styled.div`
 `;
 
 const LargeText = styled(Text)`
-  font-size: 7em;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  padding-left: 0px;
+  @media only screen and (min-width: 425px) {
+    font-size: 7em;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    padding-left: 0px;
+  }
+
+  font-size: 5em;
 `;
 
 const MediumText = styled(Text)`
-  font-size: 5em;
-  font-weight: 500;
-  letter-spacing: 0.13em;
-  margin-top: 1%;
+  @media only screen and (min-width: 425px) {
+    font-size: 5em;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    margin-top: 1%;
+  }
+  font-size: 3em;
+  letter-spacing: 0.15em;
 `;
 
 const SmallText = styled(Text)`
-  font-size: 1.5em;
-  letter-spacing: 0.32em;
-  padding-left: 1%;
-  margin-top: 6%;
+  @media only screen and (min-width: 425px) {
+    font-size: 1.5em;
+    letter-spacing: 0.32em;
+    padding-left: 1%;
+    margin-top: 6%;
+  }
+
+  letter-spacing: 0.27em;
 `;
 
 export default Intro;
