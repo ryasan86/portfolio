@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 // import Waypoint from 'react-waypoint';
-import { BG_1, BG_2, SECTIONS } from './constants';
+import { BG_1, BG_2, BG_3, SECTIONS } from './constants';
 import { amountScrolled } from './utils';
 // components
 import Header from './components/Header';
@@ -20,8 +20,8 @@ class App extends Component {
       this.setState({ bg: BG_1 });
     } else if (scrollPct > 31 && scrollPct <= 65 && bg !== BG_2) {
       this.setState({ bg: BG_2 });
-    } else if (scrollPct > 65 && scrollPct <= 100 && bg !== BG_1) {
-      this.setState({ bg: BG_1 });
+    } else if (scrollPct > 65 && scrollPct <= 100 && bg !== BG_3) {
+      this.setState({ bg: BG_3 });
     }
   };
 
@@ -54,8 +54,8 @@ const Parallax = styled.div`
   width: 100%;
   position: fixed;
   top: 0;
-  /* filter: blur(2px);
-  -webkit-filter: blur(2px); */
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
   /* filter: ${({ blur }) => (blur ? 'blur(2px)' : 'none')}; */
   /* -webkit-filter: ${({ blur }) => (blur ? 'blur(2px)' : 'none')}; */
 `;

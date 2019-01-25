@@ -15,12 +15,11 @@ class About extends Component {
     return (
       <AboutWrap>
         <AboutContent>
-          <SummaryContainer>
+          <SummaryContainer data-aos="fade-up">
             <h3>Summary</h3>
             <p>{data.summary}</p>
           </SummaryContainer>
-
-          <SkillsContainer>
+          <SkillsContainer data-aos="fade-down">
             <SkillsTable />
           </SkillsContainer>
         </AboutContent>
@@ -43,6 +42,7 @@ const SkillsContainer = styled.div`
   background: ${({ theme }) => theme.dark};
   color: ${({ theme }) => theme.light};
   padding: 2% 7%;
+  overflow-y: scroll;
 `;
 
 const AboutContent = styled(SectionContent)`
@@ -54,7 +54,7 @@ const AboutContent = styled(SectionContent)`
 const AboutWrap = styled(SectionWrap)`
   background: ${({ theme }) => theme.light};
   color: ${({ theme }) => theme.mainFontColor};
-  margin-bottom: 30%;
+  margin-bottom: 20%;
 `;
 
 export default About;

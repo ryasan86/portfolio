@@ -33,7 +33,7 @@ const IntroWrap = styled(SectionWrap)`
     ${({ theme }) => theme.primary}
   );
   color: ${({ theme }) => theme.light};
-  margin-bottom: 30%;
+  margin-bottom: 20%;
 `;
 
 const Text = styled.div`

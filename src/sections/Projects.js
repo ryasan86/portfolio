@@ -49,12 +49,14 @@ const ProjectsListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 25px;
+  
 `;
 
 const ProjectsWrap = styled(SectionWrap)`
   background: ${({ theme }) => theme.light};
   color: ${({ theme }) => theme.mainFontColor};
-  margin-bottom: 30%;
+  margin-bottom: 20%;
+  overflow-x: scroll;
 `;
 
 export default Projects;
