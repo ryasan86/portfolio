@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Waypoint from 'react-waypoint';
 import { DOWN_ARROW } from './../images';
 // components
 import SkillsTable from './../components/SkillsTable';
@@ -12,21 +13,32 @@ import {
 } from './../components/common';
 
 class About extends Component {
+  state = { hideText: true };
+
+  handleEnter = () => {
+    console.log('entered about');
+    this.setState({ hideText: false });
+  };
+
   render = () => {
     return (
-      <AboutSection id={this.props.id}>
-        <AboutContent>
-          <SummaryContainer data-aos="fade-up">
-            <Summary />
-          </SummaryContainer>
-          <SkillsContainer data-aos="fade-down">
-            <SkillsTable />
-          </SkillsContainer>
-        </AboutContent>
-        <ScrollFooter>
-          <ScrollBtn to="Projects" label="Projects" icon={DOWN_ARROW} />
-        </ScrollFooter>
-      </AboutSection>
+      <Waypoint onEnter={this.handleEnter}>
+        <div>
+          <AboutSection id={this.props.id}>
+            <AboutContent>
+              <SummaryContainer data-aos="fade-up">
+                <Summary hideText={this.state.hideText} />
+              </SummaryContainer>
+              <SkillsContainer data-aos="fade-down">
+                <SkillsTable />
+              </SkillsContainer>
+            </AboutContent>
+            <ScrollFooter>
+              <ScrollBtn to="Projects" label="Projects" icon={DOWN_ARROW} />
+            </ScrollFooter>
+          </AboutSection>
+        </div>
+      </Waypoint>
     );
   };
 }

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
-import Waypoint from 'react-waypoint';
+import { darken } from 'polished';
 import data from './../data.json';
 // import { GLITCH_BG } from './../constants';
 import {
@@ -16,76 +16,36 @@ import { H2, P } from './../components/text';
 const GLITCH_BG = 'https://i.postimg.cc/7hCRc1FY/coding-1853305-1280.jpg';
 
 class Summary extends Component {
-  state = { animationIteration: null };
-  
-  handleEnter = () => {
-    this.setState({ animationIteration: 2 });
-  };
-
-  renderGlitchImages = () => {
-    return new Array({ length: 5 }).map((_, i) => (
-      <GlitchImg
-        key={i}
-        animationIteration={this.state.animationIteration}
-        className="glitch__img"
-      />
-    ));
+  renderGlitchImgs = () => {
+    const images = [];
+    for (let i = 0; i < 5; i++) {
+      images.push(<GlitchImg key={i} className="glitch__img" />);
+    }
+    return images;
   };
 
   render = () => {
-    const { animationIteration } = this.state;
+    const { hideText } = this.props;
     return (
       <SummaryWrap className="glitch-variables">
-        <Waypoint onEnter={this.handleEnter}>
-          <div>
-            <Glitch>{this.renderGlitchImages()}</Glitch>
-            <SummaryTitle animationIteration={animationIteration}>
-              About me
-            </SummaryTitle>
-            <TextContainer
-              animationIteration={animationIteration}
-              className="content__text"
-            >
-              {data.summary.map((text, i) => (
-                <Fragment key={i}>
-                  <P>{text}</P>
-                  <br />
-                </Fragment>
-              ))}
-            </TextContainer>
-          </div>
-        </Waypoint>
+        <Glitch>{this.renderGlitchImgs()}</Glitch>
+        <SummaryTitle hideText={hideText}>About me</SummaryTitle>
+
+        <TextContainer hideText={hideText} className="content__text">
+          {data.summary.map((text, i) => (
+            <Fragment key={i}>
+              <P>{text}</P>
+              <br />
+            </Fragment>
+          ))}
+        </TextContainer>
       </SummaryWrap>
     );
   };
 }
 
 const SummaryWrap = styled.div`
-  height: 100%;
-`;
-
-const SummaryTitle = styled(H2)`
-  color: ${({ theme }) => theme.primary};
-  animation-name: ${glitchAnimText};
-  animation-duration: var(--time-anim);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  position: relative;
-  animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
-  margin-bottom: 10%;
-`;
-
-const TextContainer = styled.div`
-  color: ${({ theme }) => theme.mainFontColor};
-  animation-name: ${glitchAnimText};
-  animation-duration: var(--time-anim);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  max-width: 500px;
-  animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.25);
-  @media screen and (max-width: 55em) {
-    text-align: center;
-  }
+  height: 100vh;
 `;
 
 const Glitch = styled.div`
@@ -106,9 +66,10 @@ const GlitchImg = styled.div`
   background: url(${GLITCH_BG});
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.6;
-  background-color: var(--blend-color-1);
   background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
+  background-color: var(--blend-color-1);
   transform: translate3d(0, 0, 0);
   background-blend-mode: var(--blend-mode-1);
   &:nth-child(n + 2) {
@@ -119,6 +80,7 @@ const GlitchImg = styled.div`
     animation-delay: var(--delay-anim);
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
   }
   &:nth-child(2) {
     background-color: var(--blend-color-2);
@@ -139,6 +101,30 @@ const GlitchImg = styled.div`
     background-color: var(--blend-color-5);
     background-blend-mode: var(--blend-mode-5);
     animation-name: ${glitchAnimFlash};
+  }
+`;
+
+const SummaryTitle = styled(H2)`
+  color: ${({ theme }) => darken(0.1, theme.primary)};
+  animation-name: ${glitchAnimText};
+  animation-duration: var(--time-anim);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  position: relative;
+  animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
+  margin-bottom: 10%;
+`;
+
+const TextContainer = styled.div`
+  color: black;
+  animation-name: ${glitchAnimText};
+  animation-duration: var(--time-anim);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  max-width: 500px;
+  animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.25);
+  @media screen and (max-width: 55em) {
+    text-align: center;
   }
 `;
 
