@@ -63,7 +63,6 @@ const Info = styled.div`
 `;
 
 const CardTitle = styled.h4`
-  /* margin-top: 15px; */
   margin: 0;
 `;
 

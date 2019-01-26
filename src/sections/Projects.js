@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import data from './../data.json';
 import { flexCenter } from './../utils/flexCenter';
+import { DOWN_ARROW } from './../images';
 // components
 import Card from './../components/Card';
 import {
   Section,
   ScrollFooter,
-  ScrollFooterButton,
+  ScrollBtn,
   SectionContent
 } from './../components/common';
 
@@ -26,7 +27,7 @@ class Projects extends Component {
           </ProjectsListContainer>
         </ProjectsContent>
         <ScrollFooter>
-          <ScrollFooterButton to="Contact" />
+          <ScrollBtn to="Contact" label="Contact" icon={DOWN_ARROW} />
         </ScrollFooter>
       </ProjectsSection>
     );
@@ -34,6 +35,7 @@ class Projects extends Component {
 }
 
 const ProjectsSection = styled(Section)`
+  ${flexCenter};
   background: ${({ theme }) => theme.light};
   color: ${({ theme }) => theme.mainFontColor};
   min-height: 100vh;
@@ -41,11 +43,8 @@ const ProjectsSection = styled(Section)`
 `;
 
 const ProjectsContent = styled(SectionContent)`
-  ${flexCenter};
-  flex-direction: column;
   padding: 0 0 10% 1%;
   position: relative;
-  top: 50px;
 `;
 
 const ProjectsListContainer = styled.div`

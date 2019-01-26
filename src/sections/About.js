@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import data from './../data.json';
+import { DOWN_ARROW } from './../images';
 // components
 import SkillsTable from './../components/SkillsTable';
 import {
   Section,
   ScrollFooter,
-  ScrollFooterButton,
+  ScrollBtn,
   SectionContent
 } from './../components/common';
 
@@ -24,7 +25,7 @@ class About extends Component {
           </SkillsContainer>
         </AboutContent>
         <ScrollFooter>
-          <ScrollFooterButton to="Projects" />
+          <ScrollBtn to="Projects" label="Projects" icon={DOWN_ARROW} />
         </ScrollFooter>
       </AboutSection>
     );
@@ -42,7 +43,6 @@ const AboutSection = styled(Section)`
 const AboutContent = styled(SectionContent)`
   display: flex;
   width: 100%;
-  top: 50px;
 `;
 
 const SummaryContainer = styled.div`
