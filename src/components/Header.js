@@ -23,21 +23,24 @@ const linkstyles = css`
     box-shadow: 0 -5px 0 0 ${({ theme }) => theme.primary} inset;
     color: ${({ theme }) => theme.primary};
   }
+  @media only screen and (max-width: 420px) {
+    width: 25%;
+  }
 `;
 
 const NavList = styled.ul`
   height: 100%;
-  height: 50px;
+  width: 100%;
   margin: 0 0;
   border: ${({ theme }) => theme.dark} 3px solid;
   display: flex;
 `;
 
 const StyledHeader = styled.div`
-  z-index: 1;
+  z-index: 10;
   background: ${({ theme }) => theme.dark};
   width: 100%;
-  height: 50px;
+  height: ${({ theme }) => theme.headerHeight};
   padding: 1%;
   display: flex;
   justify-content: flex-end;

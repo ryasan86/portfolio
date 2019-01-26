@@ -4,7 +4,7 @@ const SectionContent = styled.div`
   bottom: 0;
   position: absolute;
   height: calc(100% - 50px);
-  top: 50px;
+  top: ${({ theme }) => theme.headerHeight};
 `;
 
 export { SectionContent };

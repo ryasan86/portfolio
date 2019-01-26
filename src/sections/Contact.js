@@ -36,7 +36,6 @@ const ContactContent = styled(SectionContent)`
   flex-direction: column;
   min-width: 50%;
   height: calc(80% - 50px);
-  z-index: 1;
 `;
 
 const TextContainer = styled.div`

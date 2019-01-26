@@ -4,6 +4,7 @@ const light = '#f2f2f2';
 const dark = '#17202a';
 const mainFontColor = '#1c2833';
 const lightFontColor = '#566573';
+const headerHeight = '50px';
 
 export default {
   primary,
@@ -11,5 +12,6 @@ export default {
   light,
   dark,
   mainFontColor,
-  lightFontColor
+  lightFontColor,
+  headerHeight
 };

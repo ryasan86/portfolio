@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Waypoint from 'react-waypoint';
 import data from './../data.json';
 import { flexCenter } from './../utils/flexCenter';
 import { DOWN_ARROW } from './../images';
@@ -14,31 +13,23 @@ import {
 } from './../components/common';
 
 class Projects extends Component {
-  handleEnter = () => {
-    console.log('entered projects');
-  };
-
   render = () => {
     return (
-      <Waypoint onEnter={this.handleEnter}>
-        <div>
-          <ProjectsSection id={this.props.id}>
-            <ProjectsContent data-aos="fade-up">
-              <TitleContainer>
-                <h3>Projects</h3>
-              </TitleContainer>
-              <ProjectsListContainer>
-                {data.projects.map((project, i) => {
-                  return <Card key={i} project={project} />;
-                })}
-              </ProjectsListContainer>
-            </ProjectsContent>
-            <ScrollFooter>
-              <ScrollBtn to="Contact" label="Contact" icon={DOWN_ARROW} />
-            </ScrollFooter>
-          </ProjectsSection>
-        </div>
-      </Waypoint>
+      <ProjectsSection id={this.props.id}>
+        <ProjectsContent data-aos="fade-up">
+          <TitleContainer>
+            <h3>Projects</h3>
+          </TitleContainer>
+          <ProjectsListContainer>
+            {data.projects.map((project, i) => {
+              return <Card key={i} project={project} />;
+            })}
+          </ProjectsListContainer>
+        </ProjectsContent>
+        <ScrollFooter>
+          <ScrollBtn to="Contact" label="Contact" icon={DOWN_ARROW} />
+        </ScrollFooter>
+      </ProjectsSection>
     );
   };
 }

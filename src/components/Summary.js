@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 import data from './../data.json';
-// import { GLITCH_BG } from './../constants';
 import {
   glitchAnimText,
   glitchAnim1,
   glitchAnim2,
   glitchAnim3,
-  glitchAnimFlash
+  glitchAnimFlash,
+  glitch
 } from './../utils';
 // components
 import { H2, P } from './../components/text';
@@ -41,7 +41,7 @@ class Summary extends Component {
               <P>{text}</P>
               <br />
             </Fragment>
-          ))}{' '}
+          ))}
         </TextContainer>
       );
     }
@@ -66,80 +66,75 @@ const Glitch = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: var(--glitch-width);
-  height: var(--glitch-height);
+  width: ${glitch.glitchWidth};
+  height: ${glitch.glitchHeight};
   overflow: hidden;
+`;
+
+const commonAnimCSS = css`
+  animation-duration: ${glitch.timeAnim};
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
 `;
 
 const GlitchImg = styled.div`
   position: absolute;
-  top: calc(-1 * var(--gap-vertical));
-  left: calc(-1 * var(--gap-horizontal));
-  width: calc(100% + var(--gap-horizontal) * 2);
-  height: calc(100% + var(--gap-vertical) * 2);
+  top: calc(-1 * ${glitch.gapVertical});
+  left: calc(-1 * ${glitch.gapHorizontal});
+  width: calc(100% + ${glitch.gapHorizontal} * 2);
+  height: calc(100% + ${glitch.gapVertical} * 2);
   background: url(${GLITCH_BG});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.5;
   z-index: -1;
-  background-color: var(--blend-color-1);
+  background-color: ${glitch.blendColor1};
   transform: translate3d(0, 0, 0);
-  background-blend-mode: var(--blend-mode-1);
+  background-blend-mode: ${glitch.blendMode1};
   &:nth-child(n + 2) {
     opacity: 0;
   }
   &:nth-child(n + 2) {
-    animation-duration: var(--time-anim);
-    animation-delay: var(--delay-anim);
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 2;
+    animation-delay: ${glitch.delayAnim};
+    ${commonAnimCSS};
   }
   &:nth-child(2) {
-    background-color: var(--blend-color-2);
-    background-blend-mode: var(--blend-mode-2);
+    background-color: ${glitch.blendColor2};
+    background-blend-mode: ${glitch.blendMode2};
     animation-name: ${glitchAnim1};
   }
   &:nth-child(3) {
-    background-color: var(--blend-color-3);
-    background-blend-mode: var(--blend-mode-3);
+    background-color: ${glitch.blendColor3};
+    background-blend-mode: ${glitch.blendMode3};
     animation-name: ${glitchAnim2};
   }
   &:nth-child(4) {
-    background-color: var(--blend-color-4);
-    background-blend-mode: var(--blend-mode-4);
+    background-color: ${glitch.blendColor4};
+    background-blend-mode: ${glitch.blendColor4};
     animation-name: ${glitchAnim3};
   }
   &:nth-child(5) {
-    background-color: var(--blend-color-5);
-    background-blend-mode: var(--blend-mode-5);
+    background-color: ${glitch.blendColor5};
+    background-blend-mode: ${glitch.blendMode5};
     animation-name: ${glitchAnimFlash};
   }
 `;
 
 const SummaryTitle = styled(H2)`
   color: ${({ theme }) => darken(0.1, theme.primary)};
-  animation-name: ${glitchAnimText};
-  animation-duration: var(--time-anim);
-  animation-timing-function: linear;
-  animation-iteration-count: 2;
   position: relative;
-  animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
   margin-bottom: 10%;
+  animation-name: ${glitchAnimText};
+  animation-delay: calc(${glitch.delayAnim} + ${glitch.timeAnim} * 0.2);
+  ${commonAnimCSS};
 `;
 
 const TextContainer = styled.div`
   color: black;
   animation-name: ${glitchAnimText};
-  animation-duration: var(--time-anim);
-  animation-timing-function: linear;
-  animation-iteration-count: 2;
-  max-width: 500px;
-  animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.25);
-  @media screen and (max-width: 55em) {
-    text-align: center;
-  }
+  animation-delay: calc(${glitch.delayAnim} + ${glitch.timeAnim} * 0.25);
+  ${commonAnimCSS};
 `;
 
 export default Summary;
