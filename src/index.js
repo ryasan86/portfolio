@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './css/glitch.css';
 import './index.css';
 // theme provider
 import { ThemeProvider } from 'styled-components';

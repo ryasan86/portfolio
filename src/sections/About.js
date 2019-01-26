@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import data from './../data.json';
 import { DOWN_ARROW } from './../images';
 // components
 import SkillsTable from './../components/SkillsTable';
+import Summary from './../components/Summary';
 import {
   Section,
   ScrollFooter,
@@ -17,8 +17,7 @@ class About extends Component {
       <AboutSection id={this.props.id}>
         <AboutContent>
           <SummaryContainer data-aos="fade-up">
-            <h3>Summary</h3>
-            <p>{data.summary}</p>
+            <Summary />
           </SummaryContainer>
           <SkillsContainer data-aos="fade-down">
             <SkillsTable />
@@ -46,6 +45,9 @@ const AboutContent = styled(SectionContent)`
 `;
 
 const SummaryContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 60%;
   padding: 10%;
   overflow-y: scroll;

@@ -3,6 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { darken } from 'polished';
 import { flexCenter } from './../utils';
 import { UP_ARROW, LINKEDIN, CODEPEN, GITHUB } from './../images';
+import { GITHUB_URL, LINKEDIN_URL, CODEPEN_URL } from './../constants';
 // components
 import { ScrollBtn, Logo } from './common';
 
@@ -14,9 +15,15 @@ class Footer extends Component {
           <ScrollBtn to="Intro" icon={UP_ARROW} styles={ScrollBtnStyles} />
         </BtnContainer>
         <LogoContainer>
-          <FooterLogo src={GITHUB} />
-          <FooterLogo src={CODEPEN} />
-          <FooterLogo src={LINKEDIN} />
+          <a href={GITHUB_URL}>
+            <FooterLogo src={GITHUB} />
+          </a>
+          <a href={CODEPEN_URL}>
+            <FooterLogo src={CODEPEN} />
+          </a>
+          <a href={LINKEDIN_URL}>
+            <FooterLogo src={LINKEDIN} />
+          </a>
         </LogoContainer>
         <NormalText>RYAN SANTOS</NormalText>
       </FooterWrap>
