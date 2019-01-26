@@ -18,27 +18,41 @@ const GLITCH_BG = 'https://i.postimg.cc/7hCRc1FY/coding-1853305-1280.jpg';
 class Summary extends Component {
   renderGlitchImgs = () => {
     const images = [];
-    for (let i = 0; i < 5; i++) {
-      images.push(<GlitchImg key={i} className="glitch__img" />);
+    if (this.props.enteredAbout) {
+      for (let i = 0; i < 5; i++) {
+        images.push(<GlitchImg key={i} className="glitch__img" />);
+      }
     }
     return images;
   };
 
-  render = () => {
-    const { hideText } = this.props;
-    return (
-      <SummaryWrap className="glitch-variables">
-        <Glitch>{this.renderGlitchImgs()}</Glitch>
-        <SummaryTitle hideText={hideText}>About me</SummaryTitle>
+  renderTitle = () => {
+    if (this.props.enteredAbout) {
+      return <SummaryTitle>About me</SummaryTitle>;
+    }
+  };
 
-        <TextContainer hideText={hideText} className="content__text">
+  renderNormalText = () => {
+    if (this.props.enteredAbout) {
+      return (
+        <TextContainer className="content__text">
           {data.summary.map((text, i) => (
             <Fragment key={i}>
               <P>{text}</P>
               <br />
             </Fragment>
-          ))}
+          ))}{' '}
         </TextContainer>
+      );
+    }
+  };
+
+  render = () => {
+    return (
+      <SummaryWrap className="glitch-variables">
+        <Glitch>{this.renderGlitchImgs()}</Glitch>
+        {this.renderTitle()}
+        {this.renderNormalText()}
       </SummaryWrap>
     );
   };
@@ -79,8 +93,8 @@ const GlitchImg = styled.div`
     animation-duration: var(--time-anim);
     animation-delay: var(--delay-anim);
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
     animation-fill-mode: forwards;
+    animation-iteration-count: 2;
   }
   &:nth-child(2) {
     background-color: var(--blend-color-2);
@@ -109,7 +123,7 @@ const SummaryTitle = styled(H2)`
   animation-name: ${glitchAnimText};
   animation-duration: var(--time-anim);
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 2;
   position: relative;
   animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
   margin-bottom: 10%;
@@ -120,7 +134,7 @@ const TextContainer = styled.div`
   animation-name: ${glitchAnimText};
   animation-duration: var(--time-anim);
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 2;
   max-width: 500px;
   animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.25);
   @media screen and (max-width: 55em) {

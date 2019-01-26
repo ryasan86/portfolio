@@ -13,11 +13,11 @@ import {
 } from './../components/common';
 
 class About extends Component {
-  state = { hideText: true };
+  state = { enteredAbout: false };
 
   handleEnter = () => {
     console.log('entered about');
-    this.setState({ hideText: false });
+    this.setState({ enteredAbout: true });
   };
 
   render = () => {
@@ -27,7 +27,7 @@ class About extends Component {
           <AboutSection id={this.props.id}>
             <AboutContent>
               <SummaryContainer data-aos="fade-up">
-                <Summary hideText={this.state.hideText} />
+                <Summary enteredAbout={this.state.enteredAbout} />
               </SummaryContainer>
               <SkillsContainer data-aos="fade-down">
                 <SkillsTable />
