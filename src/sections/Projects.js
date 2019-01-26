@@ -11,6 +11,7 @@ import {
   ScrollBtn,
   SectionContent
 } from './../components/common';
+import { P } from './../components/text';
 
 class Projects extends Component {
   render = () => {
@@ -18,7 +19,7 @@ class Projects extends Component {
       <ProjectsSection id={this.props.id}>
         <ProjectsContent data-aos="fade-up">
           <TitleContainer>
-            <h3>Projects</h3>
+            <ProjectsTitle>Projects</ProjectsTitle>
           </TitleContainer>
           <ProjectsListContainer>
             {data.projects.map((project, i) => {
@@ -67,6 +68,13 @@ const ProjectsListContainer = styled.div`
 
 const TitleContainer = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2% 0;
+`;
+
+const ProjectsTitle = styled(P)`
+  color: ${({ theme }) => theme.dark};
 `;
 
 export default Projects;

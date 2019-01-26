@@ -17,42 +17,42 @@ const SkillsStyledTable = () => {
           return (
             <Fragment key={i}>
               <tr>
-                <EmptyTd />
+                <Cell />
                 <BraceTd>{'{'}</BraceTd>
-                <EmptyTd />
-                <EmptyTd />
-                <EmptyTd />
+                <Cell />
+                <Cell />
+                <Cell />
               </tr>
               <tr>
-                <EmptyTd />
-                <EmptyTd />
+                <Cell />
+                <Cell />
                 <StyledTd>"name":"{name}",</StyledTd>
-                <EmptyTd />
-                <EmptyTd />
+                <Cell />
+                <Cell />
               </tr>
               <tr>
-                <EmptyTd />
-                <EmptyTd />
+                <Cell />
+                <Cell />
                 <StyledTd>"value": {value}</StyledTd>
-                <EmptyTd />
-                <EmptyTd />
+                <Cell />
+                <Cell />
               </tr>
               <tr>
-                <EmptyTd />
+                <Cell />
                 <BraceTd>{i < data.skills.length - 1 ? '},' : '}'}</BraceTd>
-                <EmptyTd />
-                <EmptyTd />
-                <EmptyTd />
+                <Cell />
+                <Cell />
+                <Cell />
               </tr>
             </Fragment>
           );
         })}
         <tr>
           <BraceTd>{']'}</BraceTd>
-          <EmptyTd />
-          <EmptyTd />
-          <EmptyTd />
-          <EmptyTd />
+          <Cell />
+          <Cell />
+          <Cell />
+          <Cell />
         </tr>
       </tbody>
     </StyledTable>
@@ -62,19 +62,25 @@ const SkillsStyledTable = () => {
 const StyledTable = styled.table`
   font-family: 'Segoe UI', sans-serif;
   width: 100%;
+  height: 100%;
+  overflow: scroll;
 `;
 
-const StyledTd = styled.td`
-  color: ${({ theme }) => theme.primary};
+const Cell = styled.td`
   font-size: 0.78em;
+  @media only screen and (max-width: 420px) {
+    font-size: 0.7em;
+  }
+`;
+
+const StyledTd = styled(Cell)`
+  color: ${({ theme }) => theme.primary};
   font-weight: bolder;
 `;
 
-const BraceTd = styled.td`
+const BraceTd = styled(Cell)`
   font-weight: bolder;
   width: 6%;
 `;
-
-const EmptyTd = styled.td``;
 
 export default SkillsStyledTable;

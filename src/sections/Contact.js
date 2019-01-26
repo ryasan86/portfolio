@@ -35,7 +35,7 @@ const ContactContent = styled(SectionContent)`
   ${flexCenter};
   flex-direction: column;
   min-width: 50%;
-  height: calc(80% - 50px);
+  height: calc(80% - ${({ theme }) => theme.headerHeight});
 `;
 
 const TextContainer = styled.div`

@@ -25,25 +25,26 @@ const linkstyles = css`
   }
   @media only screen and (max-width: 420px) {
     width: 25%;
+    font-size: 0.8em;
   }
 `;
 
 const NavList = styled.ul`
-  height: 100%;
+  height: ${({theme}) => theme.headerHeight};
   width: 100%;
   margin: 0 0;
   border: ${({ theme }) => theme.dark} 3px solid;
   display: flex;
+  justify-content: flex-end;
+  padding: 0 5%;
 `;
 
 const StyledHeader = styled.div`
   z-index: 10;
-  background: ${({ theme }) => theme.dark};
   width: 100%;
   height: ${({ theme }) => theme.headerHeight};
-  padding: 1%;
+  background: ${({ theme }) => theme.dark};
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   position: fixed;
   border-bottom: 2px solid ${({ theme }) => theme.dark};

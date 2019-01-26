@@ -60,6 +60,12 @@ class Summary extends Component {
 
 const SummaryWrap = styled.div`
   height: 100vh;
+  @media only screen and (max-width: 350px) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 const Glitch = styled.div`
@@ -128,6 +134,9 @@ const SummaryTitle = styled(H2)`
   animation-name: ${glitchAnimText};
   animation-delay: calc(${glitch.delayAnim} + ${glitch.timeAnim} * 0.2);
   ${commonAnimCSS};
+  @media only screen and (min-width: 350px) {
+    margin-top: 20%;
+  }
 `;
 
 const TextContainer = styled.div`

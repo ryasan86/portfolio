@@ -16,7 +16,6 @@ class About extends Component {
   state = { enteredAbout: false };
 
   handleEnter = () => {
-    console.log('entered about');
     this.setState({ enteredAbout: true });
   };
 
@@ -46,32 +45,46 @@ class About extends Component {
 const AboutSection = styled(Section)`
   background: ${({ theme }) => theme.light};
   color: ${({ theme }) => theme.mainFontColor};
+  min-height: 100vh;
+  height: auto;
+
   @media only screen and (min-width: 768px) {
     margin-bottom: 20%;
   }
 `;
 
 const AboutContent = styled(SectionContent)`
-  display: flex;
+  height: 100%;
   width: 100%;
+  display: flex;
+  @media only screen and (max-width: 420px) {
+    position: relative;
+    flex-direction: column;
+  }
 `;
 
 const SummaryContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  /* align-items: center; */
   width: 60%;
+  height: calc(100% - ${({ theme }) => theme.headerHeight});
   padding: 10%;
-  overflow-y: scroll;
+  @media only screen and (max-width: 420px) {
+    width: 100%;
+  }
 `;
 
 const SkillsContainer = styled.div`
   width: 40%;
-  height: 100%;
+  height: calc(100% - ${({ theme }) => theme.headerHeight});
   background: ${({ theme }) => theme.dark};
   color: ${({ theme }) => theme.light};
-  padding: 2% 7%;
-  overflow-y: scroll;
+  padding: 2% 13%;
+  @media only screen and (max-width: 420px) {
+    width: 100%;
+  }
 `;
 
 export default About;
