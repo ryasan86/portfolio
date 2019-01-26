@@ -4,3 +4,4 @@ export * from './ScrollFooter';
 export * from './Link';
 export * from './ScrollButton';
 export * from './SectionContent';
+export * from './Overlay';

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+// components
+import { Overlay } from './common';
 
 class Card extends Component {
   state = { active: false };
@@ -14,8 +16,9 @@ class Card extends Component {
 
   render() {
     const {
-      project: { title, description, imgUrl }
+      project: { title, description, imgUrl, projectUrl }
     } = this.props;
+    const link = <OverlayLink href={projectUrl}>{title}</OverlayLink>;
 
     return (
       <StyledCard>
@@ -24,6 +27,7 @@ class Card extends Component {
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
         >
+          {this.state.active ? <Overlay>{link}</Overlay> : ''}
           <Info active={this.state.active}>
             <CardTitle>{title}</CardTitle>
             <CardText>{description}</CardText>
@@ -68,6 +72,16 @@ const CardTitle = styled.h4`
 
 const CardText = styled.p`
   margin: 0;
+`;
+
+const OverlayLink = styled.a`
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid red;
+  &:link {
+    color: white;
+  }
 `;
 
 export default Card;

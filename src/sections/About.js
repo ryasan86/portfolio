@@ -64,10 +64,6 @@ const AboutContent = styled(SectionContent)`
 `;
 
 const SummaryContainer = styled.div`
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-direction: column; */
-  /* align-items: center; */
   width: 60%;
   height: calc(100% - ${({ theme }) => theme.headerHeight});
   padding: 10%;
