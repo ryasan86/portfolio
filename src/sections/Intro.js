@@ -5,6 +5,7 @@ import { DOWN_ARROW } from './../images';
 // components
 import {
   Section,
+  SectionContent,
   ScrollFooter,
   ScrollBtn
 } from './../components/common';
@@ -14,11 +15,13 @@ class Intro extends Component {
   render = () => {
     return (
       <IntroSection id={this.props.id}>
-        <TextContainer>
-          <LargeText data-aos="fade-down">HELLO</LargeText>
-          <MediumText data-aos="fade-left">I'M RYAN</MediumText>
-          <NormalText data-aos="fade-right">I'M A WEB DEVELOPER</NormalText>
-        </TextContainer>
+        <IntroContent>
+          <TextContainer>
+            <LargeText data-aos="fade-down">HELLO</LargeText>
+            <MediumText data-aos="fade-left">I'M RYAN</MediumText>
+            <NormalText data-aos="fade-right">I'M A WEB DEVELOPER</NormalText>
+          </TextContainer>
+        </IntroContent>
         <ScrollFooter>
           <ScrollBtn to="About" label="About" icon={DOWN_ARROW} />
         </ScrollFooter>
@@ -28,7 +31,6 @@ class Intro extends Component {
 }
 
 const IntroSection = styled(Section)`
-  ${flexCenter};
   background: linear-gradient(
     to right,
     #48c9b0,
@@ -38,6 +40,11 @@ const IntroSection = styled(Section)`
   @media only screen and (min-width: 768px) {
     margin-bottom: 20%;
   }
+`;
+
+const IntroContent = styled(SectionContent)`
+  width: 100%;
+  ${flexCenter};
 `;
 
 const TextContainer = styled.div`
