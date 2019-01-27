@@ -19,7 +19,7 @@ class App extends Component {
     const { bg } = this.state;
     if (scrollPct <= 36 && bg !== BG_1) {
       this.setState({ bg: BG_1.imgUrl, bgStyle: BG_1.bgStyle });
-    } else if (scrollPct > 36 && bg !== BG_2) {
+    } else if (scrollPct > 36 && scrollPct <= 95 && bg !== BG_2) {
       this.setState({ bg: BG_2.imgUrl, bgStyle: BG_2.bgStyle });
     } else if (scrollPct > 95) {
       this.setState({ bg: '', bgStyle: '' });

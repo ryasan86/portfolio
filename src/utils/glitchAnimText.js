@@ -1,8 +1,9 @@
 import { keyframes } from 'styled-components';
+import { glitch } from './glitchVariables';
 
 const glitchAnimText = keyframes`
 	0% { 
-		transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0) scale3d(-1,-1,1);
+		transform: translate3d(calc(-1 * ${glitch.gapHorizontal}),0,0) scale3d(-1,-1,1);
 		-webkit-clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
 		clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
 	}
@@ -35,7 +36,7 @@ const glitchAnimText = keyframes`
 		clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
 	}
 	9.9% {
-		transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0) scale3d(-1,-1,1);
+		transform: translate3d(calc(-1 * ${glitch.gapHorizontal}),0,0) scale3d(-1,-1,1);
 	}
 	10%, 100% {
 		transform: translate3d(0,0,0) scale3d(1,1,1);

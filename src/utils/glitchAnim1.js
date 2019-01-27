@@ -1,9 +1,10 @@
 import { keyframes } from 'styled-components';
+import { glitch } from './glitchVariables';
 
 const glitchAnim1 = keyframes`
 	0% { 
 		opacity: 1;
-		transform: translate3d(var(--gap-horizontal),0,0);
+		transform: translate3d(${glitch.gapHorizontal},0,0);
 		-webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
 		clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
 	}
@@ -49,7 +50,7 @@ const glitchAnim1 = keyframes`
 	}
 	21.9% {
 		opacity: 1;
-		transform: translate3d(var(--gap-horizontal),0,0);
+		transform: translate3d(${glitch.gapHorizontal},0,0);
 	}
 	22%, 100% {
 		opacity: 0;

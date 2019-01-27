@@ -16,4 +16,5 @@ const glitch = {
   blendColor4: 'transparent',
   blendColor5: '#1abc9c'
 };
+
 export { glitch };
