@@ -5,3 +5,6 @@ export * from './Link';
 export * from './ScrollButton';
 export * from './SectionContent';
 export * from './Overlay';
+export * from './Form';
+export * from './Input';
+export * from './TextArea';

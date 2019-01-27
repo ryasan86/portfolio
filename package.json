@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "http://ryasan86.github.io/portfolio",
   "dependencies": {
+    "email-validator": "^2.0.4",
+    "node-sass": "^4.11.0",
     "polished": "^2.3.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

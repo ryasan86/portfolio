@@ -1,22 +1,60 @@
 import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
-import { lighten } from 'polished';
+import styled from 'styled-components';
+import * as EmailValidator from 'email-validator';
+import { Form, Input, TextArea } from './common';
 
 class ContactForm extends Component {
-  state = { name: '', email: '', message: '' };
+  state = { name: '', email: '', message: '', validForm: false };
 
-  componentDidMount = () => {
-    // process.env.REACT_APP_EMAILJS_USERID = 'test'
-    // console.log(process.env)
-  }
+  validateForm = () => {
+    const { name, message, email } = this.state;
+    if (name && message && EmailValidator.validate(email)) {
+      this.setState({ validForm: true });
+    } else {
+      this.setState({ validForm: false });
+    }
+  };
 
-  handleSubmit = async e => {
-    e.preventDefault();
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const {
+      REACT_APP_EMAILJS_RECEIVER: receiverEmail,
+      REACT_APP_EMAILJS_TEMPLATEID: templateId
+    } = this.props.env;
+
+    this.sendMessage(
+      templateId,
+      receiverEmail,
+      this.state.email,
+      this.state.name,
+      this.state.message
+    );
+  };
+
+  sendMessage = async (
+    templateId,
+    receiverEmail,
+    senderEmail,
+    name,
+    message
+  ) => {
+    try {
+      await window.emailjs.send('mailgun', templateId, {
+        name,
+        senderEmail,
+        receiverEmail,
+        message
+      });
+      this.setState({ name: '', email: '', message: '' });
+    } catch (err) {
+      console.error('Failed to send message. Error: ', err);
+    }
   };
 
   handleChange = e => {
     const { value, name } = e.target;
-    this.setState({ [name]: value });
+    this.setState({ [name]: value }, this.validateForm);
   };
 
   render = () => {
@@ -26,22 +64,32 @@ class ContactForm extends Component {
           placeholder="Name"
           name="name"
           type="text"
+          value={this.state.name}
           onChange={this.handleChange}
         />
         <Input
           placeholder="Email"
           name="email"
           type="text"
+          value={this.state.email}
           onChange={this.handleChange}
+          required
         />
         <TextArea
           placeholder="Message"
           name="message"
           rows={10}
+          value={this.state.message}
           onChange={this.handleChange}
+          required
         />
         <BtnContainer>
-          <SubmitBtn onClick={this.handleSubmit}>Submit</SubmitBtn>
+          <SubmitBtn
+            onClick={this.handleSubmit}
+            disabled={!this.state.validForm}
+          >
+            Submit
+          </SubmitBtn>
         </BtnContainer>
       </Form>
     );
@@ -69,48 +117,14 @@ const SubmitBtn = styled.button`
   &:hover {
     background: ${({ theme }) => theme.light};
     color: ${({ theme }) => theme.primary};
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
-`;
-
-const fieldStyles = css`
-  background: rgba(0, 0, 0, 0.3);
-  padding: 2%;
-  border: none;
-  outline: none;
-  margin: 2px 0;
-  color: ${({ theme }) => theme.light};
-  ::placeholder {
-    color: ${({ theme }) => lighten(0.15, theme.mainFontColor)};
-    opacity: 1;
+  @media only screen and (max-width: 420px) {
+    width: 5em;
+    font-size: 1em;
   }
-
-  :-ms-input-placeholder {
-    color: ${({ theme }) => lighten(0.15, theme.mainFontColor)};
-  }
-
-  ::-ms-input-placeholder {
-    color: ${({ theme }) => lighten(0.15, theme.mainFontColor)};
-  }
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  max-width: 450px;
-`;
-
-const Input = styled.input`
-  ${fieldStyles}
-  width: 100%;
-  font-size: 1.2em;
-`;
-
-const TextArea = styled.textarea`
-  ${fieldStyles}
-  margin: 2px 0;
-  font-size: 1.4em;
-  font-weight: 500;
 `;
 
 export default ContactForm;

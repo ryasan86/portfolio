@@ -15,15 +15,15 @@ class Footer extends Component {
           <ScrollBtn to="Intro" icon={UP_ARROW} styles={ScrollBtnStyles} />
         </BtnContainer>
         <LogoContainer>
-          <a href={GITHUB_URL}>
+          <LogoLink href={GITHUB_URL}>
             <FooterLogo src={GITHUB} />
-          </a>
-          <a href={CODEPEN_URL}>
+          </LogoLink>
+          <LogoLink href={CODEPEN_URL}>
             <FooterLogo src={CODEPEN} />
-          </a>
-          <a href={LINKEDIN_URL}>
+          </LogoLink>
+          <LogoLink href={LINKEDIN_URL}>
             <FooterLogo src={LINKEDIN} />
-          </a>
+          </LogoLink>
         </LogoContainer>
         <NormalText>RYAN SANTOS</NormalText>
       </FooterWrap>
@@ -42,15 +42,21 @@ const FooterWrap = styled.div`
 `;
 
 const ScrollBtnStyles = css`
-  width: 50px;
-  height: 60px;
+  width: 3em;
+  height: 4em;
   background: ${({ theme }) => theme.secondary};
   position: absolute;
   transition: all 0.5s;
-  margin-top: -35px;
+  /* margin-top: -2em; */
+  bottom: 0;
   z-index: 1;
   &:hover {
     opacity: 0.8;
+  }
+  @media only screen and (max-width: 420px) {
+    width: 2em;
+    height: 2em;
+    margin-top: -1em;
   }
 `;
 
@@ -64,6 +70,10 @@ const LogoContainer = styled.div`
   justify-content: space-around;
   margin: 2%;
 `;
+
+const LogoLink = styled.a`
+margin: 0 15%;
+`
 
 const wobble = keyframes`
   0% { transform: rotate(0deg) }
@@ -83,6 +93,10 @@ const FooterLogo = styled(Logo)`
 const NormalText = styled.p`
   font-size: 0.8em;
   letter-spacing: 0.4em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0 2%;
 `;
 
 export default Footer;
