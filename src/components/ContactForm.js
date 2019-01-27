@@ -5,18 +5,43 @@ import { lighten } from 'polished';
 class ContactForm extends Component {
   state = { name: '', email: '', message: '' };
 
-  handleClick = e => {
+  componentDidMount = () => {
+    // process.env.REACT_APP_EMAILJS_USERID = 'test'
+    // console.log(process.env)
+  }
+
+  handleSubmit = async e => {
     e.preventDefault();
+  };
+
+  handleChange = e => {
+    const { value, name } = e.target;
+    this.setState({ [name]: value });
   };
 
   render = () => {
     return (
       <Form>
-        <Input placeholder="Name" type="text" />
-        <Input placeholder="Email" type="text" />
-        <TextArea placeholder="Message" rows={10} />
+        <Input
+          placeholder="Name"
+          name="name"
+          type="text"
+          onChange={this.handleChange}
+        />
+        <Input
+          placeholder="Email"
+          name="email"
+          type="text"
+          onChange={this.handleChange}
+        />
+        <TextArea
+          placeholder="Message"
+          name="message"
+          rows={10}
+          onChange={this.handleChange}
+        />
         <BtnContainer>
-          <SubmitBtn onClick={this.handleClick}>Submit</SubmitBtn>
+          <SubmitBtn onClick={this.handleSubmit}>Submit</SubmitBtn>
         </BtnContainer>
       </Form>
     );

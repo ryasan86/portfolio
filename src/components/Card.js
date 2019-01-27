@@ -78,10 +78,6 @@ const OverlayLink = styled.a`
   color: white;
   cursor: pointer;
   text-decoration: none;
-  border: 2px solid red;
-  &:link {
-    color: white;
-  }
 `;
 
 export default Card;
