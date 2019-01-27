@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import * as EmailValidator from 'email-validator';
+import { sendMessage } from './../utils';
+// components
 import { Form, Input, TextArea } from './common';
 
 class ContactForm extends Component {
@@ -17,39 +19,20 @@ class ContactForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
     const {
       REACT_APP_EMAILJS_RECEIVER: receiverEmail,
       REACT_APP_EMAILJS_TEMPLATEID: templateId
     } = this.props.env;
 
-    this.sendMessage(
+    sendMessage(
       templateId,
       receiverEmail,
       this.state.email,
       this.state.name,
       this.state.message
     );
-  };
 
-  sendMessage = async (
-    templateId,
-    receiverEmail,
-    senderEmail,
-    name,
-    message
-  ) => {
-    try {
-      await window.emailjs.send('mailgun', templateId, {
-        name,
-        senderEmail,
-        receiverEmail,
-        message
-      });
-      this.setState({ name: '', email: '', message: '' });
-    } catch (err) {
-      console.error('Failed to send message. Error: ', err);
-    }
+    this.setState({ name: '', email: '', message: '', validForm: false });
   };
 
   handleChange = e => {
