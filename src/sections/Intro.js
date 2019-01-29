@@ -13,15 +13,14 @@ import { H1, H2, P } from './../components/text';
 
 class Intro extends Component {
   handleCanvasRef = canvas => {
-    console.log(canvas.height);
-    const c = canvas.getContext('2d');
-    // rectangle
-    c.fillStyle = 'rgba(0, 0, 0, 0.1)';
-    c.fillRect(0, 50, 50, 50);
-    c.fillRect(100, 50, 50, 50);
-    c.fillRect(200, 50, 50, 50);
-    // c.strokeStyle = '#fa34a3'
-    // c.begin
+    // const c = canvas.getContext('2d');
+    // // rectangle
+    // c.fillStyle = 'rgba(0, 0, 0, 0.1)';
+    // c.fillRect(0, 50, 50, 50);
+    // c.fillRect(100, 50, 50, 50);
+    // c.fillRect(200, 50, 50, 50);
+    // // c.strokeStyle = '#fa34a3'
+    // // c.begin
   };
 
   render = () => {
