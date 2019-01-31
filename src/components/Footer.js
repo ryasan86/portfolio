@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { darken } from 'polished';
+import { darken, lighten } from 'polished';
 import { flexCenter } from './../utils';
 import { UP_ARROW, LINKEDIN, CODEPEN, GITHUB } from './../images';
-import { GITHUB_URL, LINKEDIN_URL, CODEPEN_URL } from './../constants';
+import {
+  GITHUB_URL,
+  LINKEDIN_URL,
+  CODEPEN_URL,
+  PORTFOLIO_REPO
+} from './../constants';
 // components
 import { ScrollBtn, Logo } from './common';
 
 class Footer extends Component {
+  openProjectUrl = url => {
+    window.open(url, '_blank').focus();
+  };
+
   render = () => {
     return (
       <FooterWrap>
@@ -25,7 +34,15 @@ class Footer extends Component {
             <FooterLogo src={LINKEDIN} />
           </LogoLink>
         </LogoContainer>
-        <NormalText>RYAN SANTOS</NormalText>
+        <TextContainer>
+          <NormalText>RYAN SANTOS</NormalText>
+          <NormalText>
+            portfolio{' '}
+            <RepoLink onClick={() => this.openProjectUrl(PORTFOLIO_REPO)}>
+              repo
+            </RepoLink>
+          </NormalText>
+        </TextContainer>
       </FooterWrap>
     );
   };
@@ -47,7 +64,6 @@ const ScrollBtnStyles = css`
   background: ${({ theme }) => theme.secondary};
   position: absolute;
   transition: all 0.5s;
-  /* margin-top: -2em; */
   bottom: 0;
   z-index: 1;
   &:hover {
@@ -71,9 +87,22 @@ const LogoContainer = styled.div`
   margin: 2%;
 `;
 
+const TextContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+`;
+
 const LogoLink = styled.a`
-margin: 0 15%;
-`
+  margin: 0 15%;
+`;
+
+const RepoLink = styled.a`
+  color: ${({ theme }) => lighten(0.1, theme.secondary)};
+  cursor: pointer;
+`;
 
 const wobble = keyframes`
   0% { transform: rotate(0deg) }
@@ -93,9 +122,6 @@ const FooterLogo = styled(Logo)`
 const NormalText = styled.p`
   font-size: 0.8em;
   letter-spacing: 0.4em;
-  position: absolute;
-  left: 0;
-  bottom: 0;
   padding: 0 2%;
 `;
 

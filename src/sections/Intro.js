@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { flexCenter } from './../utils';
 import { DOWN_ARROW } from './../images';
+// import { darken } from 'polished';
 // components
 import {
   Section,
@@ -13,14 +14,40 @@ import { H1, H2, P } from './../components/text';
 
 class Intro extends Component {
   handleCanvasRef = canvas => {
-    // const c = canvas.getContext('2d');
+    // canvas.width = window.innerWidth;
+    // canvas.height = window.innerHeight;
     // // rectangle
-    // c.fillStyle = 'rgba(0, 0, 0, 0.1)';
-    // c.fillRect(0, 50, 50, 50);
-    // c.fillRect(100, 50, 50, 50);
-    // c.fillRect(200, 50, 50, 50);
-    // // c.strokeStyle = '#fa34a3'
-    // // c.begin
+    // const c = canvas.getContext('2d');
+
+    // // for (let i = 0; i < 50; i++) {
+    // //   const x = Math.random() * window.innerWidth;
+    // //   const y = Math.random() * window.innerHeight;
+    // //   // dot
+    // //   c.beginPath();
+    // //   c.arc(x, y, 30, 0, Math.PI * 2, false);
+    // //   c.strokeStyle = darken(0.2, 'white');
+    // //   c.stroke();
+    // // }
+    // let x = 200;
+    // let dx = 4;
+    // const radius = 30;
+    // const animate = () => {
+    //   requestAnimationFrame(animate);
+    //   c.clearRect(0, 0, canvas.width, canvas.height);
+
+    //   c.beginPath();
+    //   c.arc(x, 200, 30, 0, Math.PI * 2, false);
+    //   c.strokeStyle = darken(0, 'white');
+    //   c.stroke();
+
+    //   if (x + radius > canvas.width || x - radius < 0) {
+    //     dx = -dx;
+    //   }
+
+    //   x += dx;
+    // };
+
+    // animate();
   };
 
   render = () => {
@@ -60,8 +87,8 @@ const IntroContent = styled(SectionContent)`
 `;
 
 const Canvas = styled.canvas`
-  width: 100%;
   height: 100%;
+  width: 100%;
   position: absolute;
 `;
 

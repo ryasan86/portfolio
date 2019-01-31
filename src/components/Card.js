@@ -14,14 +14,18 @@ class Card extends Component {
     this.setState({ active: false });
   };
 
+  openProjectUrl = url => {
+    window.open(url, '_blank').focus();
+  };
+
   render() {
     const {
       project: { title, description, imgUrl, projectUrl }
     } = this.props;
-    const link = <OverlayLink href={projectUrl}>{title}</OverlayLink>;
+    const link = <OverlayLink>{title}</OverlayLink>;
 
     return (
-      <StyledCard>
+      <StyledCard onClick={() => this.openProjectUrl(projectUrl)}>
         <Wrapper
           imgUrl={imgUrl}
           onMouseEnter={this.handleMouseEnter}
@@ -42,6 +46,7 @@ const StyledCard = styled.div`
   width: 250px;
   height: 250px;
   position: relative;
+  cursor: pointer;
 `;
 
 const Wrapper = styled.div`

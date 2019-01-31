@@ -24,6 +24,14 @@ const BG_2 = {
 const LINKEDIN_URL = 'https://www.linkedin.com/in/ryasan86/';
 const GITHUB_URL = 'https://github.com/ryasan86';
 const CODEPEN_URL = 'https://codepen.io/ryasan86/';
+const PORTFOLIO_REPO = 'https://github.com/ryasan86/portfolio';
 
-
-export { BG_1, BG_2, SECTIONS, LINKEDIN_URL, GITHUB_URL, CODEPEN_URL, };
+export {
+  BG_1,
+  BG_2,
+  SECTIONS,
+  LINKEDIN_URL,
+  GITHUB_URL,
+  CODEPEN_URL,
+  PORTFOLIO_REPO
+};

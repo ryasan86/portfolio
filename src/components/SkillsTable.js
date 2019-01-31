@@ -8,10 +8,10 @@ const SkillsStyledTable = () => {
       <tbody>
         <tr>
           <BraceTd>{'['}</BraceTd>
-          <td />
-          <td />
-          <td />
-          <td />
+          <Cell />
+          <Cell />
+          <Cell />
+          <Cell />
         </tr>
         {data.skills.map(({ name, value }, i) => {
           return (

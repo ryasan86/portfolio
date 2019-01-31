@@ -23,7 +23,7 @@ class Summary extends Component {
         images.push(<GlitchImg key={i} className="glitch__img" />);
       }
     }
-    return images;
+    return <Glitch>{images}</Glitch>;
   };
 
   renderTitle = () => {
@@ -50,7 +50,7 @@ class Summary extends Component {
   render = () => {
     return (
       <SummaryWrap className="glitch-variables">
-        <Glitch>{this.renderGlitchImgs()}</Glitch>
+        {this.renderGlitchImgs()}
         {this.renderTitle()}
         {this.renderNormalText()}
       </SummaryWrap>

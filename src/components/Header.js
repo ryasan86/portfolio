@@ -30,7 +30,7 @@ const linkstyles = css`
 `;
 
 const NavList = styled.ul`
-  height: ${({theme}) => theme.headerHeight};
+  height: ${({ theme }) => theme.headerHeight};
   width: 100%;
   margin: 0 0;
   border: ${({ theme }) => theme.dark} 3px solid;
