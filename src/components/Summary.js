@@ -59,7 +59,8 @@ class Summary extends Component {
 }
 
 const SummaryWrap = styled.div`
-  height: 100vh;
+  height: 100%;
+  overflow: scroll;
   @media only screen and (max-width: 350px) {
     display: flex;
     justify-content: flex-start;
