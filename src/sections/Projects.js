@@ -74,7 +74,7 @@ const TitleContainer = styled.div`
 `;
 
 const ProjectsTitle = styled(P)`
-  color: ${({ theme }) => theme.dark};
+  color: ${({ theme }) => theme.primary};
 `;
 
 export default Projects;
