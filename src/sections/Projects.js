@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import data from './../data.json';
-import { flexCenter } from './../utils/flexCenter';
 import { DOWN_ARROW } from './../images';
 // components
 import Card from './../components/Card';
@@ -14,9 +13,16 @@ import {
 import { P } from './../components/text';
 
 class Projects extends Component {
+  handleRef = projectsSec => {
+    this.props.getOffsetTop(projectsSec);
+  };
+
   render = () => {
     return (
-      <ProjectsSection id={this.props.id}>
+      <ProjectsSection
+        id={this.props.id}
+        data-offset-id={`${this.props.id}OffsetTop`}
+        ref={this.handleRef}>
         <ProjectsContent data-aos="fade-up">
           <TitleContainer>
             <ProjectsTitle>Projects</ProjectsTitle>
@@ -36,34 +42,24 @@ class Projects extends Component {
 }
 
 const ProjectsSection = styled(Section)`
-  ${flexCenter};
+  display: flex;
+  justify-content: center;
   background: ${({ theme }) => theme.light};
   color: ${({ theme }) => theme.mainFontColor};
   min-height: 100vh;
+  margin-bottom: 0;
   height: auto;
 `;
 
 const ProjectsContent = styled(SectionContent)`
-  padding: 0 0 10% 1%;
+  padding-bottom: 100px;
   position: relative;
 `;
 
 const ProjectsListContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 25px;
-  @media only screen and (max-width: 1350px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  @media only screen and (max-width: 1100px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media only screen and (max-width: 800px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media only screen and (max-width: 525px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const TitleContainer = styled.div`

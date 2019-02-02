@@ -47,6 +47,7 @@ const StyledCard = styled.div`
   height: 250px;
   position: relative;
   cursor: pointer;
+  margin: 20px;
 `;
 
 const Wrapper = styled.div`

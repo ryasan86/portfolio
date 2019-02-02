@@ -19,11 +19,18 @@ class About extends Component {
     this.setState({ enteredAbout: true });
   };
 
+  handleRef = aboutSec => {
+    this.props.getOffsetTop(aboutSec);
+  };
+
   render = () => {
     return (
       <Waypoint onEnter={this.handleEnter}>
         <div>
-          <AboutSection id={this.props.id}>
+          <AboutSection
+            id={this.props.id}
+            data-offset-id={`${this.props.id}OffsetTop`}
+            ref={this.handleRef}>
             <AboutContent>
               <SummaryContainer data-aos="fade-up">
                 <Summary enteredAbout={this.state.enteredAbout} />
@@ -47,10 +54,6 @@ const AboutSection = styled(Section)`
   color: ${({ theme }) => theme.mainFontColor};
   min-height: 100vh;
   height: auto;
-
-  @media only screen and (min-width: 768px) {
-    margin-bottom: 20%;
-  }
 `;
 
 const AboutContent = styled(SectionContent)`

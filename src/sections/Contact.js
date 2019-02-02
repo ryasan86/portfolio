@@ -9,9 +9,16 @@ import { Section, SectionContent } from './../components/common';
 import { H2, P } from './../components/text';
 
 class Contact extends Component {
+  handleRef = contactSec => {
+    this.props.getOffsetTop(contactSec);
+  };
+
   render = () => {
     return (
-      <ContactSection id={this.props.id}>
+      <ContactSection
+        id={this.props.id}
+        data-offset-id={`${this.props.id}OffsetTop`}
+        ref={this.handleRef}>
         <ContactContent>
           <TextContainer>
             <LargeText>Contact</LargeText>
@@ -30,6 +37,7 @@ const ContactSection = styled(Section)`
   color: ${({ theme }) => theme.light};
   display: flex;
   justify-content: center;
+  margin-bottom: 0;
 `;
 
 const ContactContent = styled(SectionContent)`

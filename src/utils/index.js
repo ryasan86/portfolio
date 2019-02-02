@@ -1,4 +1,3 @@
-export * from './amountScrolled';
 export * from './flexCenter';
 export * from './field';
 export * from './glitchAnim1';

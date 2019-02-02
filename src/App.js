@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 // import Waypoint from 'react-waypoint';
 import { BG_1, BG_2, SECTIONS } from './constants';
-import { amountScrolled } from './utils';
 // components
 import Header from './components/Header';
 
 class App extends Component {
-  state = { bg: '', bgStyle: '' };
+  state = {
+    bg: null,
+    desktopStyles: null,
+    mobileStyles: null,
+    AboutOffsetTop: 0,
+    ProjectsOffsetTop: 0,
+    ContactOffsetTop: 0
+  };
 
   componentDidMount = () => {
     window.addEventListener('scroll', this.listenForBGChange);
@@ -15,25 +21,47 @@ class App extends Component {
 
   // change parallax background depending on how far down user has scrolled
   listenForBGChange = () => {
-    const scrollPct = amountScrolled();
-    const { bg } = this.state;
-    if (scrollPct <= 32 && bg !== BG_1) {
-      this.setState({ bg: BG_1.imgUrl, bgStyle: BG_1.bgStyle });
-    } else if (scrollPct > 32 && scrollPct <= 95 && bg !== BG_2) {
-      this.setState({ bg: BG_2.imgUrl, bgStyle: BG_2.bgStyle });
-    } else if (scrollPct > 95) {
-      this.setState({ bg: '', bgStyle: '' });
+    const {
+      bg,
+      AboutOffsetTop,
+      ProjectsOffsetTop,
+      ContactOffsetTop
+    } = this.state;
+    if (window.scrollY <= AboutOffsetTop && bg !== BG_1) {
+      this.setState({
+        bg: BG_1.imgUrl,
+        desktopStyles: BG_1.desktopStyles,
+        mobileStyles: BG_1.mobileStyles
+      });
+    } else if (window.scrollY <= ProjectsOffsetTop && bg !== BG_2) {
+      this.setState({
+        bg: BG_2.imgUrl,
+        desktopStyles: BG_2.desktopStyles,
+        mobileStyles: BG_2.mobileStyles
+      });
+    } else if (window.scrollY <= ContactOffsetTop && !bg) {
+      this.setState({ bg: null });
     }
   };
 
+  getOffsetTop = el => {
+    const { offsetId } = el.dataset;
+    const offsetTop = el.offsetTop;
+    this.setState({ [offsetId]: offsetTop });
+  };
+
   render = () => {
-    const { bg, bgStyle } = this.state;
+    const { bg, desktopStyles, mobileStyles } = this.state;
     return (
       <AppWrap>
         <Header />
-        <Parallax bg={bg} bgStyle={bgStyle} />
+        <Parallax
+          bg={bg}
+          desktopStyles={desktopStyles}
+          mobileStyles={mobileStyles}
+        />
         {SECTIONS.map(({ section, Component }, i) => (
-          <Component id={section} key={i} />
+          <Component id={section} key={i} getOffsetTop={this.getOffsetTop} />
         ))}
       </AppWrap>
     );
@@ -47,12 +75,15 @@ const AppWrap = styled.div`
 const Parallax = styled.div`
   z-index: -1;
   background-color: #05070a;
-  background: url(${({ bg }) => bg}) center center;
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
-  ${({ bgStyle }) => bgStyle}
+  background: url(${({ bg }) => bg}) center center;
+  ${({ desktopStyles }) => desktopStyles}
+  @media only screen and (max-width: 420px) {
+    ${({ mobileStyles }) => mobileStyles};
+  }
 `;
 
 export default App;

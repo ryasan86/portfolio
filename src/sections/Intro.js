@@ -18,7 +18,6 @@ class Intro extends Component {
     // canvas.height = window.innerHeight;
     // // rectangle
     // const c = canvas.getContext('2d');
-
     // // for (let i = 0; i < 50; i++) {
     // //   const x = Math.random() * window.innerWidth;
     // //   const y = Math.random() * window.innerHeight;
@@ -34,19 +33,15 @@ class Intro extends Component {
     // const animate = () => {
     //   requestAnimationFrame(animate);
     //   c.clearRect(0, 0, canvas.width, canvas.height);
-
     //   c.beginPath();
     //   c.arc(x, 200, 30, 0, Math.PI * 2, false);
     //   c.strokeStyle = darken(0, 'white');
     //   c.stroke();
-
     //   if (x + radius > canvas.width || x - radius < 0) {
     //     dx = -dx;
     //   }
-
     //   x += dx;
     // };
-
     // animate();
   };
 
@@ -76,9 +71,6 @@ const IntroSection = styled(Section)`
     ${({ theme }) => theme.primary}
   );
   color: ${({ theme }) => theme.light};
-  @media only screen and (min-width: 768px) {
-    margin-bottom: 20%;
-  }
 `;
 
 const IntroContent = styled(SectionContent)`

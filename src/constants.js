@@ -12,18 +12,22 @@ const SECTIONS = [
 
 const BG_1 = {
   imgUrl: 'https://i.postimg.cc/1tYMscJb/codeBG2.png',
-  bgStyle: `background-repeat: repeat;
+  desktopStyles: `background-repeat: repeat;
             filter: blur(2px);
-            -webkit-filter: blur(2px);`
+            -webkit-filter: blur(2px);`,
+  mobileStyles: `background-repeat: repeat;
+            background-size: contain`
 };
 const BG_2 = {
   imgUrl: 'https://i.postimg.cc/4xLDYVbB/14904338619-e4ed845776-b.jpg',
-  bgStyle: 'background-repeat: no-repeat;'
+  desktopStyles: 'background-repeat: no-repeat;',
+  mobileStyles: `background-repeat: no-repeat;
+                 background-size: contain`
 };
 
-const LINKEDIN_URL   = 'https://www.linkedin.com/in/ryasan86/';
-const GITHUB_URL     = 'https://github.com/ryasan86';
-const CODEPEN_URL    = 'https://codepen.io/ryasan86/';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/ryasan86/';
+const GITHUB_URL = 'https://github.com/ryasan86';
+const CODEPEN_URL = 'https://codepen.io/ryasan86/';
 const PORTFOLIO_REPO = 'https://github.com/ryasan86/portfolio';
 
 export {
