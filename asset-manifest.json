@@ -1,9 +1,9 @@
 {
   "main.css": "/portfolio/static/css/main.2bad7a3e.chunk.css",
-  "main.js": "/portfolio/static/js/main.20028fd4.chunk.js",
-  "main.js.map": "/portfolio/static/js/main.20028fd4.chunk.js.map",
-  "static/js/1.4f2580c1.chunk.js": "/portfolio/static/js/1.4f2580c1.chunk.js",
-  "static/js/1.4f2580c1.chunk.js.map": "/portfolio/static/js/1.4f2580c1.chunk.js.map",
+  "main.js": "/portfolio/static/js/main.67222d97.chunk.js",
+  "main.js.map": "/portfolio/static/js/main.67222d97.chunk.js.map",
+  "static/js/1.8d092759.chunk.js": "/portfolio/static/js/1.8d092759.chunk.js",
+  "static/js/1.8d092759.chunk.js.map": "/portfolio/static/js/1.8d092759.chunk.js.map",
   "runtime~main.js": "/portfolio/static/js/runtime~main.ee2a1003.js",
   "runtime~main.js.map": "/portfolio/static/js/runtime~main.ee2a1003.js.map",
   "static/media/downArrow.svg": "/portfolio/static/media/downArrow.1bd87b62.svg",
@@ -13,6 +13,6 @@
   "static/media/codepen-icon.svg": "/portfolio/static/media/codepen-icon.9f0ac68a.svg",
   "static/css/main.2bad7a3e.chunk.css.map": "/portfolio/static/css/main.2bad7a3e.chunk.css.map",
   "index.html": "/portfolio/index.html",
-  "precache-manifest.46a55e3d3b63b2b5938d7c8f148be954.js": "/portfolio/precache-manifest.46a55e3d3b63b2b5938d7c8f148be954.js",
+  "precache-manifest.772c96b60d7c9a7085b4e53486423d9b.js": "/portfolio/precache-manifest.772c96b60d7c9a7085b4e53486423d9b.js",
   "service-worker.js": "/portfolio/service-worker.js"
 }
