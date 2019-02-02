@@ -19,7 +19,7 @@ const BG_1 = {
             background-size: contain`
 };
 const BG_2 = {
-  imgUrl: 'https://i.postimg.cc/4xLDYVbB/14904338619-e4ed845776-b.jpg',
+  imgUrl: 'https://i.postimg.cc/KYgMKJVb/webdev.png',
   desktopStyles: 'background-repeat: no-repeat;',
   mobileStyles: `background-repeat: no-repeat;
                  background-size: contain`
