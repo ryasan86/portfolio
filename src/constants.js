@@ -19,7 +19,7 @@ const BG_1 = {
             background-size: contain`
 };
 const BG_2 = {
-  imgUrl: 'https://i.postimg.cc/KYgMKJVb/webdev.png',
+  imgUrl: 'https://i.postimg.cc/FRkXXJ7D/webdev.png',
   desktopStyles: 'background-repeat: no-repeat;',
   mobileStyles: `background-repeat: no-repeat;
                  background-size: contain`
