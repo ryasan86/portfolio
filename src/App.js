@@ -40,7 +40,7 @@ class App extends Component {
         mobileStyles: BG_2.mobileStyles
       });
     } else if (window.scrollY <= ContactOffsetTop && !bg) {
-      this.setState({ bg: null });
+      this.setState({ bg: null, desktopStyles: null, mobileStyles: null });
     }
   };
 
