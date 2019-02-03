@@ -71,6 +71,7 @@ const TitleContainer = styled.div`
 
 const ProjectsTitle = styled(P)`
   color: ${({ theme }) => theme.primary};
+  font-size: 1em;
 `;
 
 export default Projects;

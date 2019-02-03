@@ -5,4 +5,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # TODO
     1. replace typography
     2. use canvas for something cool
-    3. refactor a bunch of stuff
+    3. use fontawesome instead of svgs
+    4. refactor a bunch of stuff
