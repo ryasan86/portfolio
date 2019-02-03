@@ -18,7 +18,8 @@ class Contact extends Component {
       <ContactSection
         id={this.props.id}
         data-offset-id={`${this.props.id}OffsetTop`}
-        ref={this.handleRef}>
+        ref={this.handleRef}
+      >
         <ContactContent>
           <TextContainer>
             <LargeText>Contact</LargeText>
@@ -58,12 +59,7 @@ const LargeText = styled(H2)`
 `;
 
 const NormalText = styled(P)`
-  font-size: 0.8em;
   margin: 10% 0;
-  @media only screen and (min-width: 425px) {
-    font-size: 1.3em;
-    font-weight: 500;
-  }
 `;
 
 export default Contact;
