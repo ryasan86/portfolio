@@ -19,7 +19,7 @@ class Intro extends Component {
           <TextContainer>
             <LargeText data-aos="fade-down">HELLO</LargeText>
             <MediumText data-aos="fade-left">I'M RYAN</MediumText>
-            <Typist>
+            <Typist avgTypingDelay={110}>
               <TypistText>CODE + DeSIGN</TypistText>
               <Typist.Backspace count={5} delay={200} />
               <TypistText>ESIGN</TypistText>
@@ -75,6 +75,7 @@ const MediumText = styled.div`
 const TypistText = styled.span`
   font-size: 0.95em;
   letter-spacing: 0.73em;
+  vertical-align: middle;
   @media only screen and (min-width: 600px) {
     font-size: 1.185em;
     letter-spacing: 1.55em;
