@@ -69,7 +69,7 @@ class App extends Component {
 }
 
 const AppWrap = styled.div`
-  height: 300vh;
+  height: 100%;
 `;
 
 const Parallax = styled.div`
