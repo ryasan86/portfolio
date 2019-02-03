@@ -19,11 +19,11 @@ class Intro extends Component {
           <TextContainer>
             <LargeText data-aos="fade-down">HELLO</LargeText>
             <MediumText data-aos="fade-left">I'M RYAN</MediumText>
-            <StyledTypist>
+            <Typist>
               <TypistText>CODE + DeSIGN</TypistText>
               <Typist.Backspace count={5} delay={200} />
               <TypistText>ESIGN</TypistText>
-            </StyledTypist>
+            </Typist>
           </TextContainer>
         </IntroContent>
         <ScrollFooter>
@@ -50,11 +50,11 @@ const IntroContent = styled(SectionContent)`
 
 const TextContainer = styled.div`
   color: ${({ theme }) => theme.light};
+  text-align: center;
 `;
 
 const LargeText = styled.div`
   font-size: 5em;
-  text-align: center;
   font-weight: bold;
   @media only screen and (min-width: 600px) {
     font-size: 10em;
@@ -62,27 +62,22 @@ const LargeText = styled.div`
 `;
 
 const MediumText = styled.div`
-  font-size: 2.8em;
-  text-align: center;
+  font-size: 2.92em;
   letter-spacing: 0.17em;
+  margin-left: 0.17em;
   @media only screen and (min-width: 600px) {
     font-size: 5em;
-    letter-spacing: 0.26em;
-  }
-`;
-
-const StyledTypist = styled(Typist)`
-  text-align: center;
-  @media only screen and (min-width: 600px) {
+    letter-spacing: 0.3em;
+    margin-left: 0.3em;
   }
 `;
 
 const TypistText = styled.span`
-  font-size: 0.9em;
+  font-size: 0.95em;
   letter-spacing: 0.73em;
   @media only screen and (min-width: 600px) {
-    font-size: 1.6em;
-    letter-spacing: 0.9em;
+    font-size: 1.185em;
+    letter-spacing: 1.55em;
   }
 `;
 
