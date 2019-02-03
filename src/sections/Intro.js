@@ -75,7 +75,6 @@ const MediumText = styled.div`
 const TypistText = styled.span`
   font-size: 0.95em;
   letter-spacing: 0.73em;
-  vertical-align: middle;
   @media only screen and (min-width: 600px) {
     font-size: 1.185em;
     letter-spacing: 1.55em;
