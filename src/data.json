@@ -103,5 +103,10 @@
       "name": "Photoshop",
       "value": 75
     }
+  ],
+  "links": [
+    { "name": "github", "url": "https://github.com/ryasan86" },
+    { "name": "codepen", "url": "https://codepen.io/ryasan86/" },
+    { "name": "linkedin", "url": "https://www.linkedin.com/in/ryasan86/" }
   ]
 }

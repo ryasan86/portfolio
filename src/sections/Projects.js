@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import data from './../data.json';
-import { DOWN_ARROW } from './../images';
+import { projects } from './../data.json';
+import Icons from './../images';
 // components
 import Card from './../components/Card';
 import {
@@ -22,19 +22,20 @@ class Projects extends Component {
       <ProjectsSection
         id={this.props.id}
         data-offset-id={`${this.props.id}OffsetTop`}
-        ref={this.handleRef}>
+        ref={this.handleRef}
+      >
         <ProjectsContent data-aos="fade-up">
           <TitleContainer>
             <ProjectsTitle>Projects</ProjectsTitle>
           </TitleContainer>
           <ProjectsListContainer>
-            {data.projects.map((project, i) => {
+            {projects.map((project, i) => {
               return <Card key={i} project={project} />;
             })}
           </ProjectsListContainer>
         </ProjectsContent>
         <ScrollFooter>
-          <ScrollBtn to="Contact" label="Contact" icon={DOWN_ARROW} />
+          <ScrollBtn to="Contact" label="Contact" icon={Icons.downArrow} />
         </ScrollFooter>
       </ProjectsSection>
     );

@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { darken, lighten } from 'polished';
 import { flexCenter } from './../utils';
-import { UP_ARROW, LINKEDIN, CODEPEN, GITHUB } from './../images';
-import {
-  GITHUB_URL,
-  LINKEDIN_URL,
-  CODEPEN_URL,
-  PORTFOLIO_REPO
-} from './../constants';
+import Icons from './../images';
+import { PORTFOLIO_REPO } from './../constants';
+import { links } from './../data.json';
 // components
 import { ScrollBtn, Logo } from './common';
 
@@ -21,18 +17,14 @@ class Footer extends Component {
     return (
       <FooterWrap>
         <BtnContainer>
-          <ScrollBtn to="Intro" icon={UP_ARROW} styles={ScrollBtnStyles} />
+          <ScrollBtn to="Intro" icon={Icons.upArrow} styles={ScrollBtnStyles} />
         </BtnContainer>
         <LogoContainer>
-          <LogoLink href={GITHUB_URL}>
-            <FooterLogo src={GITHUB} />
-          </LogoLink>
-          <LogoLink href={CODEPEN_URL}>
-            <FooterLogo src={CODEPEN} />
-          </LogoLink>
-          <LogoLink href={LINKEDIN_URL}>
-            <FooterLogo src={LINKEDIN} />
-          </LogoLink>
+          {links.map(({ name, url }, i) => (
+            <LogoLink key={i} onClick={() => this.openProjectUrl(url)}>
+              <FooterLogo src={Icons[name]} />
+            </LogoLink>
+          ))}
         </LogoContainer>
         <TextContainer>
           <NormalText>RYAN SANTOS</NormalText>

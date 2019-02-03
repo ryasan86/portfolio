@@ -4,4 +4,10 @@ import GITHUB from './github.svg';
 import LINKEDIN from './linkedin.svg';
 import CODEPEN from './codepen-icon.svg';
 
-export { GITHUB, DOWN_ARROW, LINKEDIN, CODEPEN, UP_ARROW };
+export default {
+  github: GITHUB,
+  codepen: CODEPEN,
+  linkedin: LINKEDIN,
+  downArrow: DOWN_ARROW,
+  upArrow: UP_ARROW
+};

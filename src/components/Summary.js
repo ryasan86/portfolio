@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
-import data from './../data.json';
+import { summary } from './../data.json';
 import {
   glitchAnimText,
   glitchAnim1,
@@ -36,7 +36,7 @@ class Summary extends Component {
     if (this.props.enteredAbout) {
       return (
         <TextContainer className="content__text">
-          {data.summary.map((text, i) => (
+          {summary.map((text, i) => (
             <Fragment key={i}>
               <P>{text}</P>
               <br />

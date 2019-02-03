@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Waypoint from 'react-waypoint';
-import { DOWN_ARROW } from './../images';
+import Icons from './../images';
 // components
 import SkillsTable from './../components/SkillsTable';
 import Summary from './../components/Summary';
@@ -40,7 +40,7 @@ class About extends Component {
               </SkillsContainer>
             </AboutContent>
             <ScrollFooter>
-              <ScrollBtn to="Projects" label="Projects" icon={DOWN_ARROW} />
+              <ScrollBtn to="Projects" label="Projects" icon={Icons.downArrow} />
             </ScrollFooter>
           </AboutSection>
         </div>

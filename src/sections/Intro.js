@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Typist from 'react-typist';
 import { flexCenter } from './../utils';
-import { DOWN_ARROW } from './../images';
+import Icons from './../images';
 // components
 import {
   Section,
@@ -27,7 +27,7 @@ class Intro extends Component {
           </TextContainer>
         </IntroContent>
         <ScrollFooter>
-          <ScrollBtn to="About" label="About" icon={DOWN_ARROW} />
+          <ScrollBtn to="About" label="About" icon={Icons.downArrow} />
         </ScrollFooter>
       </IntroSection>
     );

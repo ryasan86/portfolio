@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import data from './../data.json';
+import { skills } from './../data.json';
 import styled from 'styled-components';
 
 const SkillsStyledTable = () => {
@@ -14,7 +14,7 @@ const SkillsStyledTable = () => {
             <Cell />
             <Cell />
           </tr>
-          {data.skills.map(({ name, value }, i) => {
+          {skills.map(({ name, value }, i) => {
             return (
               <Fragment key={i}>
                 <tr>
@@ -40,7 +40,7 @@ const SkillsStyledTable = () => {
                 </tr>
                 <tr>
                   <Cell />
-                  <BraceTd>{i < data.skills.length - 1 ? '},' : '}'}</BraceTd>
+                  <BraceTd>{i < skills.length - 1 ? '},' : '}'}</BraceTd>
                   <Cell />
                   <Cell />
                   <Cell />
