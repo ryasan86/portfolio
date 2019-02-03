@@ -124,7 +124,7 @@ const NormalText = styled.p`
   letter-spacing: 0.4em;
   padding: 0 2%;
   @media only screen and (max-width: 450px) {
-    font-size: 0.5em;
+    font-size: 7px;
   }
 `;
 
