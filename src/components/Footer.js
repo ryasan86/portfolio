@@ -13,19 +13,21 @@ class Footer extends Component {
     window.open(url, '_blank').focus();
   };
 
+  renderLinks = () => {
+    return links.map(({ name, url }, i) => (
+      <LogoLink key={i} onClick={() => this.openProjectUrl(url)}>
+        <FooterLogo src={Icons[name]} />
+      </LogoLink>
+    ));
+  };
+
   render = () => {
     return (
       <FooterWrap>
         <BtnContainer>
           <ScrollBtn to="Intro" icon={Icons.upArrow} styles={ScrollBtnStyles} />
         </BtnContainer>
-        <LogoContainer>
-          {links.map(({ name, url }, i) => (
-            <LogoLink key={i} onClick={() => this.openProjectUrl(url)}>
-              <FooterLogo src={Icons[name]} />
-            </LogoLink>
-          ))}
-        </LogoContainer>
+        <LogoContainer>{this.renderLinks()}</LogoContainer>
         <TextContainer>
           <NormalText>RYAN SANTOS</NormalText>
           <NormalText>
