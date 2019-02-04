@@ -15,13 +15,9 @@ import {
 class About extends Component {
   state = { enteredAbout: false };
 
-  handleEnter = () => {
-    this.setState({ enteredAbout: true });
-  };
+  handleEnter = () => this.setState({ enteredAbout: true });
 
-  handleRef = aboutSec => {
-    this.props.getOffsetTop(aboutSec);
-  };
+  handleRef = aboutSec => this.props.getOffsetTop(aboutSec);
 
   render = () => {
     return (
@@ -31,6 +27,7 @@ class About extends Component {
             id={this.props.id}
             data-offset-id={`${this.props.id}OffsetTop`}
             ref={this.handleRef}>
+
             <AboutContent>
               <SummaryContainer data-aos="fade-up">
                 <Summary enteredAbout={this.state.enteredAbout} />
@@ -39,6 +36,7 @@ class About extends Component {
                 <SkillsTable />
               </SkillsContainer>
             </AboutContent>
+
             <ScrollFooter>
               <ScrollBtn to="Projects" label="Projects" icon={Icons.downArrow} />
             </ScrollFooter>

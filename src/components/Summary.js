@@ -20,7 +20,7 @@ class Summary extends Component {
     const images = [];
     if (this.props.enteredAbout) {
       for (let i = 0; i < 5; i++) {
-        images.push(<GlitchImg key={i} className="glitch__img" />);
+        images.push(<GlitchImg key={i} />);
       }
     }
     return <Glitch>{images}</Glitch>;
@@ -35,7 +35,7 @@ class Summary extends Component {
   renderNormalText = () => {
     if (this.props.enteredAbout) {
       return (
-        <TextContainer className="content__text">
+        <TextContainer>
           {summary.map((text, i) => (
             <Fragment key={i}>
               <P>{text}</P>
@@ -49,7 +49,7 @@ class Summary extends Component {
 
   render = () => {
     return (
-      <SummaryWrap className="glitch-variables">
+      <SummaryWrap>
         {this.renderGlitchImgs()}
         {this.renderTitle()}
         {this.renderNormalText()}
