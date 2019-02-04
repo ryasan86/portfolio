@@ -89,7 +89,7 @@ const GlitchImg = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0.15;
   z-index: -1;
   background-color: ${glitch.blendColor1};
   transform: translate3d(0, 0, 0);
@@ -124,7 +124,7 @@ const GlitchImg = styled.div`
 `;
 
 const SummaryTitle = styled(H2)`
-  color: ${({ theme }) => darken(0.1, theme.primary)};
+  color: ${({ theme }) => theme.primary};
   position: relative;
   margin-bottom: 10%;
   animation-name: ${glitchAnimText};

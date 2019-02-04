@@ -36,7 +36,7 @@ class Intro extends Component {
 const IntroSection = styled(Section)`
   background: linear-gradient(
     to right,
-    ${({ theme }) => lighten(0.15, theme.primary)},
+    ${({ theme }) => lighten(0.1, theme.primary)},
     ${({ theme }) => theme.primary}
   );
 `;
