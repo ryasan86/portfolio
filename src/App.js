@@ -46,7 +46,7 @@ class App extends Component {
 
   getOffsetTop = el => {
     const { offsetId } = el.dataset;
-    const offsetTop = el.offsetTop;
+    const { offsetTop } = el;
     this.setState({ [offsetId]: offsetTop });
   };
 

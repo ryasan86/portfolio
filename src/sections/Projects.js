@@ -13,8 +13,16 @@ import {
 import { P } from './../components/text';
 
 class Projects extends Component {
-  handleRef = projectsSec => {
-    this.props.getOffsetTop(projectsSec);
+  handleRef = projectsSec => this.props.getOffsetTop(projectsSec);
+
+  renderProjects = () => {
+    return (
+      <ProjectsListContainer>
+        {projects.map((project, i) => (
+          <Card key={i} project={project} />
+        ))}
+      </ProjectsListContainer>
+    );
   };
 
   render = () => {
@@ -22,18 +30,13 @@ class Projects extends Component {
       <ProjectsSection
         id={this.props.id}
         data-offset-id={`${this.props.id}OffsetTop`}
-        ref={this.handleRef}
-      >
+        ref={this.handleRef}>
+
         <ProjectsContent data-aos="fade-up">
-          <TitleContainer>
-            <ProjectsTitle>Projects</ProjectsTitle>
-          </TitleContainer>
-          <ProjectsListContainer>
-            {projects.map((project, i) => {
-              return <Card key={i} project={project} />;
-            })}
-          </ProjectsListContainer>
+          <ProjectsTitle>Projects</ProjectsTitle>
+          {this.renderProjects()}
         </ProjectsContent>
+
         <ScrollFooter>
           <ScrollBtn to="Contact" label="Contact" icon={Icons.downArrow} />
         </ScrollFooter>
@@ -59,20 +62,16 @@ const ProjectsContent = styled(SectionContent)`
 
 const ProjectsListContainer = styled.div`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: center;
-`;
-
-const TitleContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 2% 0;
 `;
 
 const ProjectsTitle = styled(P)`
   color: ${({ theme }) => theme.primary};
   font-size: 1em;
+  display: flex;
+  justify-content: center;
+  margin: 2% 0;
 `;
 
 export default Projects;

@@ -13,16 +13,16 @@ const SECTIONS = [
 const BG_1 = {
   imgUrl: 'https://i.postimg.cc/1tYMscJb/codeBG2.png',
   desktopStyles: `background-repeat: repeat;
-            filter: blur(2px);
-            -webkit-filter: blur(2px);`,
+                  filter: blur(2px);
+                  -webkit-filter: blur(2px);`,
   mobileStyles: `background-repeat: repeat;
-            background-size: contain`
+                 background-size: contain;`
 };
 const BG_2 = {
   imgUrl: 'https://i.postimg.cc/FRkXXJ7D/webdev.png',
   desktopStyles: 'background-repeat: no-repeat;',
   mobileStyles: `background-repeat: no-repeat;
-                 background-size: contain`
+                 background-size: contain;`
 };
 
 const PORTFOLIO_REPO = 'https://github.com/ryasan86/portfolio';
