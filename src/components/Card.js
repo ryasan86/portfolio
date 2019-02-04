@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { openProjectUrl } from './../utils';
+import { followUrl } from './../utils';
 // components
 import { Overlay } from './common';
 
@@ -31,7 +31,7 @@ class Card extends Component {
     } = this.props;
 
     return (
-      <StyledCard onClick={() => openProjectUrl(projectUrl)}>
+      <StyledCard onClick={() => followUrl(projectUrl)}>
         <Wrapper
           imgUrl={imgUrl}
           onMouseEnter={this.handleMouseEnter}

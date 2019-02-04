@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { darken, lighten } from 'polished';
-import { flexCenter, openProjectUrl } from './../utils';
+import { flexCenter, followUrl } from './../utils';
 import Icons from './../images';
 import { PORTFOLIO_REPO } from './../constants';
 import { links } from './../data.json';
@@ -13,7 +13,7 @@ class Footer extends Component {
   renderLinks = () => (
     <LogoContainer>
       {links.map(({ name, url }, i) => (
-        <LogoLink key={i} onClick={() => openProjectUrl(url)}>
+        <LogoLink key={i} onClick={() => followUrl(url)}>
           <FooterLogo src={Icons[name]} />
         </LogoLink>
       ))}
@@ -33,7 +33,7 @@ class Footer extends Component {
         <NormalText>RYAN SANTOS</NormalText>
         <NormalText>
           portfolio{' '}
-          <RepoLink onClick={() => openProjectUrl(PORTFOLIO_REPO)}>
+          <RepoLink onClick={() => followUrl(PORTFOLIO_REPO)}>
             repo
           </RepoLink>
         </NormalText>

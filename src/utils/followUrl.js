@@ -1,3 +1,3 @@
-const openProjectUrl = url => window.open(url, '_blank').focus();
+const followUrl = url => window.open(url, '_blank').focus();
 
-export { openProjectUrl };
+export { followUrl };
