@@ -15,34 +15,30 @@ import { P } from './../components/text';
 class Projects extends Component {
   handleRef = projectsSec => this.props.getOffsetTop(projectsSec);
 
-  renderProjects = () => {
-    return (
-      <ProjectsListContainer>
-        {projects.map((project, i) => (
-          <Card key={i} project={project} />
-        ))}
-      </ProjectsListContainer>
-    );
-  };
+  renderProjects = () => (
+    <ProjectsListContainer>
+      {projects.map((project, i) => (
+        <Card key={i} project={project} />
+      ))}
+    </ProjectsListContainer>
+  );
 
-  render = () => {
-    return (
-      <ProjectsSection
-        id={this.props.id}
-        data-offset-id={`${this.props.id}OffsetTop`}
-        ref={this.handleRef}>
+  render = () => (
+    <ProjectsSection
+      id={this.props.id}
+      data-offset-id={`${this.props.id}OffsetTop`}
+      ref={this.handleRef}>
 
-        <ProjectsContent data-aos="fade-up">
-          <ProjectsTitle>Projects</ProjectsTitle>
-          {this.renderProjects()}
-        </ProjectsContent>
+      <ProjectsContent data-aos="fade-up">
+        <ProjectsTitle>Projects</ProjectsTitle>
+        {this.renderProjects()}
+      </ProjectsContent>
 
-        <ScrollFooter>
-          <ScrollBtn to="Contact" label="Contact" icon={Icons.downArrow} />
-        </ScrollFooter>
-      </ProjectsSection>
-    );
-  };
+      <ScrollFooter>
+        <ScrollBtn to="Contact" label="Contact" icon={Icons.downArrow} />
+      </ScrollFooter>
+    </ProjectsSection>
+  );
 }
 
 const ProjectsSection = styled(Section)`

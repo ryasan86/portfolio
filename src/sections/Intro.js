@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Typist from 'react-typist';
+import { lighten } from 'polished';
 import { flexCenter } from './../utils';
 import Icons from './../images';
 // components
@@ -12,44 +13,39 @@ import {
 } from './../components/common';
 
 class Intro extends Component {
-  render = () => {
-    return (
-      <IntroSection id={this.props.id}>
-        <IntroContent>
-          <TextContainer>
-            <LargeText data-aos="fade-down">HELLO</LargeText>
-            <MediumText data-aos="fade-left">I'M RYAN</MediumText>
-            <Typist avgTypingDelay={110}>
-              <TypistText>CODE + DeSIGN</TypistText>
-              <Typist.Backspace count={5} delay={200} />
-              <TypistText>ESIGN</TypistText>
-            </Typist>
-          </TextContainer>
-        </IntroContent>
-        <ScrollFooter>
-          <ScrollBtn to="About" label="About" icon={Icons.downArrow} />
-        </ScrollFooter>
-      </IntroSection>
-    );
-  };
+  render = () => (
+    <IntroSection id={this.props.id}>
+
+      <IntroContent>
+        <LargeText data-aos="fade-down">HELLO</LargeText>
+        <MediumText data-aos="fade-left">I'M RYAN</MediumText>
+        <Typist avgTypingDelay={110}>
+          <TypistText>CODE + DeSIGN</TypistText>
+          <Typist.Backspace count={5} delay={200} />
+          <TypistText>ESIGN</TypistText>
+        </Typist>
+      </IntroContent>
+
+      <ScrollFooter>
+        <ScrollBtn to="About" label="About" icon={Icons.downArrow} />
+      </ScrollFooter>
+    </IntroSection>
+  );
 }
 
 const IntroSection = styled(Section)`
   background: linear-gradient(
     to right,
-    #48c9b0,
+    ${({ theme }) => lighten(0.15, theme.primary)},
     ${({ theme }) => theme.primary}
   );
-  color: ${({ theme }) => theme.light};
 `;
 
 const IntroContent = styled(SectionContent)`
+  color: ${({ theme }) => theme.light};
   width: 100%;
   ${flexCenter};
-`;
-
-const TextContainer = styled.div`
-  color: ${({ theme }) => theme.light};
+  flex-direction: column;
   text-align: center;
 `;
 
