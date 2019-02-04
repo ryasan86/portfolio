@@ -13,6 +13,12 @@
       "description": "react | redux"
     },
     {
+      "title": "Tic Tac Toe",
+      "imgUrl": "https://i.postimg.cc/XNk0pXh1/tictactoe.png",
+      "projectUrl": "https://ryasan86.github.io/tic_tac_toe",
+      "description": "react"
+    },
+    {
       "title": "Masonry Tiles",
       "imgUrl": "https://i.postimg.cc/2yZvkTDf/masonry.jpg",
       "projectUrl": "https://ryasan86.github.io/masonry",
@@ -28,12 +34,6 @@
       "title": "Drum Kit",
       "imgUrl": "https://s15.postimg.cc/mj0w5wmu3/drum_machine.png",
       "projectUrl": "https://ryasan86.github.io/drum_machine",
-      "description": "react"
-    },
-    {
-      "title": "Tic Tac Toe",
-      "imgUrl": "https://i.postimg.cc/XNk0pXh1/tictactoe.png",
-      "projectUrl": "https://ryasan86.github.io/tic_tac_toe",
       "description": "react"
     },
     {
