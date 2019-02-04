@@ -9,37 +9,39 @@ import { links } from './../data.json';
 import { ScrollBtn, Logo } from './common';
 
 class Footer extends Component {
-  openProjectUrl = url => {
-    window.open(url, '_blank').focus();
-  };
+  openProjectUrl = url => window.open(url, '_blank').focus();
 
-  renderLinks = () => {
-    return links.map(({ name, url }, i) => (
-      <LogoLink key={i} onClick={() => this.openProjectUrl(url)}>
-        <FooterLogo src={Icons[name]} />
-      </LogoLink>
-    ));
-  };
+  renderLinks = () => (
+    <LogoContainer>
+      {links.map(({ name, url }, i) => (
+        <LogoLink key={i} onClick={() => this.openProjectUrl(url)}>
+          <FooterLogo src={Icons[name]} />
+        </LogoLink>
+      ))}
+    </LogoContainer>
+  );
 
-  render = () => {
-    return (
-      <FooterWrap>
-        <BtnContainer>
-          <ScrollBtn to="Intro" icon={Icons.upArrow} styles={ScrollBtnStyles} />
-        </BtnContainer>
-        <LogoContainer>{this.renderLinks()}</LogoContainer>
-        <TextContainer>
-          <NormalText>RYAN SANTOS</NormalText>
-          <NormalText>
-            portfolio{' '}
-            <RepoLink onClick={() => this.openProjectUrl(PORTFOLIO_REPO)}>
-              repo
-            </RepoLink>
-          </NormalText>
-        </TextContainer>
-      </FooterWrap>
-    );
-  };
+  render = () => (
+    <FooterWrap>
+
+      <BtnContainer>
+        <ScrollBtn to="Intro" icon={Icons.upArrow} styles={ScrollBtnStyles} />
+      </BtnContainer>
+
+      {this.renderLinks()}
+
+      <TextContainer>
+        <NormalText>RYAN SANTOS</NormalText>
+        <NormalText>
+          portfolio{' '}
+          <RepoLink onClick={() => this.openProjectUrl(PORTFOLIO_REPO)}>
+            repo
+          </RepoLink>
+        </NormalText>
+      </TextContainer>
+
+    </FooterWrap>
+  );
 }
 
 const FooterWrap = styled.div`
