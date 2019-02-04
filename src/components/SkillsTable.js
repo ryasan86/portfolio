@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import { skills } from './../data.json';
 import styled from 'styled-components';
+import { skills } from './../data.json';
 
 const SkillsStyledTable = () => (
   <SkillsWrap>
@@ -26,14 +26,16 @@ const SkillsStyledTable = () => (
               <tr>
                 <Cell />
                 <Cell />
-                <StyledTd>"name":"{name}",</StyledTd>
+                <StyledTd>"name": "{name}",</StyledTd>
                 <Cell />
                 <Cell />
               </tr>
               <tr>
                 <Cell />
                 <Cell />
-                <StyledTd>"value": {value}</StyledTd>
+                <StyledTd>
+                  "value": <P>{value}</P>
+                </StyledTd>
                 <Cell />
                 <Cell />
               </tr>
@@ -61,7 +63,6 @@ const SkillsStyledTable = () => (
 
 const SkillsWrap = styled.div`
   height: 100%;
-  overflow: scroll;
 `;
 
 const StyledTable = styled.table`
@@ -70,7 +71,8 @@ const StyledTable = styled.table`
 `;
 
 const Cell = styled.td`
-  font-size: 0.78em;
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: bold;
   @media only screen and (max-width: 420px) {
     font-size: 0.7em;
   }
@@ -78,13 +80,19 @@ const Cell = styled.td`
 
 const StyledTd = styled(Cell)`
   color: ${({ theme }) => theme.primary};
-  font-weight: bolder;
+  width: 400px;
+  white-space: nowrap;
 `;
 
 const BraceTd = styled(Cell)`
-  font-size: 1.1em;
-  font-weight: bolder;
   width: 30px;
+`;
+
+const P = styled.p`
+  margin: 0;
+  display: inline;
+  font-weight: bolder;
+  color: #e53935;
 `;
 
 export default SkillsStyledTable;

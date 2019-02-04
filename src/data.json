@@ -81,11 +81,11 @@
     },
     {
       "name": "Node.js",
-      "value": 65
+      "value": 70
     },
     {
       "name": "SQL",
-      "value": 65
+      "value": 60
     },
     {
       "name": "Angular 2+",
@@ -97,11 +97,11 @@
     },
     {
       "name": "GraphQL",
-      "value": 70
+      "value": 65
     },
     {
       "name": "Photoshop",
-      "value": 75
+      "value": 80
     }
   ],
   "links": [

@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { GLITCH_BG } from './../constants';
 import styled, { css } from 'styled-components';
-import { darken } from 'polished';
 import { summary } from './../data.json';
 import {
   glitchAnimText,
