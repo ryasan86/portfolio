@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { openProjectUrl } from './../utils';
 // components
 import { Overlay } from './common';
 
@@ -14,24 +15,28 @@ class Card extends Component {
     this.setState({ active: false });
   };
 
-  openProjectUrl = url => {
-    window.open(url, '_blank').focus();
+  renderOverlayLink = () => {
+    const { title } = this.props.project;
+    const overlayLink = (
+      <Overlay>
+        <StyledLink>{title}</StyledLink>
+      </Overlay>
+    );
+    return this.state.active ? overlayLink : '';
   };
 
   render() {
     const {
       project: { title, description, imgUrl, projectUrl }
     } = this.props;
-    const link = <OverlayLink>{title}</OverlayLink>;
 
     return (
-      <StyledCard onClick={() => this.openProjectUrl(projectUrl)}>
+      <StyledCard onClick={() => openProjectUrl(projectUrl)}>
         <Wrapper
           imgUrl={imgUrl}
           onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-        >
-          {this.state.active ? <Overlay>{link}</Overlay> : ''}
+          onMouseLeave={this.handleMouseLeave}>
+          {this.renderOverlayLink()}
           <Info active={this.state.active}>
             <CardTitle>{title}</CardTitle>
             <CardText>{description}</CardText>
@@ -80,7 +85,7 @@ const CardText = styled.p`
   margin: 0;
 `;
 
-const OverlayLink = styled.a`
+const StyledLink = styled.a`
   color: white;
   cursor: pointer;
   text-decoration: none;
