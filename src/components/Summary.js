@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { GLITCH_BG } from './../constants';
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 import { summary } from './../data.json';
@@ -13,14 +14,12 @@ import {
 // components
 import { H2, P } from './../components/text';
 
-const GLITCH_BG = 'https://i.postimg.cc/7hCRc1FY/coding-1853305-1280.jpg';
-
 class Summary extends Component {
   renderGlitchImgs = () => {
     const images = [];
     if (this.props.enteredAbout) {
       for (let i = 0; i < 5; i++) {
-        images.push(<GlitchImg key={i} />);
+        images.push(<GlitchImg key={i} glitchBg={GLITCH_BG} />);
       }
     }
     return <Glitch>{images}</Glitch>;
@@ -32,7 +31,7 @@ class Summary extends Component {
     }
   };
 
-  renderNormalText = () => {
+  renderSummary = () => {
     if (this.props.enteredAbout) {
       return (
         <TextContainer>
@@ -47,15 +46,13 @@ class Summary extends Component {
     }
   };
 
-  render = () => {
-    return (
-      <SummaryWrap>
-        {this.renderGlitchImgs()}
-        {this.renderTitle()}
-        {this.renderNormalText()}
-      </SummaryWrap>
-    );
-  };
+  render = () => (
+    <SummaryWrap>
+      {this.renderGlitchImgs()}
+      {this.renderTitle()}
+      {this.renderSummary()}
+    </SummaryWrap>
+  );
 }
 
 const SummaryWrap = styled.div`
@@ -90,7 +87,7 @@ const GlitchImg = styled.div`
   left: calc(-1 * ${glitch.gapHorizontal});
   width: calc(100% + ${glitch.gapHorizontal} * 2);
   height: calc(100% + ${glitch.gapVertical} * 2);
-  background: url(${GLITCH_BG});
+  background: url(${({glitchBg}) => glitchBg});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

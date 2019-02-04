@@ -26,5 +26,6 @@ const BG_2 = {
 };
 
 const PORTFOLIO_REPO = 'https://github.com/ryasan86/portfolio';
+const GLITCH_BG = 'https://i.postimg.cc/7hCRc1FY/coding-1853305-1280.jpg';
 
-export { BG_1, BG_2, SECTIONS, PORTFOLIO_REPO };
+export { BG_1, BG_2, SECTIONS, PORTFOLIO_REPO, GLITCH_BG };
