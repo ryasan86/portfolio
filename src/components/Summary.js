@@ -16,13 +16,11 @@ import { H2, P } from './../components/text';
 
 class Summary extends Component {
   renderGlitchImgs = () => {
-    const images = [];
-    if (this.props.enteredAbout) {
-      for (let i = 0; i < 5; i++) {
-        images.push(<GlitchImg key={i} glitchBg={GLITCH_BG} />);
-      }
-    }
-    return <Glitch>{images}</Glitch>;
+    const glitchImages = Array(5)
+      .fill()
+      .map((_, i) => <GlitchImg key={i} glitchBg={GLITCH_BG} />);
+
+    return <Glitch>{glitchImages}</Glitch>;
   };
 
   renderTitle = () => {
@@ -33,16 +31,14 @@ class Summary extends Component {
 
   renderSummary = () => {
     if (this.props.enteredAbout) {
-      return (
-        <TextContainer>
-          {summary.map((text, i) => (
-            <Fragment key={i}>
-              <P>{text}</P>
-              <br />
-            </Fragment>
-          ))}
-        </TextContainer>
-      );
+      const summaryText = summary.map((text, i) => (
+        <Fragment key={i}>
+          <P>{text}</P>
+          <br />
+        </Fragment>
+      ));
+
+      return <TextContainer>{summaryText}</TextContainer>;
     }
   };
 
@@ -87,7 +83,7 @@ const GlitchImg = styled.div`
   left: calc(-1 * ${glitch.gapHorizontal});
   width: calc(100% + ${glitch.gapHorizontal} * 2);
   height: calc(100% + ${glitch.gapVertical} * 2);
-  background: url(${({glitchBg}) => glitchBg});
+  background: url(${({ glitchBg }) => glitchBg});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
