@@ -16,11 +16,13 @@ import { H2, P } from './../components/text';
 
 class Summary extends Component {
   renderGlitchImgs = () => {
-    const glitchImages = Array(5)
-      .fill()
-      .map((_, i) => <GlitchImg key={i} glitchBg={GLITCH_BG} />);
+    if (this.props.enteredAbout) {
+      const glitchImages = Array(5)
+        .fill()
+        .map((_, i) => <GlitchImg key={i} glitchBg={GLITCH_BG} />);
 
-    return <Glitch>{glitchImages}</Glitch>;
+      return <Glitch>{glitchImages}</Glitch>;
+    }
   };
 
   renderTitle = () => {
