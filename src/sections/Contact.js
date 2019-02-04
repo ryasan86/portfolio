@@ -9,28 +9,23 @@ import { Section, SectionContent } from './../components/common';
 import { H2, P } from './../components/text';
 
 class Contact extends Component {
-  handleRef = contactSec => {
-    this.props.getOffsetTop(contactSec);
-  };
+  handleRef = contactSec => this.props.getOffsetTop(contactSec);
 
-  render = () => {
-    return (
-      <ContactSection
-        id={this.props.id}
-        data-offset-id={`${this.props.id}OffsetTop`}
-        ref={this.handleRef}
-      >
-        <ContactContent>
-          <TextContainer>
-            <LargeText>Contact</LargeText>
-            <NormalText>Have a question or want to work together?</NormalText>
-          </TextContainer>
-          <ContactForm env={env} />
-        </ContactContent>
-        <Footer />
-      </ContactSection>
-    );
-  };
+  render = () => (
+    <ContactSection
+      id={this.props.id}
+      data-offset-id={`${this.props.id}OffsetTop`}
+      ref={this.handleRef}>
+
+      <ContactContent>
+        <LargeText>Contact</LargeText>
+        <NormalText>Have a question or want to work together?</NormalText>
+        <ContactForm env={env} />
+      </ContactContent>
+
+      <Footer />
+    </ContactSection>
+  );
 }
 
 const ContactSection = styled(Section)`
@@ -48,18 +43,17 @@ const ContactContent = styled(SectionContent)`
   height: calc(80% - ${({ theme }) => theme.headerHeight});
 `;
 
-const TextContainer = styled.div`
+const LargeText = styled(H2)`
   color: ${({ theme }) => theme.light};
+  letter-spacing: 0.1em;
+  margin: 0;
   text-align: center;
 `;
 
-const LargeText = styled(H2)`
-  letter-spacing: 0.1em;
-  margin: 0;
-`;
-
 const NormalText = styled(P)`
+  color: ${({ theme }) => theme.light};
   margin: 10% 0;
+  text-align: center;
 `;
 
 export default Contact;

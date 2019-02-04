@@ -105,7 +105,8 @@ const SubmitBtn = styled.button`
     }
   }
   @media only screen and (max-width: 420px) {
-    font-size: 0.6em;
+    font-size: 10px;
+    padding: 5px;
   }
 `;
 
