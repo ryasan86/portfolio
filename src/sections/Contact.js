@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { flexCenter } from './../utils';
-import { env } from './../config';
 // components
 import ContactForm from './../components/ContactForm';
 import Footer from './../components/Footer';
@@ -20,7 +19,7 @@ class Contact extends Component {
       <ContactContent>
         <LargeText>Contact</LargeText>
         <NormalText>Have a question or want to work together?</NormalText>
-        <ContactForm env={env} />
+        <ContactForm />
       </ContactContent>
 
       <Footer />

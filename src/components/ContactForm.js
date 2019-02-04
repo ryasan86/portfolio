@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import * as EmailValidator from 'email-validator';
 import { sendMessage } from './../utils';
+import { env } from './../config';
 // components
 import { Form, Input, TextArea } from './common';
 
@@ -22,7 +23,7 @@ class ContactForm extends Component {
     const {
       REACT_APP_EMAILJS_RECEIVER: receiverEmail,
       REACT_APP_EMAILJS_TEMPLATEID: templateId
-    } = this.props.env;
+    } = env;
 
     sendMessage(
       templateId,
@@ -48,29 +49,25 @@ class ContactForm extends Component {
           name="name"
           type="text"
           value={this.state.name}
-          onChange={this.handleChange}
-        />
+          onChange={this.handleChange} />
         <Input
           placeholder="Email"
           name="email"
           type="text"
           value={this.state.email}
           onChange={this.handleChange}
-          required
-        />
+          required />
         <TextArea
           placeholder="Message"
           name="message"
           rows={10}
           value={this.state.message}
           onChange={this.handleChange}
-          required
-        />
+          required />
         <BtnContainer>
           <SubmitBtn
             onClick={this.handleSubmit}
-            disabled={!this.state.validForm}
-          >
+            disabled={!this.state.validForm}>
             Submit
           </SubmitBtn>
         </BtnContainer>
