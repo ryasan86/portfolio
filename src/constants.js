@@ -27,5 +27,11 @@ const BG_2 = {
 
 const PORTFOLIO_REPO = 'https://github.com/ryasan86/portfolio';
 const GLITCH_BG = 'https://i.postimg.cc/7hCRc1FY/coding-1853305-1280.jpg';
+const PROJECT_TYPES = [
+  { id: 0, title: 'All' },
+  { id: 1, title: 'Game' },
+  { id: 2, title: 'Ui Component' },
+  { id: 3, title: 'Full Stack' }
+];
 
-export { BG_1, BG_2, SECTIONS, PORTFOLIO_REPO, GLITCH_BG };
+export { BG_1, BG_2, SECTIONS, PORTFOLIO_REPO, GLITCH_BG, PROJECT_TYPES };

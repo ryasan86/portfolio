@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { projects } from './../data.json';
+import { PROJECT_TYPES } from './../constants';
 import Icons from './../images';
 // components
 import Card from './../components/Card';
@@ -13,15 +14,41 @@ import {
 import { P } from './../components/text';
 
 class Projects extends Component {
+  state = {
+    activeId: 0
+  };
+
   handleRef = projectsSec => this.props.getOffsetTop(projectsSec);
 
-  renderProjects = () => (
-    <ProjectsListContainer>
-      {projects.map((project, i) => (
-        <Card key={i} project={project} />
+  handleLinkClick = tabId => {
+    this.setState({ activeId: tabId });
+  };
+
+  renderProjectsNav = () => (
+    <TypeContainer>
+      {PROJECT_TYPES.map(({ title }, i) => (
+        <TypeLink
+          key={i}
+          active={this.state.activeId === i}
+          onClick={() => this.handleLinkClick(i)}>
+          {title}
+        </TypeLink>
       ))}
-    </ProjectsListContainer>
+    </TypeContainer>
   );
+
+  renderProjects = () => {
+    const { title } = PROJECT_TYPES[this.state.activeId];
+    const projectList = projects.filter(({ type }) => type === title || title === 'All');
+
+    return (
+      <ProjectsListContainer>
+        {projectList.map((project, i) => (
+          <Card key={i} project={project} />
+        ))}
+      </ProjectsListContainer>
+    );
+  };
 
   render = () => (
     <ProjectsSection
@@ -31,6 +58,7 @@ class Projects extends Component {
 
       <ProjectsContent data-aos="fade-up">
         <ProjectsTitle>Projects</ProjectsTitle>
+        {this.renderProjectsNav()}
         {this.renderProjects()}
       </ProjectsContent>
 
@@ -68,6 +96,26 @@ const ProjectsTitle = styled(P)`
   display: flex;
   justify-content: center;
   margin: 2% 0;
+`;
+
+const TypeContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const TypeLink = styled.a`
+  color: ${({ theme }) => theme.primary};
+  margin: 15px;
+  min-width: 150px;
+  text-align: center;
+  padding: 5px;
+  transition: background 0.5s;
+  cursor: pointer;
+  ${({ active, theme }) =>
+    active ? `background: ${theme.primary};
+              color: ${theme.light};`
+            : ''}
 `;
 
 export default Projects;
