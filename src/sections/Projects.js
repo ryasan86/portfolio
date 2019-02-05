@@ -80,28 +80,20 @@ const ProjectsSection = styled(Section)`
 `;
 
 const ProjectsContent = styled(SectionContent)`
+  width: 100%;
   padding-bottom: 100px;
   position: relative;
 `;
 
-const ProjectsListContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
-
-const ProjectsTitle = styled(P)`
-  color: ${({ theme }) => theme.primary};
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
-  margin: 2% 0;
-`;
 
 const TypeContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
+  @media only screen and (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const TypeLink = styled.a`
@@ -116,6 +108,20 @@ const TypeLink = styled.a`
     active ? `background: ${theme.primary};
               color: ${theme.light};`
             : ''}
+`;
+
+const ProjectsListContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
+const ProjectsTitle = styled(P)`
+  color: ${({ theme }) => theme.primary};
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  margin: 2% 0;
 `;
 
 export default Projects;

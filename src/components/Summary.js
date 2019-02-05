@@ -54,6 +54,7 @@ class Summary extends Component {
 
 const SummaryWrap = styled.div`
   height: 100%;
+  min-height: 100vh;
   overflow: scroll;
   @media only screen and (max-width: 350px) {
     display: flex;
