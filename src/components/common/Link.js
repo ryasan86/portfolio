@@ -11,8 +11,7 @@ const Link = ({ to, children, activeClass, linkstyles }) => {
       smooth={true}
       duration={500}
       activeClass={activeClass}
-      linkstyles={linkstyles}
-    >
+      linkstyles={linkstyles}>
       {children}
     </StyledLink>
   );
