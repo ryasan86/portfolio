@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "title": "Restaurant Menu",
+      "title": "Restaurant Menu Demo",
       "imgUrl": "https://i.postimg.cc/pdyLQcDF/restaurant.jpg",
       "projectUrl": "https://ryasan86.github.io/restaurant_menu",
       "description": "react | styled components"
@@ -11,6 +11,12 @@
       "imgUrl": "https://i.postimg.cc/BQr02vHg/simon.jpg",
       "projectUrl": "https://ryasan86.github.io/simon",
       "description": "react | redux"
+    },
+    {
+      "title": "Netflix Login Demo",
+      "imgUrl": "https://i.postimg.cc/QCtt6WQg/netflix-login.jpg",
+      "projectUrl": "https://codepen.io/ryasan86/full/jdLzVp",
+      "description": "vanillajs | scss"
     },
     {
       "title": "Tic Tac Toe",

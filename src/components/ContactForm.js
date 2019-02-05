@@ -89,6 +89,7 @@ const SubmitBtn = styled.button`
   color: ${({ theme }) => theme.light};
   padding: 2%;
   width: 6em;
+  min-height: 30px;
   font-size: 1.2em;
   font-weight: 500;
   transition: all 0.5s;
