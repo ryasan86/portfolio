@@ -50,6 +50,11 @@ class App extends Component {
     this.setState({ [offsetId]: offsetTop });
   };
 
+  renderSections = () =>
+    SECTIONS.map(({ section, Component }, i) => (
+      <Component id={section} key={i} getOffsetTop={this.getOffsetTop} />
+    ));
+
   render = () => {
     const { bg, desktopStyles, mobileStyles } = this.state;
     return (
@@ -58,11 +63,8 @@ class App extends Component {
         <Parallax
           bg={bg}
           desktopStyles={desktopStyles}
-          mobileStyles={mobileStyles}
-        />
-        {SECTIONS.map(({ section, Component }, i) => (
-          <Component id={section} key={i} getOffsetTop={this.getOffsetTop} />
-        ))}
+          mobileStyles={mobileStyles} />
+        {this.renderSections()}
       </AppWrap>
     );
   };
