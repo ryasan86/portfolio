@@ -5,7 +5,7 @@
             "imgUrl": "https://i.postimg.cc/pdyLQcDF/restaurant.jpg",
             "projectUrl": "https://ryasan86.github.io/restaurant_menu",
             "description": "react | styled components",
-            "type": "Ui Component"
+            "type": "UI Component"
         },
         {
             "title": "Simon Says",
@@ -19,7 +19,7 @@
             "imgUrl": "https://i.postimg.cc/QCtt6WQg/netflix-login.jpg",
             "projectUrl": "https://codepen.io/ryasan86/full/jdLzVp",
             "description": "vanillajs | scss",
-            "type": "Ui Component"
+            "type": "UI Component"
         },
         {
             "title": "Tic Tac Toe",
@@ -33,14 +33,14 @@
             "imgUrl": "https://i.postimg.cc/2yZvkTDf/masonry.jpg",
             "projectUrl": "https://ryasan86.github.io/masonry",
             "description": "react",
-            "type": "Ui Component"
+            "type": "UI Component"
         },
         {
             "title": "Street Fighter Selection",
             "imgUrl": "https://i.postimg.cc/13NbQ4T8/street-fighter.jpg",
             "projectUrl": "https://ryasan86.github.io/street_fighter_selection",
             "description": "react | styled components",
-            "type": "Ui Component"
+            "type": "UI Component"
         },
         {
             "title": "Drum Kit",
@@ -75,7 +75,7 @@
             "imgUrl": "https://i.postimg.cc/HxHXVPYD/nintendo-switch.jpg",
             "projectUrl": "https://codepen.io/ryasan86/pen/zaVXgz",
             "description": "scss images | pug",
-            "type": "Ui Component"
+            "type": "UI Component"
         }
     ],
     "summary": [

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { followUrl } from './../utils';
+import { followUrl } from '../utils';
 // components
 import { Overlay } from './common';
 
-class Card extends Component {
+class ProjectCard extends Component {
   state = { active: false };
 
   handleMouseEnter = () => {
@@ -31,7 +31,7 @@ class Card extends Component {
     } = this.props;
 
     return (
-      <StyledCard onClick={() => followUrl(projectUrl)}>
+      <StyledCard onClick={() => followUrl(projectUrl)} data-aos="fade-up">
         <Wrapper
           imgUrl={imgUrl}
           onMouseEnter={this.handleMouseEnter}
@@ -48,11 +48,11 @@ class Card extends Component {
 }
 
 const StyledCard = styled.div`
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
+  margin: 20px;
   position: relative;
   cursor: pointer;
-  margin: 20px;
 `;
 
 const Wrapper = styled.div`
@@ -91,4 +91,4 @@ const StyledLink = styled.a`
   text-decoration: none;
 `;
 
-export default Card;
+export default ProjectCard;

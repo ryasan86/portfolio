@@ -29,7 +29,7 @@ const PORTFOLIO_REPO = 'https://github.com/ryasan86/portfolio';
 const GLITCH_BG = 'https://i.postimg.cc/7hCRc1FY/coding-1853305-1280.jpg';
 const PROJECT_TYPES = [
   { id: 0, title: 'All' },
-  { id: 1, title: 'Ui Component' },
+  { id: 1, title: 'UI Component' },
   { id: 2, title: 'Game' },
   { id: 3, title: 'Full Stack' }
 ];

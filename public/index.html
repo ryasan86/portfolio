@@ -46,13 +46,13 @@
       type="text/javascript"
       src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"
     ></script>
+    <script>
+      AOS.init({ duration: 750 });
+    </script>
     <script type="text/javascript">
       (function() {
         emailjs.init('%REACT_APP_EMAILJS_USERID%');
       })();
-    </script>
-    <script>
-      AOS.init({ duration: 750 });
     </script>
   </body>
 </html>

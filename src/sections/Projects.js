@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { projects } from './../data.json';
-import { PROJECT_TYPES } from './../constants';
 import { getPageChunk } from './../utils';
+import { PROJECT_TYPES } from './../constants';
 import Icons from './../images';
 // components
-import Card from './../components/Card';
+import ProjectList from './../components/ProjectList';
+import ProjectCategoryTabs from './../components/ProjectCategoryTabs';
+import ProjectPagination from './../components/ProjectPagination';
 import {
   Section,
   ScrollFooter,
@@ -22,81 +24,61 @@ class Projects extends Component {
     projectsByCategory: projects
   };
 
-  handleRef = projectsSec => this.props.getOffsetTop(projectsSec);
-
-  renderProjectCategories = () => (
-    <CategoryContainer>
-      {PROJECT_TYPES.map(({ title }, i) => (
-        <CategoryLink
-          key={i}
-          active={this.state.activeTab === i}
-          onClick={() => this.handleCategoryClick(i)}>
-          {title}
-        </CategoryLink>
-      ))}
-    </CategoryContainer>
-  );
+  handleSectionRef = projectsSec => this.props.getOffsetTop(projectsSec);
 
   handleCategoryClick = tabId => {
     this.setState({ activeTab: tabId }, () => {
       const { title } = PROJECT_TYPES[this.state.activeTab];
-      const projectList = projects.filter(({ type }) => type === title || title === 'All');
+      const projectList = projects.filter(({ type }) => type === title || title === 'All' );
 
       this.setState({
         projectsByCategory: projectList,
         pageChunk: getPageChunk(projectList, 0),
-        activePageBtn: 0,
+        activePageBtn: 0
       });
     });
   };
 
-  renderProjects = () => {
-    return (
-      <ProjectsListContainer>
-        {this.state.pageChunk.map((project, i) => (
-          <Card key={i} project={project} />
-        ))}
-      </ProjectsListContainer>
-    );
-  };
-
-  renderPageChunk = id => {
+  setActivePage = id => {
     this.setState({
       pageChunk: getPageChunk(this.state.projectsByCategory, id),
       activePageBtn: id
     });
   };
 
-  renderPageBtns = () => {
-    const { projectsByCategory, activePageBtn } = this.state;
-    const btns = Array(Math.ceil(projectsByCategory.length / 6)).fill().map((_, i) => {
-        return (
-          <PageBtn key={i} onClick={() => this.renderPageChunk(i)} active={activePageBtn === i}>
-            {i + 1}
-          </PageBtn>
-        );
-      });
-    return <BtnContainer>{btns}</BtnContainer>;
+  render = () => {
+    const {
+      activeTab,
+      pageChunk,
+      activePageBtn,
+      projectsByCategory
+    } = this.state;
+    const { id } = this.props;
+
+    return (
+      <ProjectsSection
+        id={id}
+        data-offset-id={`${id}OffsetTop`}
+        ref={this.handleSectionRef}>
+
+        <ProjectsContent data-aos="fade-up">
+          <ProjectsTitle>Projects</ProjectsTitle>
+          <ProjectCategoryTabs
+            handleCategoryClick={this.handleCategoryClick}
+            activeTab={activeTab} />
+          <ProjectList projects={pageChunk} />
+          <ProjectPagination
+            setActivePage={this.setActivePage}
+            activePageBtn={activePageBtn}
+            projectsByCategory={projectsByCategory} />
+        </ProjectsContent>
+
+        <ScrollFooter>
+          <ScrollBtn to="Contact" label="Contact" icon={Icons.downArrow} />
+        </ScrollFooter>
+      </ProjectsSection>
+    );
   };
-
-  render = () => (
-    <ProjectsSection
-      id={this.props.id}
-      data-offset-id={`${this.props.id}OffsetTop`}
-      ref={this.handleRef}>
-
-      <ProjectsContent data-aos="fade-up">
-        <ProjectsTitle>Projects</ProjectsTitle>
-        {this.renderProjectCategories()}
-        {this.renderProjects()}
-        {this.renderPageBtns()}
-      </ProjectsContent>
-
-      <ScrollFooter>
-        <ScrollBtn to="Contact" label="Contact" icon={Icons.downArrow} />
-      </ScrollFooter>
-    </ProjectsSection>
-  );
 }
 
 const ProjectsSection = styled(Section)`
@@ -124,52 +106,6 @@ const ProjectsTitle = styled(P)`
   display: flex;
   justify-content: center;
   margin: 2% 0;
-`;
-
-const CategoryContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  @media only screen and (max-width: 700px) {
-    display: none;
-  }
-`;
-
-const CategoryLink = styled.a`
-  color: ${({ theme }) => theme.primary};
-  margin: 15px;
-  min-width: 150px;
-  text-align: center;
-  padding: 5px;
-  transition: background 0.5s;
-  cursor: pointer;
-  ${({ active, theme }) =>
-    active
-      ? `background: ${theme.primary};
-         color: ${theme.light};`
-      : ''}
-`;
-
-const ProjectsListContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 1159px;
-`;
-
-const BtnContainer = styled.div`
-  padding: 20px;
-`;
-
-const PageBtn = styled.button`
-  border: 1px solid ${({ theme }) => theme.primary};
-  color: ${({ active, theme }) => active ? theme.light : theme.primary};
-  background: ${({ active, theme }) => active ? theme.primary : theme.light};
-  transition: background 0.5s;
-  cursor: pointer;
-  padding: 5px 10px;
-  font-size: 15px;
 `;
 
 export default Projects;
