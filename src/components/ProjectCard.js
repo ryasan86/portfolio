@@ -48,8 +48,8 @@ class ProjectCard extends Component {
 }
 
 const StyledCard = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   margin: 20px;
   position: relative;
   cursor: pointer;
