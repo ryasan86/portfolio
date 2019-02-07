@@ -1,7 +1,7 @@
 {
     "projects": [
         {
-            "title": "Restaurant Menu Demo",
+            "title": "Restaurant Menu",
             "imgUrl": "https://i.postimg.cc/pdyLQcDF/restaurant.jpg",
             "projectUrl": "https://ryasan86.github.io/restaurant_menu",
             "description": "react | styled components",
@@ -27,6 +27,12 @@
             "projectUrl": "https://ryasan86.github.io/tic_tac_toe",
             "description": "react",
             "type": "Game"
+        },        {
+            "title": "Music Landing Page",
+            "imgUrl": "https://i.postimg.cc/sXznmFNY/music-landing.jpg",
+            "projectUrl": "https://codepen.io/ryasan86/full/XOVpOO",
+            "description": "react",
+            "type": "UI Component"
         },
         {
             "title": "Masonry Tiles",
