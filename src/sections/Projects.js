@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { projects } from './../data.json';
 import { PROJECT_TYPES } from './../constants';
+import { getPageChunk } from './../utils';
 import Icons from './../images';
 // components
 import Card from './../components/Card';
@@ -15,39 +16,66 @@ import { P } from './../components/text';
 
 class Projects extends Component {
   state = {
-    activeId: 0
+    activeTab: 0,
+    activePageBtn: 0,
+    pageChunk: getPageChunk(projects, 0),
+    projectsByCategory: projects
   };
 
   handleRef = projectsSec => this.props.getOffsetTop(projectsSec);
 
-  handleLinkClick = tabId => {
-    this.setState({ activeId: tabId });
-  };
-
-  renderProjectsNav = () => (
-    <TypeContainer>
+  renderProjectCategories = () => (
+    <CategoryContainer>
       {PROJECT_TYPES.map(({ title }, i) => (
-        <TypeLink
+        <CategoryLink
           key={i}
-          active={this.state.activeId === i}
-          onClick={() => this.handleLinkClick(i)}>
+          active={this.state.activeTab === i}
+          onClick={() => this.handleCategoryClick(i)}>
           {title}
-        </TypeLink>
+        </CategoryLink>
       ))}
-    </TypeContainer>
+    </CategoryContainer>
   );
 
-  renderProjects = () => {
-    const { title } = PROJECT_TYPES[this.state.activeId];
-    const projectList = projects.filter(({ type }) => type === title || title === 'All');
+  handleCategoryClick = tabId => {
+    this.setState({ activeTab: tabId }, () => {
+      const { title } = PROJECT_TYPES[this.state.activeTab];
+      const projectList = projects.filter(({ type }) => type === title || title === 'All');
 
+      this.setState({
+        projectsByCategory: projectList,
+        pageChunk: getPageChunk(projectList, 0)
+      });
+    });
+  };
+
+  renderProjects = () => {
     return (
       <ProjectsListContainer>
-        {projectList.map((project, i) => (
+        {this.state.pageChunk.map((project, i) => (
           <Card key={i} project={project} />
         ))}
       </ProjectsListContainer>
     );
+  };
+
+  renderPageChunk = id => {
+    this.setState({
+      pageChunk: getPageChunk(this.state.projectsByCategory, id),
+      activePageBtn: id
+    });
+  };
+
+  renderPageBtns = () => {
+    const { projectsByCategory, activePageBtn } = this.state;
+    const btns = Array(Math.ceil(projectsByCategory.length / 6)).fill().map((_, i) => {
+        return (
+          <PageBtn key={i} onClick={() => this.renderPageChunk(i)} active={activePageBtn === i}>
+            {i + 1}
+          </PageBtn>
+        );
+      });
+    return <div>{btns}</div>;
   };
 
   render = () => (
@@ -58,8 +86,9 @@ class Projects extends Component {
 
       <ProjectsContent data-aos="fade-up">
         <ProjectsTitle>Projects</ProjectsTitle>
-        {this.renderProjectsNav()}
+        {this.renderProjectCategories()}
         {this.renderProjects()}
+        {this.renderPageBtns()}
       </ProjectsContent>
 
       <ScrollFooter>
@@ -83,10 +112,20 @@ const ProjectsContent = styled(SectionContent)`
   width: 100%;
   padding-bottom: 100px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
+const ProjectsTitle = styled(P)`
+  color: ${({ theme }) => theme.primary};
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  margin: 2% 0;
+`;
 
-const TypeContainer = styled.div`
+const CategoryContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -96,7 +135,7 @@ const TypeContainer = styled.div`
   }
 `;
 
-const TypeLink = styled.a`
+const CategoryLink = styled.a`
   color: ${({ theme }) => theme.primary};
   margin: 15px;
   min-width: 150px;
@@ -105,23 +144,27 @@ const TypeLink = styled.a`
   transition: background 0.5s;
   cursor: pointer;
   ${({ active, theme }) =>
-    active ? `background: ${theme.primary};
-              color: ${theme.light};`
-            : ''}
+    active
+      ? `background: ${theme.primary};
+         color: ${theme.light};`
+      : ''}
 `;
 
 const ProjectsListContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 1159px;
 `;
 
-const ProjectsTitle = styled(P)`
-  color: ${({ theme }) => theme.primary};
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
-  margin: 2% 0;
+const PageBtn = styled.button`
+  border: 1px solid ${({ theme }) => theme.secondary};
+  color: ${({ active, theme }) => active ? theme.light : theme.secondary};
+  background: ${({ active, theme }) => active ? theme.secondary : theme.light};
+  transition: background 0.5s;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 15px;
 `;
 
 export default Projects;

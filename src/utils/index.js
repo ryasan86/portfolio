@@ -8,3 +8,4 @@ export * from './glitchAnimFlash';
 export * from './glitchVariables';
 export * from './sendMessage';
 export * from './followUrl';
+export * from './getPageChunk';
