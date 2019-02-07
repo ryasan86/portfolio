@@ -44,7 +44,8 @@ class Projects extends Component {
 
       this.setState({
         projectsByCategory: projectList,
-        pageChunk: getPageChunk(projectList, 0)
+        pageChunk: getPageChunk(projectList, 0),
+        activePageBtn: 0,
       });
     });
   };
@@ -75,7 +76,7 @@ class Projects extends Component {
           </PageBtn>
         );
       });
-    return <div>{btns}</div>;
+    return <BtnContainer>{btns}</BtnContainer>;
   };
 
   render = () => (
@@ -157,10 +158,14 @@ const ProjectsListContainer = styled.div`
   max-width: 1159px;
 `;
 
+const BtnContainer = styled.div`
+  padding: 20px;
+`;
+
 const PageBtn = styled.button`
-  border: 1px solid ${({ theme }) => theme.secondary};
-  color: ${({ active, theme }) => active ? theme.light : theme.secondary};
-  background: ${({ active, theme }) => active ? theme.secondary : theme.light};
+  border: 1px solid ${({ theme }) => theme.primary};
+  color: ${({ active, theme }) => active ? theme.light : theme.primary};
+  background: ${({ active, theme }) => active ? theme.primary : theme.light};
   transition: background 0.5s;
   cursor: pointer;
   padding: 5px 10px;
