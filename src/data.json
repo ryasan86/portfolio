@@ -1,6 +1,13 @@
 {
     "projects": [
         {
+            "title": "Mars Rovers Image Browser",
+            "imgUrl": "https://i.postimg.cc/FsxFqGj5/mars-rovers.jpg",
+            "projectUrl": "http://ryasan86.github.io/mars_rovers",
+            "description": "react | redux",
+            "type": "Full Stack"
+        },
+        {
             "title": "Restaurant Menu",
             "imgUrl": "https://i.postimg.cc/pdyLQcDF/restaurant.jpg",
             "projectUrl": "https://ryasan86.github.io/restaurant_menu",
@@ -15,11 +22,11 @@
             "type": "Game"
         },
         {
-            "title": "Netflix Login Demo",
-            "imgUrl": "https://i.postimg.cc/QCtt6WQg/netflix-login.jpg",
-            "projectUrl": "https://codepen.io/ryasan86/full/jdLzVp",
-            "description": "vanillajs",
-            "type": "UI Component"
+            "title": "PokeDex",
+            "imgUrl": "https://s20.postimg.cc/hbej6k5t9/pokemon.jpg",
+            "projectUrl": "http://138.68.245.105",
+            "description": "react | redux | nodejs | express",
+            "type": "Full Stack"
         },
         {
             "title": "Tic Tac Toe",
@@ -27,10 +34,18 @@
             "projectUrl": "https://ryasan86.github.io/tic_tac_toe",
             "description": "react",
             "type": "Game"
-        },        {
+        },
+        {
             "title": "Music Landing Page",
             "imgUrl": "https://i.postimg.cc/sXznmFNY/music-landing.jpg",
             "projectUrl": "https://codepen.io/ryasan86/full/XOVpOO",
+            "description": "vanillajs",
+            "type": "UI Component"
+        },
+        {
+            "title": "Netflix Login Demo",
+            "imgUrl": "https://i.postimg.cc/QCtt6WQg/netflix-login.jpg",
+            "projectUrl": "https://codepen.io/ryasan86/full/jdLzVp",
             "description": "vanillajs",
             "type": "UI Component"
         },
@@ -54,13 +69,6 @@
             "projectUrl": "https://ryasan86.github.io/drum_machine",
             "description": "react",
             "type": "Game"
-        },
-        {
-            "title": "PokeDex",
-            "imgUrl": "https://s20.postimg.cc/hbej6k5t9/pokemon.jpg",
-            "projectUrl": "http://138.68.245.105",
-            "description": "react | redux | nodejs | express",
-            "type": "Full Stack"
         },
         {
             "title": "NotReddit",
