@@ -26,6 +26,7 @@ const BtnContainer = styled.div`
 
 const PageBtn = styled.button`
   border: 1px solid ${({ theme }) => theme.primary};
+  border-left: none;
   color: ${({ active, theme }) => (active ? theme.light : theme.primary)};
   background: ${({ active, theme }) => (active ? theme.primary : theme.light)};
   transition: background 0.5s;
@@ -33,6 +34,9 @@ const PageBtn = styled.button`
   padding: 5px 10px;
   font-size: 15px;
   outline: none;
+  &:first-child{
+    border-left: 1px solid ${({ theme }) => theme.primary}
+  }
 `;
 
 export default ProjectPagination;

@@ -32,16 +32,16 @@ class ProjectCard extends Component {
 
     return (
       <StyledCard onClick={() => followUrl(projectUrl)} data-aos="fade-up">
-        <Wrapper
+        <CardWrapper
           imgUrl={imgUrl}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}>
           {this.renderOverlayLink()}
-          <Info active={this.state.active}>
+          <CardBody active={this.state.active}>
             <CardTitle>{title}</CardTitle>
             <CardText>{description}</CardText>
-          </Info>
-        </Wrapper>
+          </CardBody>
+        </CardWrapper>
       </StyledCard>
     );
   }
@@ -55,7 +55,7 @@ const StyledCard = styled.div`
   cursor: pointer;
 `;
 
-const Wrapper = styled.div`
+const CardWrapper = styled.div`
   height: 100%;
   background: url(${({ imgUrl }) => imgUrl}) center center/contain no-repeat;
   position: relative;
@@ -63,7 +63,7 @@ const Wrapper = styled.div`
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
 `;
 
-const Info = styled.div`
+const CardBody = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -79,10 +79,14 @@ const Info = styled.div`
 
 const CardTitle = styled.h4`
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 const CardText = styled.p`
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 const StyledLink = styled.a`
