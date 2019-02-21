@@ -2,7 +2,7 @@
     "projects": [
         {
             "title": "Mars Rovers Image Browser",
-            "imgUrl": "https://i.postimg.cc/FsxFqGj5/mars-rovers.jpg",
+            "imgUrl": "https://i.postimg.cc/GpcBnXQw/mars-rovers.jpg",
             "projectUrl": "http://ryasan86.github.io/mars_rovers",
             "description": "react | redux",
             "type": "Full Stack"
