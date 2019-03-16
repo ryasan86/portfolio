@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { flexCenter } from './../utils';
-// components
+
 import ContactForm from './../components/ContactForm';
 import Footer from './../components/Footer';
 import { Section, SectionContent } from './../components/common';
 import { H2, P } from './../components/text';
+import { flexCenter } from './../utils';
 
 class Contact extends Component {
   handleRef = contactSec => this.props.getOffsetTop(contactSec);
@@ -17,7 +17,6 @@ class Contact extends Component {
         <NormalText>Have a question or want to work together?</NormalText>
         <ContactForm />
       </ContactContent>
-
       <Footer />
     </ContactSection>
   );

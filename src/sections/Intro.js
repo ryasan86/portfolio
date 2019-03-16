@@ -2,20 +2,19 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Typist from 'react-typist';
 import { lighten } from 'polished';
-import { flexCenter } from './../utils';
-import Icons from './../images';
-// components
+
 import {
   Section,
   SectionContent,
   ScrollFooter,
   ScrollBtn
 } from './../components/common';
+import Icons from './../images';
+import { flexCenter } from './../utils';
 
 class Intro extends Component {
   render = () => (
     <IntroSection id={this.props.id}>
-
       <IntroContent>
         <LargeText data-aos="fade-down">HELLO</LargeText>
         <MediumText data-aos="fade-left">I'M RYAN</MediumText>
@@ -25,7 +24,6 @@ class Intro extends Component {
           <TypistText>ESIGN</TypistText>
         </Typist>
       </IntroContent>
-
       <ScrollFooter>
         <ScrollBtn to="About" label="About" icon={Icons.downArrow} />
       </ScrollFooter>

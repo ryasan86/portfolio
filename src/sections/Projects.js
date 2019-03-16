@@ -62,7 +62,7 @@ class Projects extends Component {
         data-offset-id={`${id}OffsetTop`}
         ref={this.handleSectionRef}>
         <ProjectsContent data-aos="fade-up">
-          <h2 className="title">Projects</h2>
+          <h2>Projects</h2>
           <ProjectCategoryTabs
             handleCategoryClick={this.handleCategoryClick}
             activeTab={activeTab}
@@ -99,7 +99,7 @@ const ProjectsContent = styled(SectionContent)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  & > .title {
+  & > h2 {
     color: ${({ theme }) => theme.primary};
     display: flex;
     justify-content: center;
