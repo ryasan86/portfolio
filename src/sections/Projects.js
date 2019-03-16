@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { projects } from './../data.json';
-import { getPageChunk } from './../utils';
-import { PROJECT_TYPES } from './../constants';
+
 import Icons from './../images';
-// components
 import ProjectList from './../components/ProjectList';
 import ProjectCategoryTabs from './../components/ProjectCategoryTabs';
 import ProjectPagination from './../components/ProjectPagination';
@@ -14,7 +11,9 @@ import {
   ScrollBtn,
   SectionContent
 } from './../components/common';
-import { P } from './../components/text';
+import { projects } from './../data.json';
+import { getPageChunk } from './../utils';
+import { PROJECT_TYPES } from './../constants';
 
 class Projects extends Component {
   state = {
@@ -29,7 +28,9 @@ class Projects extends Component {
   handleCategoryClick = tabId => {
     this.setState({ activeTab: tabId }, () => {
       const { title } = PROJECT_TYPES[this.state.activeTab];
-      const projectList = projects.filter(({ type }) => type === title || title === 'All' );
+      const projectList = projects.filter(
+        ({ type }) => type === title || title === 'All'
+      );
 
       this.setState({
         projectsByCategory: projectList,
@@ -53,26 +54,26 @@ class Projects extends Component {
       activePageBtn,
       projectsByCategory
     } = this.state;
-    const { id } = this.props;
+    const id = this.props.id;
 
     return (
       <ProjectsSection
         id={id}
         data-offset-id={`${id}OffsetTop`}
         ref={this.handleSectionRef}>
-
         <ProjectsContent data-aos="fade-up">
-          <ProjectsTitle>Projects</ProjectsTitle>
+          <h2 className="title">Projects</h2>
           <ProjectCategoryTabs
             handleCategoryClick={this.handleCategoryClick}
-            activeTab={activeTab} />
+            activeTab={activeTab}
+          />
           <ProjectList projects={pageChunk} />
           <ProjectPagination
             setActivePage={this.setActivePage}
             activePageBtn={activePageBtn}
-            projectsByCategory={projectsByCategory} />
+            projectsByCategory={projectsByCategory}
+          />
         </ProjectsContent>
-
         <ScrollFooter>
           <ScrollBtn to="Contact" label="Contact" icon={Icons.downArrow} />
         </ScrollFooter>
@@ -98,14 +99,12 @@ const ProjectsContent = styled(SectionContent)`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const ProjectsTitle = styled(P)`
-  color: ${({ theme }) => theme.primary};
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
-  margin: 2% 0;
+  & > .title {
+    color: ${({ theme }) => theme.primary};
+    display: flex;
+    justify-content: center;
+    margin: 2% 0;
+  }
 `;
 
 export default Projects;

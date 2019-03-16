@@ -6,12 +6,9 @@ import { BG_1, BG_2, SECTIONS } from './constants';
 
 class App extends Component {
   state = {
-    bg: null,
-    desktopStyles: null,
-    mobileStyles: null,
+    bgSettings: {},
     AboutOffsetTop: 0,
-    ProjectsOffsetTop: 0,
-    ContactOffsetTop: 0
+    ProjectsOffsetTop: 0
   };
 
   componentDidMount = () => {
@@ -20,23 +17,17 @@ class App extends Component {
 
   // change background depending on where the user has scrolled
   listenForBGChange = () => {
-    const {
-      bg,
-      AboutOffsetTop,
-      ProjectsOffsetTop,
-      ContactOffsetTop
-    } = this.state;
-    let bgSettings = {};
+    const { bgSettings, AboutOffsetTop, ProjectsOffsetTop } = this.state;
 
-    if (window.scrollY <= AboutOffsetTop && bg !== BG_1) {
-      bgSettings = { ...BG_1 };
-    } else if (window.scrollY <= ProjectsOffsetTop && bg !== BG_2) {
-      bgSettings = { ...BG_2 };
-    } else if (window.scrollY <= ContactOffsetTop && !bg) {
-      bgSettings = { bg: null, desktopStyles: null, mobileStyles: null };
+    if (window.scrollY <= AboutOffsetTop && bgSettings.bg !== BG_1.bg) {
+      this.setState({ bgSettings: BG_1 });
+    } else if (
+      window.scrollY > AboutOffsetTop &&
+      window.scrollY <= ProjectsOffsetTop &&
+      bgSettings.bg !== BG_2.bg
+    ) {
+      this.setState({ bgSettings: BG_2 });
     }
-
-    this.setState({ ...bgSettings });
   };
 
   getOffsetTop = el => {
@@ -51,15 +42,10 @@ class App extends Component {
     ));
 
   render = () => {
-    const { bg, desktopStyles, mobileStyles } = this.state;
     return (
       <AppWrap>
         <Header />
-        <Parallax
-          bg={bg}
-          desktopStyles={desktopStyles}
-          mobileStyles={mobileStyles}
-        />
+        <Parallax {...this.state.bgSettings} />
         {this.renderSections()}
       </AppWrap>
     );

@@ -11,11 +11,7 @@ class Contact extends Component {
   handleRef = contactSec => this.props.getOffsetTop(contactSec);
 
   render = () => (
-    <ContactSection
-      id={this.props.id}
-      data-offset-id={`${this.props.id}OffsetTop`}
-      ref={this.handleRef}>
-
+    <ContactSection id={this.props.id} ref={this.handleRef}>
       <ContactContent>
         <LargeText>Contact</LargeText>
         <NormalText>Have a question or want to work together?</NormalText>
