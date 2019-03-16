@@ -11,15 +11,14 @@ const SECTIONS = [
 ];
 
 const BG_1 = {
-  imgUrl: 'https://i.postimg.cc/1tYMscJb/codeBG2.png',
+  bg: 'https://i.postimg.cc/8PQ3WSd8/codeBG3.png',
   desktopStyles: `background-repeat: repeat;
-                  filter: blur(2px);
-                  -webkit-filter: blur(2px);`,
+                  background-position: left center`,
   mobileStyles: `background-repeat: repeat;
                  background-size: contain;`
 };
 const BG_2 = {
-  imgUrl: 'https://i.postimg.cc/FRkXXJ7D/webdev.png',
+  bg: 'https://i.postimg.cc/FRkXXJ7D/webdev.png',
   desktopStyles: 'background-repeat: no-repeat;',
   mobileStyles: `background-repeat: no-repeat;
                  background-size: contain;`

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-// import Waypoint from 'react-waypoint';
-import { BG_1, BG_2, SECTIONS } from './constants';
-// components
+
 import Header from './components/Header';
+import { BG_1, BG_2, SECTIONS } from './constants';
 
 class App extends Component {
   state = {
@@ -19,7 +18,7 @@ class App extends Component {
     window.addEventListener('scroll', this.listenForBGChange);
   };
 
-  // change parallax background depending on how far down user has scrolled
+  // change background depending on where the user has scrolled
   listenForBGChange = () => {
     const {
       bg,
@@ -27,26 +26,22 @@ class App extends Component {
       ProjectsOffsetTop,
       ContactOffsetTop
     } = this.state;
+    let bgSettings = {};
+
     if (window.scrollY <= AboutOffsetTop && bg !== BG_1) {
-      this.setState({
-        bg: BG_1.imgUrl,
-        desktopStyles: BG_1.desktopStyles,
-        mobileStyles: BG_1.mobileStyles
-      });
+      bgSettings = { ...BG_1 };
     } else if (window.scrollY <= ProjectsOffsetTop && bg !== BG_2) {
-      this.setState({
-        bg: BG_2.imgUrl,
-        desktopStyles: BG_2.desktopStyles,
-        mobileStyles: BG_2.mobileStyles
-      });
+      bgSettings = { ...BG_2 };
     } else if (window.scrollY <= ContactOffsetTop && !bg) {
-      this.setState({ bg: null, desktopStyles: null, mobileStyles: null });
+      bgSettings = { bg: null, desktopStyles: null, mobileStyles: null };
     }
+
+    this.setState({ ...bgSettings });
   };
 
   getOffsetTop = el => {
-    const { offsetId } = el.dataset;
-    const { offsetTop } = el;
+    const offsetId = el.dataset.offsetId;
+    const offsetTop = el.offsetTop;
     this.setState({ [offsetId]: offsetTop });
   };
 
@@ -63,7 +58,8 @@ class App extends Component {
         <Parallax
           bg={bg}
           desktopStyles={desktopStyles}
-          mobileStyles={mobileStyles} />
+          mobileStyles={mobileStyles}
+        />
         {this.renderSections()}
       </AppWrap>
     );
