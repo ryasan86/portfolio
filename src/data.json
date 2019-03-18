@@ -24,7 +24,7 @@
         {
             "title": "PokeDex",
             "imgUrl": "https://s20.postimg.cc/hbej6k5t9/pokemon.jpg",
-            "projectUrl": "http://138.68.245.105",
+            "projectUrl": "https://pokedex-prod.herokuapp.com/",
             "description": "react | redux | nodejs | express",
             "type": "Full Stack"
         },
