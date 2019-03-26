@@ -2,7 +2,7 @@
     "projects": [
         {
             "title": "Sick Fits",
-            "imgUrl": "https://i.postimg.cc/T3F3bpvv/sickfits.jpg",
+            "imgUrl": "https://i.postimg.cc/C5hMj2hW/sickfits.jpg",
             "projectUrl": "https://sick-fits-next-prod-rs.herokuapp.com/",
             "description": "react | graphql | next.js",
             "type": "Full Stack"
