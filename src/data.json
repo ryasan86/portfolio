@@ -1,6 +1,13 @@
 {
     "projects": [
         {
+            "title": "Sick Fits",
+            "imgUrl": "https://i.postimg.cc/T3F3bpvv/sickfits.jpg",
+            "projectUrl": "https://sick-fits-next-prod-rs.herokuapp.com/",
+            "description": "react | graphql | next.js",
+            "type": "Full Stack"
+        },
+        {
             "title": "Mars Rovers Image Browser",
             "imgUrl": "https://i.postimg.cc/GpcBnXQw/mars-rovers.jpg",
             "projectUrl": "http://ryasan86.github.io/mars_rovers",
