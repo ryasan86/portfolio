@@ -13,7 +13,7 @@ import { flexCenter } from './../utils';
 
 class Intro extends Component {
   render = () => (
-    <IntroSection id={this.props.id}>
+    <Section id={this.props.id}>
       <IntroBG />
       <IntroContent>
         <LargeText data-aos="fade-down">HELLO</LargeText>
@@ -27,13 +27,9 @@ class Intro extends Component {
       <ScrollFooter>
         <ScrollBtn to="About" label="About" icon={Icons.downArrow} />
       </ScrollFooter>
-    </IntroSection>
+    </Section>
   );
 }
-
-const IntroSection = styled(Section)`
-  /* position: absolute; */
-`;
 
 const IntroContent = styled(SectionContent)`
   color: ${({ theme }) => theme.light};
