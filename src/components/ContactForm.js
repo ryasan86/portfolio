@@ -41,39 +41,38 @@ class ContactForm extends Component {
     this.setState({ [name]: value }, this.validateForm);
   };
 
-  render = () => {
-    return (
-      <Form>
-        <Input
-          placeholder="Name"
-          name="name"
-          type="text"
-          value={this.state.name}
-          onChange={this.handleChange} />
-        <Input
-          placeholder="Email"
-          name="email"
-          type="text"
-          value={this.state.email}
-          onChange={this.handleChange}
-          required />
-        <TextArea
-          placeholder="Message"
-          name="message"
-          rows={10}
-          value={this.state.message}
-          onChange={this.handleChange}
-          required />
-        <BtnContainer>
-          <SubmitBtn
-            onClick={this.handleSubmit}
-            disabled={!this.state.validForm}>
-            Submit
-          </SubmitBtn>
-        </BtnContainer>
-      </Form>
-    );
-  };
+  render = () => (
+    <Form>
+      <Input
+        placeholder="Name"
+        name="name"
+        type="text"
+        value={this.state.name}
+        onChange={this.handleChange}
+      />
+      <Input
+        placeholder="Email"
+        name="email"
+        type="text"
+        value={this.state.email}
+        onChange={this.handleChange}
+        required
+      />
+      <TextArea
+        placeholder="Message"
+        name="message"
+        rows={10}
+        value={this.state.message}
+        onChange={this.handleChange}
+        required
+      />
+      <BtnContainer>
+        <SubmitBtn onClick={this.handleSubmit} disabled={!this.state.validForm}>
+          Submit
+        </SubmitBtn>
+      </BtnContainer>
+    </Form>
+  );
 }
 
 const BtnContainer = styled.div`

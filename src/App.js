@@ -15,6 +15,10 @@ class App extends Component {
     window.addEventListener('scroll', this.listenForBGChange);
   };
 
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.listenForBGChange);
+  };
+
   // change background depending on where the user has scrolled
   listenForBGChange = () => {
     const { bgSettings, AboutOffsetTop, ProjectsOffsetTop } = this.state;

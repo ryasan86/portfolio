@@ -9,7 +9,6 @@ import { links } from './../data.json';
 import { ScrollBtn, Logo } from './common';
 
 class Footer extends Component {
-
   renderLinks = () => (
     <LogoContainer>
       {links.map(({ name, url }, i) => (
@@ -22,23 +21,17 @@ class Footer extends Component {
 
   render = () => (
     <FooterWrap>
-
       <BtnContainer>
         <ScrollBtn to="Intro" icon={Icons.upArrow} styles={ScrollBtnStyles} />
       </BtnContainer>
-
       {this.renderLinks()}
-
       <TextContainer>
         <NormalText>RYAN SANTOS</NormalText>
         <NormalText>
           portfolio{' '}
-          <RepoLink onClick={() => followUrl(PORTFOLIO_REPO)}>
-            repo
-          </RepoLink>
+          <RepoLink onClick={() => followUrl(PORTFOLIO_REPO)}>repo</RepoLink>
         </NormalText>
       </TextContainer>
-
     </FooterWrap>
   );
 }
