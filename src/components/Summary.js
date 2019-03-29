@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { summary } from './../data.json';
 
 import { P } from './../components/text';
-import { flexCenter } from '../utils/flexCenter.js';
 
 class Summary extends Component {
   render = () => (
