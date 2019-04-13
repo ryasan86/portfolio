@@ -35,6 +35,7 @@ const ContactContent = styled(SectionContent)`
   flex-direction: column;
   min-width: 50%;
   height: calc(80% - ${({ theme }) => theme.headerHeight});
+  overflow: scroll;
 `;
 
 const LargeText = styled(H2)`

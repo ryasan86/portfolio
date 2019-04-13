@@ -1,37 +1,28 @@
 import React, { Component } from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { darken, lighten } from 'polished';
+import { darken } from 'polished';
 import { flexCenter, followUrl } from './../utils';
 import Icons from './../images';
-import { PORTFOLIO_REPO } from './../constants';
 import { links } from './../data.json';
 // components
 import { ScrollBtn, Logo } from './common';
 
 class Footer extends Component {
-  renderLinks = () => (
-    <LogoContainer>
-      {links.map(({ name, url }, i) => (
-        <LogoLink key={i} onClick={() => followUrl(url)}>
-          <FooterLogo src={Icons[name]} />
-        </LogoLink>
-      ))}
-    </LogoContainer>
-  );
-
   render = () => (
     <FooterWrap>
-      <BtnContainer>
+      <div className="btn-container">
         <ScrollBtn to="Intro" icon={Icons.upArrow} styles={ScrollBtnStyles} />
-      </BtnContainer>
-      {this.renderLinks()}
-      <TextContainer>
+      </div>
+      <div className="logo-container">
+        {links.map(({ name, url }, i) => (
+          <LogoLink key={i} onClick={() => followUrl(url)}>
+            <FooterLogo src={Icons[name]} />
+          </LogoLink>
+        ))}
+      </div>
+      <div className="txt-container">
         <NormalText>RYAN SANTOS</NormalText>
-        <NormalText>
-          portfolio{' '}
-          <RepoLink onClick={() => followUrl(PORTFOLIO_REPO)}>repo</RepoLink>
-        </NormalText>
-      </TextContainer>
+      </div>
     </FooterWrap>
   );
 }
@@ -44,6 +35,22 @@ const FooterWrap = styled.div`
   position: absolute;
   bottom: 0;
   flex-direction: column;
+  .btn-container {
+    ${flexCenter};
+  }
+  .logo-container {
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    margin: 2%;
+  }
+  .txt-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+  }
 `;
 
 const ScrollBtnStyles = css`
@@ -64,32 +71,8 @@ const ScrollBtnStyles = css`
   }
 `;
 
-const BtnContainer = styled.div`
-  ${flexCenter};
-`;
-
-const LogoContainer = styled.div`
-  width: 10%;
-  display: flex;
-  justify-content: space-around;
-  margin: 2%;
-`;
-
-const TextContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-`;
-
 const LogoLink = styled.a`
   margin: 0 15%;
-`;
-
-const RepoLink = styled.a`
-  color: ${({ theme }) => lighten(0.1, theme.secondary)};
-  cursor: pointer;
 `;
 
 const wobble = keyframes`

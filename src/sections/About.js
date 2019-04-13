@@ -11,6 +11,7 @@ import {
   SectionContent
 } from './../components/common';
 import Icons from './../images';
+import { flexCenter } from '../utils';
 
 class About extends Component {
   state = { enteredAbout: false };
@@ -67,9 +68,10 @@ const AboutContent = styled(SectionContent)`
     flex-direction: column;
   }
   & > .summary-container {
+    ${flexCenter}
     width: 60%;
     height: calc(100% - ${({ theme }) => theme.headerHeight});
-    padding: 10%;
+    padding: 0 10%;
     @media only screen and (max-width: 420px) {
       width: 100%;
     }
@@ -80,6 +82,7 @@ const AboutContent = styled(SectionContent)`
     background: ${({ theme }) => theme.dark};
     color: ${({ theme }) => theme.light};
     padding: 2% 13%;
+    overflow: scroll;
     @media only screen and (max-width: 420px) {
       width: 100%;
     }

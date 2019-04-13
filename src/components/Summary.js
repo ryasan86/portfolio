@@ -19,8 +19,6 @@ class Summary extends Component {
 }
 
 const SummaryWrap = styled.div`
-  height: 100%;
-  min-height: 100vh;
   overflow: scroll;
   @media only screen and (max-width: 350px) {
     display: flex;
@@ -31,10 +29,6 @@ const SummaryWrap = styled.div`
   & > h2 {
     color: ${({ theme }) => theme.primary};
     font-size: 3em;
-    margin-bottom: 10%;
-    @media (min-width: 350px) {
-      margin-top: 20%;
-    }
   }
 `;
 
