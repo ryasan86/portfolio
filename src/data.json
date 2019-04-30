@@ -16,9 +16,9 @@
     },
     {
       "title": "Juice Served Here",
-      "imgUrl": "https://i.postimg.cc/ZRMwt5F3/juice.jpg",
+      "imgUrl": "https://i.postimg.cc/XNp2pnHg/juice-showcase.jpg",
       "projectUrl": "https://ryasan86.github.io/juice_served_here/",
-      "description": "vanillajs | scss",
+      "description": "sass",
       "type": "UI Component"
     },
     {
@@ -50,17 +50,24 @@
       "type": "Game"
     },
     {
+      "title": "Drum Kit",
+      "imgUrl": "https://s15.postimg.cc/mj0w5wmu3/drum_machine.png",
+      "projectUrl": "https://ryasan86.github.io/drum_machine",
+      "description": "react",
+      "type": "Game"
+    },
+    {
       "title": "Music Landing Page",
       "imgUrl": "https://i.postimg.cc/sXznmFNY/music-landing.jpg",
       "projectUrl": "https://codepen.io/ryasan86/full/XOVpOO",
-      "description": "vanillajs",
+      "description": "sass",
       "type": "UI Component"
     },
     {
       "title": "Netflix Login Demo",
       "imgUrl": "https://i.postimg.cc/QCtt6WQg/netflix-login.jpg",
       "projectUrl": "https://codepen.io/ryasan86/full/jdLzVp",
-      "description": "vanillajs",
+      "description": "sass",
       "type": "UI Component"
     },
     {
@@ -76,13 +83,6 @@
       "projectUrl": "https://ryasan86.github.io/street_fighter_selection",
       "description": "react | styled components",
       "type": "UI Component"
-    },
-    {
-      "title": "Drum Kit",
-      "imgUrl": "https://s15.postimg.cc/mj0w5wmu3/drum_machine.png",
-      "projectUrl": "https://ryasan86.github.io/drum_machine",
-      "description": "react",
-      "type": "Game"
     },
     {
       "title": "NotReddit",
@@ -102,7 +102,7 @@
       "title": "Nintendo Switch",
       "imgUrl": "https://i.postimg.cc/HxHXVPYD/nintendo-switch.jpg",
       "projectUrl": "https://codepen.io/ryasan86/pen/zaVXgz",
-      "description": "scss images | pug",
+      "description": "sass images | pug",
       "type": "UI Component"
     }
   ],
