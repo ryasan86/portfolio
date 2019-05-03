@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Header from './components/Header';
-import { BG_1, BG_2, SECTIONS } from './constants';
+import { BG, SECTIONS } from './constants';
+import Parallax from './components/Parallax';
 
 class App extends Component {
   state = {
@@ -23,14 +24,14 @@ class App extends Component {
   listenForBGChange = () => {
     const { bgSettings, AboutOffsetTop, ProjectsOffsetTop } = this.state;
 
-    if (window.scrollY <= AboutOffsetTop && bgSettings.bg !== BG_1.bg) {
-      this.setState({ bgSettings: BG_1 });
+    if (window.scrollY <= AboutOffsetTop && bgSettings.bg) {
+      this.setState({ bgSettings: {} });
     } else if (
       window.scrollY > AboutOffsetTop &&
       window.scrollY <= ProjectsOffsetTop &&
-      bgSettings.bg !== BG_2.bg
+      bgSettings.bg !== BG.bg
     ) {
-      this.setState({ bgSettings: BG_2 });
+      this.setState({ bgSettings: BG });
     }
   };
 
@@ -49,7 +50,7 @@ class App extends Component {
     return (
       <AppWrap>
         <Header />
-        <Parallax {...this.state.bgSettings} />
+        <Parallax bgSettings={this.state.bgSettings} />
         {this.renderSections()}
       </AppWrap>
     );
@@ -58,20 +59,6 @@ class App extends Component {
 
 const AppWrap = styled.div`
   height: 100%;
-`;
-
-const Parallax = styled.div`
-  z-index: -1;
-  background-color: #05070a;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  background: url(${({ bg }) => bg}) center center;
-  ${({ desktopStyles }) => desktopStyles}
-  @media only screen and (max-width: 420px) {
-    ${({ mobileStyles }) => mobileStyles};
-  }
 `;
 
 export default App;

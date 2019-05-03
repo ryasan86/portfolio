@@ -10,7 +10,7 @@ const SECTIONS = [
   { section: 'Contact', Component: Contact }
 ];
 
-const BG_1 = {
+const BG = {
   bg: 'https://i.postimg.cc/8PQ3WSd8/codeBG3.png',
   desktopStyles: `background-repeat: repeat;
                   background-position: left center`,
@@ -33,4 +33,4 @@ const PROJECT_TYPES = [
   { id: 3, title: 'Full Stack' }
 ];
 
-export { BG_1, BG_2, SECTIONS, PORTFOLIO_REPO, GLITCH_BG, PROJECT_TYPES };
+export { BG, BG_2, SECTIONS, PORTFOLIO_REPO, GLITCH_BG, PROJECT_TYPES };
