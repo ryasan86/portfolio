@@ -1,64 +1,40 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import { withController } from 'react-scroll-parallax';
 
-import Header from './components/Header';
-import { BG, SECTIONS } from './constants';
-import Parallax from './components/Parallax';
+import { DataContext } from './providers';
+import AppContainer from './AppStyles';
+import ProgressBar from './components/ProgressBar/ProgressBar';
+import Header from './components/Header/Header';
+import Home from './sections/Home/Home';
+import About from './sections/About/About';
+import Projects from './sections/Projects/Projects';
+import Contact from './sections/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import Link from './components/common/ScrollLink';
 
-class App extends Component {
-  state = {
-    bgSettings: {},
-    AboutOffsetTop: 0,
-    ProjectsOffsetTop: 0
+const App = props => {
+  const handleClick = (e, menuIsOpen, toggleMenu) => {
+    if (e.target.id !== 'sidebar' && menuIsOpen) toggleMenu(false);
   };
 
-  componentDidMount = () => {
-    window.addEventListener('scroll', this.listenForBGChange);
-  };
+  return (
+    <DataContext.Consumer>
+      {({ menuIsOpen, toggleMenu }) => (
+        <AppContainer onClick={e => handleClick(e, menuIsOpen, toggleMenu)}>
+          <ProgressBar />
+          <Header />
+          <Home />
+          <About />
+          <Projects />
+          <Contact />
+          <Footer />
+          <Link to="home" className="go-top">
+            ⬆
+          </Link>
+        </AppContainer>
+      )}
+    </DataContext.Consumer>
+  );
+};
 
-  componentWillUnmount = () => {
-    window.removeEventListener('scroll', this.listenForBGChange);
-  };
-
-  // change background depending on where the user has scrolled
-  listenForBGChange = () => {
-    const { bgSettings, AboutOffsetTop, ProjectsOffsetTop } = this.state;
-
-    if (window.scrollY <= AboutOffsetTop && bgSettings.bg) {
-      this.setState({ bgSettings: {} });
-    } else if (
-      window.scrollY > AboutOffsetTop &&
-      window.scrollY <= ProjectsOffsetTop &&
-      bgSettings.bg !== BG.bg
-    ) {
-      this.setState({ bgSettings: BG });
-    }
-  };
-
-  getOffsetTop = el => {
-    const offsetId = el.dataset.offsetId;
-    const offsetTop = el.offsetTop;
-    this.setState({ [offsetId]: offsetTop });
-  };
-
-  renderSections = () =>
-    SECTIONS.map(({ section, Component }, i) => (
-      <Component id={section} key={i} getOffsetTop={this.getOffsetTop} />
-    ));
-
-  render = () => {
-    return (
-      <AppWrap>
-        <Header />
-        <Parallax bgSettings={this.state.bgSettings} />
-        {this.renderSections()}
-      </AppWrap>
-    );
-  };
-}
-
-const AppWrap = styled.div`
-  height: 100%;
-`;
-
-export default App;
+export default withController(App);

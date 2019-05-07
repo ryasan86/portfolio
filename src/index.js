@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
-// theme provider
-import { ThemeProvider } from 'styled-components';
-import theme from './theme';
-// components
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+import Providers from './providers';
 import App from './App';
 
-const WRAPPED_APP = (
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>
-);
+AOS.init({ duration: 800, easing: 'slide' });
 
-ReactDOM.render(WRAPPED_APP, document.getElementById('root'));
+ReactDOM.render(
+  <Providers>
+    <App />
+  </Providers>,
+  document.getElementById('root'),
+);

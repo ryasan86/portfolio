@@ -1,36 +1,61 @@
-import Intro from './sections/Intro';
-import About from './sections/About';
-import Projects from './sections/Projects';
-import Contact from './sections/Contact';
+import {
+  SickFitsImg,
+  MarsBrowserImg,
+  JuiceImg,
+  SimonImg,
+} from './assets/images';
 
-const SECTIONS = [
-  { section: 'Intro', Component: Intro },
-  { section: 'About', Component: About },
-  { section: 'Projects', Component: Projects },
-  { section: 'Contact', Component: Contact }
+const projects = [
+  {
+    title: 'Sick Fits',
+    img: SickFitsImg,
+    url: 'https://sick-fits-next-prod-rs.herokuapp.com/',
+    tools: ['React', 'GraphQL', 'NextJS'],
+    description:
+      'Ecommerce application complete with authentication, search autocomplete, and Stripe checkout',
+    type: 'Full Stack',
+  },
+  {
+    title: 'Mars Rovers Image Browser',
+    img: MarsBrowserImg,
+    url: 'http://ryasan86.github.io/mars_rovers',
+    tools: ['React', 'Redux'],
+    description: 'Check out photos taken from the 3 rovers on Mars',
+    type: 'Full Stack',
+  },
+  {
+    title: 'Simon Says',
+    img: SimonImg,
+    url: 'https://ryasan86.github.io/simon',
+    tools: ['React', 'Redux', 'Styled-Components'],
+    description: 'Data flow management with async functions',
+    type: 'Game',
+  },
+  {
+    title: 'Juice Served Here',
+    img: JuiceImg,
+    url: 'https://ryasan86.github.io/juice_served_here/',
+    tools: ['SASS'],
+    description: 'Fully responsive UI design using SASS',
+    type: 'UI Component',
+  },
 ];
 
-const BG = {
-  bg: 'https://i.postimg.cc/8PQ3WSd8/codeBG3.png',
-  desktopStyles: `background-repeat: repeat;
-                  background-position: left center`,
-  mobileStyles: `background-repeat: repeat;
-                 background-size: contain;`
-};
-const BG_2 = {
-  bg: 'https://i.postimg.cc/FRkXXJ7D/webdev.png',
-  desktopStyles: 'background-repeat: no-repeat;',
-  mobileStyles: `background-repeat: no-repeat;
-                 background-size: contain;`
-};
-
-const PORTFOLIO_REPO = 'https://github.com/ryasan86/portfolio';
-const GLITCH_BG = 'https://i.postimg.cc/7hCRc1FY/coding-1853305-1280.jpg';
-const PROJECT_TYPES = [
-  { id: 0, title: 'All' },
-  { id: 1, title: 'UI Component' },
-  { id: 2, title: 'Game' },
-  { id: 3, title: 'Full Stack' }
+const socials = [
+  {
+    name: 'github',
+    url: 'https://github.com/ryasan86',
+  },
+  {
+    name: 'codepen',
+    url: 'https://codepen.io/ryasan86/',
+  },
+  {
+    name: 'linkedin',
+    url: 'https://www.linkedin.com/in/ryasan86/',
+  },
 ];
 
-export { BG, BG_2, SECTIONS, PORTFOLIO_REPO, GLITCH_BG, PROJECT_TYPES };
+const portfolioRepo = 'https://github.com/ryasan86/portfolio';
+
+export { projects, socials, portfolioRepo };
