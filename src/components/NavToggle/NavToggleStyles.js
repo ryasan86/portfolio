@@ -13,7 +13,7 @@ const NavToggleContainer = styled.div`
   /* open nav toggle */
   i.open {
     position: relative;
-    width: 40px;
+    width: 4rem;
     height: 2px;
     color: ${props => props.theme.black};
     background: ${props => props.theme.white};
@@ -25,7 +25,7 @@ const NavToggleContainer = styled.div`
     &:before,
     &:after {
       content: '';
-      width: 40px;
+      width: 4rem;
       height: 2px;
       background: ${props => props.theme.white};
       position: absolute;
@@ -54,15 +54,15 @@ const NavToggleContainer = styled.div`
   /* close nav toggle */
   i.close {
     position: relative;
-    width: 32px;
-    height: 32px;
+    width: 3.2rem;
+    height: 3.2rem;
     &:before,
     &:after {
       position: absolute;
-      left: 15px;
+      left: 1.5rem;
       content: ' ';
-      height: 33px;
-      width: 2px;
+      height: 3.3rem;
+      width: 0.2rem;
       background: ${props => props.theme.white};
     }
     &:before {

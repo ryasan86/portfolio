@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import device from '../../styles/device';
 
 const HomeContainer = styled.section`
-  height: 100vh;
   display: flex;
   flex-direction: column;
 

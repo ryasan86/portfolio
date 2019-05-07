@@ -30,8 +30,8 @@ const FooterContainer = styled.footer`
     display: flex;
     margin: 0 0 40px 0;
     li {
-      width: 60px;
-      height: 60px;
+      width: 6rem;
+      height: 6rem;
       padding: 15px;
       background: red;
       border-radius: 50%;

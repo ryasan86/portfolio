@@ -12,6 +12,7 @@ const ProjectItemContainer = styled.li`
 
   .parallax {
     grid-column: ${props => (props.idx % 2) + 1};
+    z-index: 1;
     @media ${device.tablet} {
       grid-column: 1;
     }
@@ -27,8 +28,10 @@ const ProjectItemContainer = styled.li`
   }
 
   .text {
-    padding: 7% 0;
     padding: 15%;
+    @media ${device.mobileL} {
+      padding: 25px 0;
+    }
     h4 {
       margin: 0;
       font-weight: 200;

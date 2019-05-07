@@ -18,7 +18,7 @@ const HeaderContainer = styled.header`
 
   .navbar-brand {
     .logo {
-      font-size: 20px;
+      font-size: 2rem;
       text-transform: uppercase;
       color: ${props => props.theme.white};
       font-weight: 400;
@@ -28,8 +28,8 @@ const HeaderContainer = styled.header`
       display: flex;
       align-items: center;
       .logo-img {
-        width: 50px;
-        height: 50px;
+        width: 5rem;
+        height: 5rem;
         border-radius: 50%;
         background: url(${LogoImg}) center center/cover no-repeat;
         margin-right: 15px;

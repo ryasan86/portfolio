@@ -44,8 +44,8 @@ const AppContainer = styled.div`
   .go-top {
     position: fixed;
     z-index: 9999;
-    width: 60px;
-    height: 60px;
+    width: 6rem;
+    height: 6rem;
     margin: 30px;
     bottom: 0;
     right: 0;

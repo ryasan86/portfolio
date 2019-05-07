@@ -1,10 +1,10 @@
 import styled from 'styled-components';
+import device from '../../styles/device';
 
 const ContactContainer = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 7em;
   z-index: 1;
 
   .contact-content {
@@ -13,6 +13,10 @@ const ContactContainer = styled.section`
     max-width: 600px;
     padding: 50px;
     background: #0c0c0c;
+    @media ${device.mobileL} {
+      padding: 0;
+    }
+
     h3 {
       font-size: 1.4rem;
       text-transform: uppercase;

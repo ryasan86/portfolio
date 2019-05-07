@@ -4,9 +4,6 @@ import { Me } from './../../assets/images';
 import device from '../../styles/device';
 
 const AboutContainer = styled.section`
-  padding: 0 5%;
-  /* overflow-x: hidden; */
-
   .inner {
     position: relative;
     max-width: ${props => props.theme.maxContentWidth};
@@ -15,10 +12,6 @@ const AboutContainer = styled.section`
     z-index: 1;
     @media ${device.tablet} {
       grid-template-columns: none;
-      /* display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
     }
   }
 
@@ -29,17 +22,17 @@ const AboutContainer = styled.section`
     margin-right: 100px;
     @media ${device.tablet} {
       margin: 0;
-      width: 100%;
-      height: 500px;
-    }
-    @media ${device.mobileL} {
-      height: 300px;
+      height: 400px;
     }
   }
 
   .about-desc {
     padding: 50px;
     position: relative;
+    @media ${device.mobileL} {
+      padding: 50px 0;
+    }
+
     h1 {
       position: absolute;
       top: -220px;
@@ -62,6 +55,9 @@ const AboutContainer = styled.section`
         margin: 0 0 50px 0;
         font-weight: lighter;
         letter-spacing: 1px;
+        @media ${device.tablet} {
+          text-align: center;
+        }
       }
       h5 {
         margin: 0;
@@ -83,8 +79,8 @@ const AboutContainer = styled.section`
     padding: 0;
     margin: 20px 0;
     li {
-      width: 60px;
-      height: 60px;
+      width: 6rem;
+      height: 6rem;
       border-radius: 50%;
       padding: 15px;
       margin-left: 10px;

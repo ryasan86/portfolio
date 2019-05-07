@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import theme from './theme';
 import fonts from './fonts';
+import device from './device';
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -18,6 +19,9 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     font-size: 10px;
+    @media ${device.mobileL} {
+      font-size: 8px;
+    }
   }
 
   /* * {
@@ -64,6 +68,7 @@ const GlobalStyles = createGlobalStyle`
     justify-content: center;
     align-items: center;
     z-index: 10;
+    padding: 7em 2em;
   }
 
   button, .button {
