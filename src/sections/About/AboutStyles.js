@@ -1,18 +1,24 @@
 import styled from 'styled-components';
 
-import Me from './../../assets/images/me.jpg';
+import { Me } from './../../assets/images';
 import device from '../../styles/device';
 
 const AboutContainer = styled.section`
   padding: 0 5%;
+  /* overflow-x: hidden; */
 
   .inner {
     position: relative;
     max-width: ${props => props.theme.maxContentWidth};
     display: grid;
     grid-template-columns: 3fr 4fr;
+    z-index: 1;
     @media ${device.tablet} {
       grid-template-columns: none;
+      /* display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; */
     }
   }
 
@@ -20,10 +26,13 @@ const AboutContainer = styled.section`
     position: relative;
     background: url(${Me}) center center/cover no-repeat;
     height: 100%;
-    margin-right: 150px;
+    margin-right: 100px;
     @media ${device.tablet} {
       margin: 0;
-      display: block;
+      width: 100%;
+      height: 500px;
+    }
+    @media ${device.mobileL} {
       height: 300px;
     }
   }
@@ -41,7 +50,8 @@ const AboutContainer = styled.section`
       font-size: 18rem;
       font-weight: 900;
       color: rgba(255, 255, 255, 0.08);
-      @media ${device.tablet} {
+      overflow: hidden;
+      @media ${device.laptop} {
         display: none;
       }
     }

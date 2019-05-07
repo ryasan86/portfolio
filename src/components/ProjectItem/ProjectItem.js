@@ -1,11 +1,11 @@
 import React from 'react';
-import { Parallax } from 'react-scroll-parallax';
 
 import ProjectItemContainer from './ProjectItemStyles';
+import Parallax from './../Parallax/Parallax';
 
 const ProjectItem = ({ idx, project }) => (
   <ProjectItemContainer idx={idx} img={project.img}>
-    <Parallax className="parallax" y={[80, -80]} styleInner={{ height: '100%' }}>
+    <Parallax className="parallax" y={[80, -80]}>
       <div className="img" />
     </Parallax>
     <div className="text" data-aos="fade-up">
