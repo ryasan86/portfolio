@@ -77,13 +77,13 @@ const AboutContainer = styled.section`
     display: flex;
     list-style-type: none;
     padding: 0;
-    margin: 20px 0;
+    margin: 2rem 0;
     li {
       width: 6rem;
       height: 6rem;
       border-radius: 50%;
-      padding: 15px;
-      margin-left: 10px;
+      padding: 1.5rem;
+      margin-left: 1rem;
       background: rgba(255, 255, 255, 0.05);
       cursor: pointer;
       &:first-child {

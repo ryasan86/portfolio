@@ -23,6 +23,7 @@ const ProjectItemContainer = styled.li`
       @media ${device.tablet} {
         display: block;
         height: 300px;
+        background-position: center center;
       }
     }
   }

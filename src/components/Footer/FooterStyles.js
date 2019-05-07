@@ -32,11 +32,10 @@ const FooterContainer = styled.footer`
     li {
       width: 6rem;
       height: 6rem;
-      padding: 15px;
-      background: red;
+      padding: 1.5rem;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.05);
-      margin: 0 5px;
+      margin: 0 0.5rem;
       cursor: pointer;
       &:hover {
         svg {
