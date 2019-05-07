@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "40b8488af545fe373db2",
-    "url": "/portfolio/static/js/main.40b8488a.chunk.js"
+    "revision": "f83a67ab2fc0715be6c5",
+    "url": "/portfolio/static/js/main.f83a67ab.chunk.js"
   },
   {
     "revision": "2386ccaf2d2c7e3045a2",
@@ -60,7 +60,7 @@ self.__precacheManifest = [
     "url": "/portfolio/static/media/poppins-bold-webfont.13e9632b.woff2"
   },
   {
-    "revision": "d563bab85a53dd790b5d32ab7f730e7b",
+    "revision": "85a5217f230e3af79fa64e4119e125af",
     "url": "/portfolio/index.html"
   }
 ];
