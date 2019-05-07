@@ -60,6 +60,9 @@ const AboutContainer = styled.section`
       p {
         margin: 10px 0 15px 0;
         font-weight: lighter;
+        button {
+          font-size: inherit;
+        }
       }
     }
   }

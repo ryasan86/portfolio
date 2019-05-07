@@ -32,8 +32,15 @@ const About = () => (
             ))}
           </ul>
           <h5>Contact me here!</h5>
-          <p>Email: <a href="#home">ryansantos86@gmail.com</a></p>
-          <p>Phone: <a href="#home">(310)-872-6851</a></p>
+          <p>Email:{' '}             
+            <button
+              className="button-link"
+              onClick={() =>
+                window.location.href = 'mailto:ryansantos86@gmail.com?subject=sup!&body=say hello'
+              }>
+              ryansantos86@gmail.com
+            </button></p>
+          <p>Phone: <button className="button-link">(310)-872-6851</button></p>
         </div>
       </div>
     </div>

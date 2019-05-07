@@ -23,10 +23,12 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Ryan Santos - Full Stack Developer</title>
-    <link
-      href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css"
-      rel="stylesheet"
-    />
+    <style>
+      #root {
+        position: relative;
+        min-height: 500vh;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -41,14 +43,10 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.emailjs.com/sdk/2.1.0/email.min.js"
     ></script>
-    <script>
-      AOS.init({ duration: 750 });
-    </script>
     <script type="text/javascript">
       (function() {
         emailjs.init('%REACT_APP_EMAILJS_USERID%');

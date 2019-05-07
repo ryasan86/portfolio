@@ -68,6 +68,13 @@ const GlobalStyles = createGlobalStyle`
 
   button, .button {
     cursor: pointer;
+    &.button-link {
+      color: ${theme.primary};
+      background: none;
+      border: none;
+      outline: none;
+      padding: 0;
+    }
   }
 `;
 

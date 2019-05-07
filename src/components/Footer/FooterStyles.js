@@ -18,9 +18,6 @@ const FooterContainer = styled.footer`
     }
     p {
       margin: 0;
-      a {
-        color: ${props => props.theme.white};
-      }
     }
     small {
       margin-top: 40px;
@@ -49,19 +46,11 @@ const FooterContainer = styled.footer`
     }
   }
 
-  button {
-    background: none;
-    outline: none;
-    border: none;
-    color: ${props => props.theme.primary};
-    padding: 0;
-    &.mail-button {
-      font-size: 1.8rem;
-      line-height: 1.8;
-      font-weight: 400;
-      letter-spacing: 1px;
-      color: ${props => props.theme.white};
-    }
+  .mail-button {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: ${props => props.theme.white};
   }
 `;
 

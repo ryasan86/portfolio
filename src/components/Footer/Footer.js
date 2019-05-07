@@ -7,7 +7,9 @@ import { socials, portfolioRepo } from '../../constants';
 
 const Footer = () => {
   const repoLink = (
-    <button onClick={() => window.open(portfolioRepo, '_blank').focus()}>
+    <button
+      className="button-link"
+      onClick={() => window.open(portfolioRepo, '_blank').focus()}>
       React
     </button>
   );
@@ -27,7 +29,13 @@ const Footer = () => {
           ))}
         </ul>
         <h2>Contact Me</h2>
-        <button className="mail-button" onClick={() => window.open('mailto:ryansantos86@gmail.com?subject=sup!')}>ryansantos86@gmail.com</button>
+        <button
+          className="button-link mail-button"
+          onClick={() =>
+            window.location.href = 'mailto:ryansantos86@gmail.com?subject=sup!&body=say hello'
+          }>
+          ryansantos86@gmail.com
+        </button>
         <small>Built with <span role="img" aria-label="heart"> ❤️ </span> using {repoLink}</small>
       </div>
     </FooterContainer>
