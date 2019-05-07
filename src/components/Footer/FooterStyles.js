@@ -22,16 +22,8 @@ const FooterContainer = styled.footer`
         color: ${props => props.theme.white};
       }
     }
-
     small {
       margin-top: 40px;
-      button {
-        background: none;
-        outline: none;
-        border: none;
-        color: ${props => props.theme.primary};
-        padding: 0;
-      }
     }
   }
 
@@ -54,6 +46,21 @@ const FooterContainer = styled.footer`
           fill: ${props => props.theme.white};
         }
       }
+    }
+  }
+
+  button {
+    background: none;
+    outline: none;
+    border: none;
+    color: ${props => props.theme.primary};
+    padding: 0;
+    &.mail-button {
+      font-size: 1.8rem;
+      line-height: 1.8;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: ${props => props.theme.white};
     }
   }
 `;

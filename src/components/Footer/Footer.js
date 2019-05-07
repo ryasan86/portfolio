@@ -27,9 +27,7 @@ const Footer = () => {
           ))}
         </ul>
         <h2>Contact Me</h2>
-        <p>
-          <a href="#home">ryansantos86@gmail.com</a>
-        </p>
+        <button className="mail-button" onClick={() => window.open('mailto:ryansantos86@gmail.com?subject=sup!')}>ryansantos86@gmail.com</button>
         <small>Built with <span role="img" aria-label="heart"> ❤️ </span> using {repoLink}</small>
       </div>
     </FooterContainer>
