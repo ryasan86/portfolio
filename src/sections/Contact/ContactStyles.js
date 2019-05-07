@@ -61,6 +61,14 @@ const ContactContainer = styled.section`
         padding: 20px 0;
         text-transform: uppercase;
         letter-spacing: ${props => props.theme.letterSpacing};
+        border: 2px solid ${props => props.theme.primary};
+        &:disabled {
+          cursor: not-allowed;
+        }
+        &:active {
+          background: ${props => props.theme.white};
+          color: ${props => props.theme.primary};
+        }
       }
     }
   }

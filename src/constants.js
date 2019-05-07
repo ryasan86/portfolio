@@ -10,7 +10,7 @@ const projects = [
     title: 'Sick Fits',
     img: SickFitsImg,
     url: 'https://sick-fits-next-prod-rs.herokuapp.com/',
-    tools: ['React', 'GraphQL', 'NextJS'],
+    tools: ['React', 'GraphQL', 'NextJS', 'Prisma'],
     description:
       'Ecommerce application complete with authentication, search autocomplete, and Stripe checkout',
     type: 'Full Stack',
