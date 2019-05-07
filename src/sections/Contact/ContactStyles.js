@@ -14,7 +14,7 @@ const ContactContainer = styled.section`
     padding: 50px;
     background: #0c0c0c;
     @media ${device.mobileL} {
-      padding: 0;
+      padding: 15px;
     }
 
     h3 {
@@ -58,7 +58,7 @@ const ContactContainer = styled.section`
         font-size: inherit;
         outline: none;
         border: none;
-        margin: 30px 0;
+        margin-top: 3rem;
         width: 100%;
         background: ${props => props.theme.primary};
         color: ${props => props.theme.white};

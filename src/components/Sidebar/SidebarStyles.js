@@ -8,7 +8,7 @@ const SidebarContainer = styled.nav`
   line-height: 1.846;
   padding: 3.6rem 3rem 3.6rem 3.6rem;
   height: 100%;
-  width: 300px;
+  width: 30rem;
   position: fixed;
   right: 0;
   top: 0;
@@ -32,7 +32,7 @@ const SidebarContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     h4 {
-      margin: 30px 0;
+      margin: 4rem 0;
       font-weight: 200;
       letter-spacing: ${props => props.theme.letterSpacing};
       font-size: 1.3rem;
@@ -44,10 +44,10 @@ const SidebarContainer = styled.nav`
   ul {
     list-style-type: none;
     padding-left: 0;
-    margin-top: 50px;
+    margin-top: 5rem;
     li {
       display: flex;
-      margin: 20px 0;
+      margin: 2rem 0;
       a {
         color: ${props => props.theme.white};
         width: 100%;

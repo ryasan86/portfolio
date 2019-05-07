@@ -4,7 +4,7 @@ const ProgressBarContainer = styled.div`
   position: fixed;
   z-index: 100;
   width: 100%;
-  height: 8px;
+  height: 0.8rem;
 `;
 
 const ProgressBar = styled.div.attrs(({ scrollPct }) => ({
