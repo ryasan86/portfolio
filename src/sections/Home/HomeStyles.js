@@ -1,11 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import device from '../../styles/device';
+
+const blink = keyframes`
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+`;
 
 const HomeContainer = styled.section`
   display: flex;
   flex-direction: column;
 
-  div {
+  .inner {
     text-align: center;
     color: ${props => props.theme.white};
     display: flex;
@@ -23,17 +29,19 @@ const HomeContainer = styled.section`
       text-transform: uppercase;
     }
 
-    h1 {
-      font-size: 5.5rem;
-      color: ${props => props.theme.white};
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 10px;
-      display: inline-block;
-      position: relative;
-      margin: 0;
-      @media ${device.tablet} {
-        font-size: 4rem;
+    .typist-container {
+      h1 {
+        display: inline-block;
+        font-size: 5.5rem;
+        color: ${props => props.theme.white};
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+        position: relative;
+        margin: 0;
+        @media ${device.tablet} {
+          font-size: 4rem;
+        }
       }
     }
 

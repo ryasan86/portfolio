@@ -1,5 +1,6 @@
 import React from 'react';
 import { withController } from 'react-scroll-parallax';
+import { css } from 'styled-components';
 
 import { DataContext } from './providers';
 import AppContainer from './AppStyles';
@@ -11,6 +12,8 @@ import Projects from './sections/Projects/Projects';
 import Contact from './sections/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Link from './components/common/ScrollLink';
+import Icon from './components/Icons';
+import theme from './styles/theme';
 
 const App = props => {
   const handleClick = (e, menuIsOpen, toggleMenu) => {
@@ -29,12 +32,16 @@ const App = props => {
           <Contact />
           <Footer />
           <Link to="home" className="go-top">
-            ⬆
+            <Icon name="upArrow" css={iconStyles} />
           </Link>
         </AppContainer>
       )}
     </DataContext.Consumer>
   );
 };
+
+const iconStyles = css`
+  fill: ${theme.textColor};
+`;
 
 export default withController(App);

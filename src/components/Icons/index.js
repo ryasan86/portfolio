@@ -3,6 +3,7 @@ import React from 'react';
 import Github from './Github';
 import Codepen from './Codepen';
 import Linkedin from './Linkedin';
+import UpArrow from './UpArrow';
 
 const Icon = props => {
   switch (props.name) {
@@ -12,6 +13,8 @@ const Icon = props => {
       return <Codepen {...props} />;
     case 'linkedin':
       return <Linkedin {...props} />;
+    case 'upArrow':
+      return <UpArrow {...props} />;
     default:
       return;
   }

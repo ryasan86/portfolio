@@ -55,6 +55,7 @@ const AppContainer = styled.div`
     color: rgba(255, 255, 255, 0.6);
     background: #262626;
     font-size: 2.5rem;
+    padding: 2rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -62,7 +63,9 @@ const AppContainer = styled.div`
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     &:hover {
-      color: ${props => props.theme.white};
+      svg {
+        fill: ${props => props.theme.white};
+      }
     }
   }
 `;

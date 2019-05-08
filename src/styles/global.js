@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
       font-size: 8px;
     }
   }
-
+  
   /* * {
     outline: 1px solid red;
   } */
@@ -71,7 +71,8 @@ const GlobalStyles = createGlobalStyle`
     padding: 7em 2em;
   }
 
-  button, .button {
+  button,
+  .button {
     cursor: pointer;
     &.button-link {
       color: ${theme.primary};
