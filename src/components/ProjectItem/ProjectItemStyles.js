@@ -17,6 +17,7 @@ const ProjectItemContainer = styled.li`
   .parallax {
     grid-column: ${props => (props.idx % 2) + 1};
     z-index: 1;
+    overflow: hidden;
     @media ${device.tablet} {
       grid-column: 1;
     }
