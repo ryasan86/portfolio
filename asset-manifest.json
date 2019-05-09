@@ -1,9 +1,9 @@
 {
-  "main.js": "/portfolio/static/js/main.ae1fb149.chunk.js",
-  "main.js.map": "/portfolio/static/js/main.ae1fb149.chunk.js.map",
+  "main.js": "/portfolio/static/js/main.bedec347.chunk.js",
+  "main.js.map": "/portfolio/static/js/main.bedec347.chunk.js.map",
   "static/css/1.07e23312.chunk.css": "/portfolio/static/css/1.07e23312.chunk.css",
-  "static/js/1.7c5ccec5.chunk.js": "/portfolio/static/js/1.7c5ccec5.chunk.js",
-  "static/js/1.7c5ccec5.chunk.js.map": "/portfolio/static/js/1.7c5ccec5.chunk.js.map",
+  "static/js/1.724bc838.chunk.js": "/portfolio/static/js/1.724bc838.chunk.js",
+  "static/js/1.724bc838.chunk.js.map": "/portfolio/static/js/1.724bc838.chunk.js.map",
   "runtime~main.js": "/portfolio/static/js/runtime~main.ee2a1003.js",
   "runtime~main.js.map": "/portfolio/static/js/runtime~main.ee2a1003.js.map",
   "static/media/me.jpg": "/portfolio/static/media/me.e8365237.jpg",
@@ -19,6 +19,6 @@
   "static/media/poppins-bold-webfont.woff2": "/portfolio/static/media/poppins-bold-webfont.13e9632b.woff2",
   "static/css/1.07e23312.chunk.css.map": "/portfolio/static/css/1.07e23312.chunk.css.map",
   "index.html": "/portfolio/index.html",
-  "precache-manifest.ab6b3ac8918733d4328b41251c30b413.js": "/portfolio/precache-manifest.ab6b3ac8918733d4328b41251c30b413.js",
+  "precache-manifest.462d3c0ab9d4dc1a39a1f94b7b746700.js": "/portfolio/precache-manifest.462d3c0ab9d4dc1a39a1f94b7b746700.js",
   "service-worker.js": "/portfolio/service-worker.js"
 }
