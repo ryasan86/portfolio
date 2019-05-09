@@ -17,7 +17,6 @@ const ProjectItemContainer = styled.li`
   .parallax {
     grid-column: ${props => (props.idx % 2) + 1};
     z-index: 1;
-    overflow: hidden;
     @media ${device.tablet} {
       grid-column: 1;
     }
@@ -33,8 +32,8 @@ const ProjectItemContainer = styled.li`
         background-position: center center;
       }
       &:hover {
-        transform: scale(1.05);
-        -webkit-transform: scale(1.05);
+        transform: scale(1.03);
+        -webkit-transform: scale(1.03);
       }
     }
   }

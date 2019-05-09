@@ -23,10 +23,6 @@ const GlobalStyles = createGlobalStyle`
       font-size: 8px;
     }
   }
-  
-  /* * {
-    outline: 1px solid red;
-  } */
 
   *,
   *:before,
