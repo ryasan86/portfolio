@@ -38,7 +38,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
-
+  
   a {
     transition: 0.3s all ease;
     -webkit-transition: 0.3s all ease;

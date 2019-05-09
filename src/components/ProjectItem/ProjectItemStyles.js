@@ -8,6 +8,10 @@ const ProjectItemContainer = styled.li`
   grid-auto-flow: dense;
   @media ${device.tablet} {
     grid-template-columns: none;
+    margin-bottom: 10rem;
+    &:last-child {
+      margin: 0;
+    }
   }
 
   .parallax {
@@ -17,13 +21,19 @@ const ProjectItemContainer = styled.li`
       grid-column: 1;
     }
     .img {
-      position: relative;
       background: url(${props => props.img}) left center/cover no-repeat;
       height: 400px;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      -webkit-transition: all 0.5s ease-in-out;
       @media ${device.tablet} {
         display: block;
         height: 300px;
         background-position: center center;
+      }
+      &:hover {
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
       }
     }
   }

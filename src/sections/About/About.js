@@ -13,7 +13,7 @@ const About = () => {
   return (
     <AboutContainer id="about">
       <div className="inner">
-        <Parallax y={['800px', '-800px']}>
+        <Parallax y={['800px', '-800px']} styleInner={styleInner} styleOuter={styleOuter}>
           <div className="about-img" />
         </Parallax>
         <div className="about-desc">
@@ -49,6 +49,15 @@ const About = () => {
       </div>
     </AboutContainer>
   )
+};
+
+const styleOuter = {
+  height: '100%'
+};
+
+const styleInner = {
+  height: '100%',
+  overflow: 'hidden'
 };
 
 const iconStyles = css`

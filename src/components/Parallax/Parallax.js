@@ -3,7 +3,13 @@ import { Parallax } from 'react-scroll-parallax';
 
 import { size } from '../../styles/device';
 
-const ParallaxItem = ({ children, className, y }) => {
+const ParallaxItem = ({
+  children = {},
+  className = '',
+  styleOuter = {},
+  styleInner = {},
+  y = [80, -80]
+}) => {
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
@@ -17,8 +23,8 @@ const ParallaxItem = ({ children, className, y }) => {
     <Parallax
       className={className}
       y={y}
-      styleOuter={{ height: '100%' }}
-      styleInner={{ height: '100%' }}
+      styleOuter={styleOuter}
+      styleInner={styleInner}
       disabled={disabled}>
       {children}
     </Parallax>

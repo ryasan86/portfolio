@@ -5,8 +5,8 @@ import Parallax from './../Parallax/Parallax';
 
 const ProjectItem = ({ idx, project }) => (
   <ProjectItemContainer idx={idx} img={project.img}>
-    <Parallax className="parallax" y={[80, -80]}>
-      <div className="img" />
+    <Parallax className="parallax">
+      <div className="img" onClick={() => window.open(project.url, '_blank')} />
     </Parallax>
     <div className="text" data-aos="fade-up">
       <h4>{project.type}</h4>
