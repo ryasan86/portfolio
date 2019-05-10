@@ -5,6 +5,8 @@ import Codepen from './Codepen';
 import Linkedin from './Linkedin';
 import UpArrow from './UpArrow';
 import Code from './Code';
+import Measurement from './Measurement';
+import King from './King';
 
 const Icon = props => {
   switch (props.name) {
@@ -18,6 +20,10 @@ const Icon = props => {
       return <UpArrow {...props} />;
     case 'code':
       return <Code {...props} />;
+    case 'measurement':
+      return <Measurement {...props} />;
+    case 'king':
+      return <King {...props} />;
     default:
       return;
   }

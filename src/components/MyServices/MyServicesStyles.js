@@ -20,6 +20,9 @@ const MyServicesContainer = styled.ul`
   .service-item {
     margin-bottom: 3rem;
     width: 23rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &:last-child {
       margin-bottom: 0;
     }
@@ -30,6 +33,15 @@ const MyServicesContainer = styled.ul`
       li {
         white-space: nowrap;
       }
+    }
+  }
+
+  .icon-container {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+    svg {
+      fill: ${props => props.theme.primary};
     }
   }
 `;
