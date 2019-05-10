@@ -26,6 +26,14 @@ const MyServicesContainer = styled.ul`
     &:last-child {
       margin-bottom: 0;
     }
+    .icon-container {
+      width: 5rem;
+      height: 5rem;
+      margin-bottom: 1rem;
+      svg {
+        fill: ${props => props.theme.primary};
+      }
+    }
     .category-list {
       list-style-type: none;
       padding: 0;
@@ -33,15 +41,6 @@ const MyServicesContainer = styled.ul`
       li {
         white-space: nowrap;
       }
-    }
-  }
-
-  .icon-container {
-    width: 5rem;
-    height: 5rem;
-    margin-bottom: 1rem;
-    svg {
-      fill: ${props => props.theme.primary};
     }
   }
 `;
