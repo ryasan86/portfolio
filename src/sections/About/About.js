@@ -1,10 +1,8 @@
 import React from 'react';
-import { css } from 'styled-components';
 
-import AboutContainer from './AboutStyles';
+import AboutContainer, { styleOuter, styleInner } from './AboutStyles';
 import Parallax from './../../components/Parallax/Parallax';
 import Icon from '../../components/Icons/index';
-import theme from '../../styles/theme';
 import { socials } from '../../constants';
 
 
@@ -30,7 +28,7 @@ const About = () => {
                   data-aos="fade-up"
                   data-aos-delay={i * 100 + 50}
                   onClick={() => window.open(s.url, '_blank').focus()}>
-                  <Icon name={s.name} css={iconStyles} />
+                  <Icon name={s.name} />
                 </li>
               ))}
             </ul>
@@ -50,18 +48,5 @@ const About = () => {
     </AboutContainer>
   )
 };
-
-const styleOuter = {
-  height: '100%'
-};
-
-const styleInner = {
-  height: '100%',
-  overflow: 'hidden'
-};
-
-const iconStyles = css`
-  fill: ${theme.primary};
-`;
 
 export default About;

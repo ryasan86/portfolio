@@ -5,3 +5,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # TODO
     1. use canvas for something cool
     2. use nextjs and preload styles
+    3. fix typist bug

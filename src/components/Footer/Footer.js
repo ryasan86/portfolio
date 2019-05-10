@@ -1,5 +1,4 @@
 import React from 'react';
-import { css } from 'styled-components';
 
 import FooterContainer from './FooterStyles';
 import Icon from './../Icons/index';
@@ -24,7 +23,7 @@ const Footer = () => {
               data-aos="fade-up"
               data-aos-delay={i * 100 + 50}
               onClick={() => window.open(s.url, '_blank').focus()}>
-              <Icon name={s.name} css={iconStyles} />
+              <Icon name={s.name} />
             </li>
           ))}
         </ul>
@@ -41,9 +40,5 @@ const Footer = () => {
     </FooterContainer>
   );
 };
-
-const iconStyles = css`
-  fill: rgba(255, 255, 255, 0.3);
-`;
 
 export default Footer;

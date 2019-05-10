@@ -32,7 +32,7 @@ const SidebarContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     h4 {
-      margin: 4rem 0;
+      margin: 3rem 0;
       font-weight: 200;
       letter-spacing: ${props => props.theme.letterSpacing};
       font-size: 1.3rem;
@@ -44,7 +44,6 @@ const SidebarContainer = styled.nav`
   ul {
     list-style-type: none;
     padding-left: 0;
-    margin-top: 5rem;
     li {
       display: flex;
       margin: 2rem 0;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Me } from './../../assets/images';
 import device from '../../styles/device';
@@ -94,8 +94,25 @@ const AboutContainer = styled.section`
           fill: ${props => props.theme.white};
         }
       }
+      svg {
+        fill: ${props => props.theme.primary};
+      }
     }
   }
 `;
 
+const iconStyles = css`
+  fill: ${props => props.theme.primary};
+`;
+
+const styleOuter = {
+  height: '100%'
+};
+
+const styleInner = {
+  height: '100%',
+  overflow: 'hidden'
+};
+
+export { iconStyles, styleOuter, styleInner };
 export default AboutContainer;

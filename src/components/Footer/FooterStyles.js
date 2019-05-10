@@ -42,6 +42,9 @@ const FooterContainer = styled.footer`
           fill: ${props => props.theme.white};
         }
       }
+      svg {
+        fill: rgba(255, 255, 255, 0.3);
+      }
     }
   }
 
