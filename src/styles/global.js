@@ -24,6 +24,10 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  /* * {
+    outline: 1px solid red;
+  } */
+
   *,
   *:before,
   *:after {

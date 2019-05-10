@@ -5,11 +5,11 @@ import SidebarContainer from './SidebarStyles';
 import Link from './../common/ScrollLink';
 import NavToggle from '../NavToggle/NavToggle';
 
-const Sidebar = () => {
+const Sidebar = ({ setSidebarEl }) => {
   return (
     <DataContext.Consumer>
       {({ menuIsOpen, toggleMenu }) => (
-        <SidebarContainer menuIsOpen={menuIsOpen} id="sidebar">
+        <SidebarContainer menuIsOpen={menuIsOpen} id="sidebar" ref={el => setSidebarEl(el)}>
             <div>
               <h4>Navigation</h4>
               <NavToggle iconClass="close" onClick={() => toggleMenu(false)} />

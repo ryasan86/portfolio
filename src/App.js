@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withController } from 'react-scroll-parallax';
 import { css } from 'styled-components';
 
@@ -14,10 +14,15 @@ import Footer from './components/Footer/Footer';
 import Link from './components/common/ScrollLink';
 import Icon from './components/Icons';
 import theme from './styles/theme';
+import Skills from './sections/Skills/Skills';
 
 const App = props => {
+  const [sidebarEl, setSidebarEl] = useState(null);
+
   const handleClick = (e, menuIsOpen, toggleMenu) => {
-    if (e.target.id !== 'sidebar' && menuIsOpen) toggleMenu(false);
+    if (sidebarEl && !sidebarEl.contains(e.target) && menuIsOpen) {
+      toggleMenu(false);
+    }
   };
 
   return (
@@ -25,10 +30,11 @@ const App = props => {
       {({ menuIsOpen, toggleMenu }) => (
         <AppContainer onClick={e => handleClick(e, menuIsOpen, toggleMenu)}>
           <ProgressBar />
-          <Header />
+          <Header setSidebarEl={setSidebarEl} />
           <Home />
           <About />
           <Projects />
+          <Skills />
           <Contact />
           <Footer />
           <Link to="home" className="go-top">

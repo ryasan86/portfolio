@@ -2,10 +2,10 @@ import React from 'react';
 
 import { DataContext } from '../../providers';
 import HeaderContainer from './HeaderStyles';
-import Sidebar from './../Sidebar/Sidebar';
 import NavToggle from '../NavToggle/NavToggle';
+import Sidebar from './../Sidebar/Sidebar';
 
-const Header = () => (
+const Header = ({ setSidebarEl }) => (
   <DataContext.Consumer>
     {({ toggleMenu }) => (
       <HeaderContainer>
@@ -16,7 +16,7 @@ const Header = () => (
           </div>
         </div>
         <NavToggle onClick={() => toggleMenu(true)} iconClass="open" />
-        <Sidebar />
+        <Sidebar setSidebarEl={setSidebarEl} />
       </HeaderContainer>
     )}
   </DataContext.Consumer>

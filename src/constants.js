@@ -2,7 +2,7 @@ import {
   SickFitsImg,
   MarsBrowserImg,
   JuiceImg,
-  SimonImg,
+  SimonImg
 } from './assets/images';
 
 const projects = [
@@ -13,7 +13,7 @@ const projects = [
     tools: ['React', 'GraphQL', 'NextJS', 'Prisma'],
     description:
       'Ecommerce application complete with authentication, search autocomplete, and Stripe checkout',
-    type: 'Full Stack',
+    type: 'Full Stack'
   },
   {
     title: 'Mars Rovers Image Browser',
@@ -21,7 +21,7 @@ const projects = [
     url: 'http://ryasan86.github.io/mars_rovers',
     tools: ['React', 'Redux'],
     description: 'Check out photos taken from the 3 rovers on Mars',
-    type: 'Full Stack',
+    type: 'Full Stack'
   },
   {
     title: 'Simon Says',
@@ -29,7 +29,7 @@ const projects = [
     url: 'https://ryasan86.github.io/simon',
     tools: ['React', 'Redux', 'Styled-Components'],
     description: 'Data flow management with async functions',
-    type: 'Game',
+    type: 'Game'
   },
   {
     title: 'Juice Served Here',
@@ -37,25 +37,64 @@ const projects = [
     url: 'https://ryasan86.github.io/juice_served_here/',
     tools: ['SASS'],
     description: 'Fully responsive UI design using SASS',
-    type: 'UI Component',
-  },
+    type: 'UI Component'
+  }
 ];
 
 const socials = [
   {
     name: 'github',
-    url: 'https://github.com/ryasan86',
+    url: 'https://github.com/ryasan86'
   },
   {
     name: 'codepen',
-    url: 'https://codepen.io/ryasan86/',
+    url: 'https://codepen.io/ryasan86/'
   },
   {
     name: 'linkedin',
-    url: 'https://www.linkedin.com/in/ryasan86/',
+    url: 'https://www.linkedin.com/in/ryasan86/'
+  }
+];
+
+const skills = [
+  {
+    name: 'HTML',
+    value: 90
   },
+  {
+    name: 'CSS',
+    value: 90
+  },
+  {
+    name: 'React.js',
+    value: 90
+  },
+  {
+    name: 'Node.js',
+    value: 70
+  },
+  {
+    name: 'SQL',
+    value: 60
+  },
+  {
+    name: 'Angular 2+',
+    value: 75
+  },
+  {
+    name: 'REST API',
+    value: 75
+  },
+  {
+    name: 'GraphQL',
+    value: 65
+  },
+  {
+    name: 'Photoshop',
+    value: 80
+  }
 ];
 
 const portfolioRepo = 'https://github.com/ryasan86/portfolio';
 
-export { projects, socials, portfolioRepo };
+export { projects, socials, skills, portfolioRepo };
