@@ -1,9 +1,9 @@
 {
-  "main.js": "/portfolio/static/js/main.be865120.chunk.js",
-  "main.js.map": "/portfolio/static/js/main.be865120.chunk.js.map",
-  "static/css/1.07e23312.chunk.css": "/portfolio/static/css/1.07e23312.chunk.css",
-  "static/js/1.028f51a4.chunk.js": "/portfolio/static/js/1.028f51a4.chunk.js",
-  "static/js/1.028f51a4.chunk.js.map": "/portfolio/static/js/1.028f51a4.chunk.js.map",
+  "main.js": "/portfolio/static/js/main.7c01b97f.chunk.js",
+  "main.js.map": "/portfolio/static/js/main.7c01b97f.chunk.js.map",
+  "static/css/1.53d598b6.chunk.css": "/portfolio/static/css/1.53d598b6.chunk.css",
+  "static/js/1.e10c36bf.chunk.js": "/portfolio/static/js/1.e10c36bf.chunk.js",
+  "static/js/1.e10c36bf.chunk.js.map": "/portfolio/static/js/1.e10c36bf.chunk.js.map",
   "runtime~main.js": "/portfolio/static/js/runtime~main.ee2a1003.js",
   "runtime~main.js.map": "/portfolio/static/js/runtime~main.ee2a1003.js.map",
   "static/media/me.jpg": "/portfolio/static/media/me.e8365237.jpg",
@@ -17,8 +17,8 @@
   "static/media/poppins-regular-webfont.woff2": "/portfolio/static/media/poppins-regular-webfont.cd8ad152.woff2",
   "static/media/poppins-bold-webfont.woff": "/portfolio/static/media/poppins-bold-webfont.c7422667.woff",
   "static/media/poppins-bold-webfont.woff2": "/portfolio/static/media/poppins-bold-webfont.13e9632b.woff2",
-  "static/css/1.07e23312.chunk.css.map": "/portfolio/static/css/1.07e23312.chunk.css.map",
+  "static/css/1.53d598b6.chunk.css.map": "/portfolio/static/css/1.53d598b6.chunk.css.map",
   "index.html": "/portfolio/index.html",
-  "precache-manifest.b44963ab170ad911b1629b3abc2e939c.js": "/portfolio/precache-manifest.b44963ab170ad911b1629b3abc2e939c.js",
+  "precache-manifest.e9e7cdfaeaa2ee6b2d0aaea30eeb0385.js": "/portfolio/precache-manifest.e9e7cdfaeaa2ee6b2d0aaea30eeb0385.js",
   "service-worker.js": "/portfolio/service-worker.js"
 }
