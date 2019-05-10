@@ -5,10 +5,10 @@ import { DataContext } from '../../providers';
 const Link = ({ children, className, to }) => (
   <DataContext.Consumer>
     {({ menuIsOpen, toggleMenu }) => {
-      const ms = 750;
+      const delay = 750;
       const duration = () => {
-        setTimeout(() => menuIsOpen && toggleMenu(false), ms);
-        return ms;
+        setTimeout(() => menuIsOpen && toggleMenu(false), delay);
+        return delay;
       };
 
       return (

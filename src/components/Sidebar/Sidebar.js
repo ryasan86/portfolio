@@ -18,7 +18,8 @@ const Sidebar = ({ setSidebarEl }) => {
               <li><Link to="home"><span>01</span>Home</Link></li>
               <li><Link to="about"><span>02</span>About</Link></li>
               <li><Link to="projects"><span>03</span>Projects</Link></li>
-              <li><Link to="contact"><span>04</span>Contact</Link></li>
+              <li><Link to="skills"><span>05</span>Skills</Link></li>
+              <li><Link to="contact"><span>06</span>Contact</Link></li>
             </ul>
         </SidebarContainer>
       )}

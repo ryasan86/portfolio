@@ -57,42 +57,14 @@ const socials = [
 ];
 
 const skills = [
-  {
-    name: 'HTML',
-    value: 90
-  },
-  {
-    name: 'CSS',
-    value: 90
-  },
-  {
-    name: 'React.js',
-    value: 90
-  },
-  {
-    name: 'Node.js',
-    value: 70
-  },
-  {
-    name: 'SQL',
-    value: 60
-  },
-  {
-    name: 'Angular 2+',
-    value: 75
-  },
-  {
-    name: 'REST API',
-    value: 75
-  },
-  {
-    name: 'GraphQL',
-    value: 65
-  },
-  {
-    name: 'Photoshop',
-    value: 80
-  }
+  { HTML5: 90 },
+  { 'CSS / SASS': 90 },
+  { ReactJS: 90 },
+  { NodeJS: 70 },
+  { SQL: 60 },
+  { 'Angular2+': 75 },
+  { 'Rest API': 75 },
+  { GraphQL: 65 }
 ];
 
 const portfolioRepo = 'https://github.com/ryasan86/portfolio';

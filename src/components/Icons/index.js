@@ -4,6 +4,7 @@ import Github from './Github';
 import Codepen from './Codepen';
 import Linkedin from './Linkedin';
 import UpArrow from './UpArrow';
+import Code from './Code';
 
 const Icon = props => {
   switch (props.name) {
@@ -15,6 +16,8 @@ const Icon = props => {
       return <Linkedin {...props} />;
     case 'upArrow':
       return <UpArrow {...props} />;
+    case 'code':
+      return <Code {...props} />;
     default:
       return;
   }

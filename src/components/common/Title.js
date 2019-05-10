@@ -8,6 +8,7 @@ const TitleContainer = styled.div`
   position: relative;
   margin-bottom: 4em;
   max-width: 800px;
+
   p {
     font-size: 2rem;
     line-height: 1.5;
@@ -16,6 +17,7 @@ const TitleContainer = styled.div`
     letter-spacing: 4px;
     text-transform: uppercase;
   }
+  
   h2 {
     font-size: 4rem;
     color: ${props => props.theme.white};

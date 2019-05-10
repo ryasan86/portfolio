@@ -20,7 +20,7 @@ const App = props => {
   const [sidebarEl, setSidebarEl] = useState(null);
 
   const handleClick = (e, menuIsOpen, toggleMenu) => {
-    if (sidebarEl && !sidebarEl.contains(e.target) && menuIsOpen) {
+    if (!sidebarEl.contains(e.target) && menuIsOpen) {
       toggleMenu(false);
     }
   };
