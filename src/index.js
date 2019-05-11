@@ -5,12 +5,13 @@ import 'aos/dist/aos.css';
 
 import Providers from './providers';
 import App from './App';
+import { loaderDelay } from './constants';
 
-AOS.init({ duration: 800, easing: 'slide' });
+setTimeout(() => AOS.init({ duration: 800, easing: 'slide' }), loaderDelay + 500);
 
 ReactDOM.render(
   <Providers>
     <App />
   </Providers>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );

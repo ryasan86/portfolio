@@ -24,12 +24,13 @@ const HomeContainer = styled.section`
     }
 
     .typist-container {
+      min-height: 20rem;
       h1 {
+        text-transform: uppercase;
         display: inline-block;
         font-size: 5.5rem;
         color: ${props => props.theme.white};
         font-weight: 700;
-        text-transform: uppercase;
         letter-spacing: 1rem;
         position: relative;
         margin: 0;
@@ -40,7 +41,6 @@ const HomeContainer = styled.section`
     }
 
     .button {
-      margin-top: 100px;
       background: transparent;
       color: ${props => props.theme.white};
       border: 2px solid ${props => props.theme.white};

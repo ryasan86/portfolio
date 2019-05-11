@@ -6,3 +6,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     1. use canvas for something cool
     2. use nextjs and preload styles
     3. fix typist bug
+    4. remove vendor prefixes and put non vendor specific prefix at bottom

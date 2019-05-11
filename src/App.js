@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withController } from 'react-scroll-parallax';
-import { css } from 'styled-components';
 
 import { DataContext } from './providers';
 import AppContainer from './AppStyles';
@@ -13,8 +12,8 @@ import Contact from './sections/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Link from './components/common/ScrollLink';
 import Icon from './components/Icons';
-import theme from './styles/theme';
 import Skills from './sections/Skills/Skills';
+import { loaderDelay } from './constants';
 
 const App = props => {
   const [sidebarEl, setSidebarEl] = useState(null);
@@ -24,6 +23,14 @@ const App = props => {
       toggleMenu(false);
     }
   };
+
+  useEffect(() => {
+    document.querySelector('#loader').classList.add('hide');
+
+    setTimeout(() => {
+      document.querySelector('#preloader').classList.add('hide');
+    }, loaderDelay);
+  });
 
   return (
     <DataContext.Consumer>
@@ -38,16 +45,12 @@ const App = props => {
           <Contact />
           <Footer />
           <Link to="home" className="go-top">
-            <Icon name="upArrow" css={iconStyles} />
+            <Icon name="upArrow" />
           </Link>
         </AppContainer>
       )}
     </DataContext.Consumer>
   );
 };
-
-const iconStyles = css`
-  fill: ${theme.textColor};
-`;
 
 export default withController(App);

@@ -67,6 +67,7 @@ const skills = [
   { GraphQL: 65 }
 ];
 
+const loaderDelay = 1000;
 const portfolioRepo = 'https://github.com/ryasan86/portfolio';
 
-export { projects, socials, skills, portfolioRepo };
+export { projects, socials, skills, portfolioRepo, loaderDelay };

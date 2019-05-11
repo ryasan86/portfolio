@@ -43,7 +43,7 @@ const AppContainer = styled.div`
 
   .go-top {
     position: fixed;
-    z-index: 9999;
+    z-index: 1000;
     width: 6rem;
     height: 6rem;
     margin: 30px;
@@ -57,15 +57,18 @@ const AppContainer = styled.div`
     font-size: 2.5rem;
     padding: 2rem;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover {
       svg {
         fill: ${props => props.theme.white};
       }
+    }
+    svg {
+      fill: ${props => props.theme.textColor};
     }
   }
 `;
