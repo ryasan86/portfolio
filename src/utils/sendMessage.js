@@ -19,4 +19,4 @@ const sendMessage = async (
   }
 };
 
-export { sendMessage };
+export default sendMessage;

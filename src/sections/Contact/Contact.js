@@ -1,60 +1,63 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as EmailValidator from 'email-validator';
 
 import ContactContainer from './ContactStyles';
 import TitleContainer from './../../components/common/Title';
-import { sendMessage } from './../../utils';
+import sendMessage from './../../utils/sendMessage';
 import { env } from './../../config';
 
-class Contact extends Component {
-  state = {
+const Contact = () => {
+  const [fields, setFields] = useState({
     name: '',
     email: '',
     subject: '',
     message: '',
-    validForm: false
-  };
+  });
+  const [formIsValid, setFormIsValid] = useState(false);
 
-  validateForm = () => {
-    const { name, message, email } = this.state;
+  const validateForm = () => {
+    const { name, message, email } = fields;
 
     if (name && message && EmailValidator.validate(email)) {
-      this.setState({ validForm: true });
+      setFormIsValid(true);
     } else {
-      this.setState({ validForm: false });
+      setFormIsValid(false);
     }
   };
 
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
     const {
       REACT_APP_EMAILJS_RECEIVER: receiverEmail,
-      REACT_APP_EMAILJS_TEMPLATEID: templateId
+      REACT_APP_EMAILJS_TEMPLATEID: templateId,
     } = env;
 
     sendMessage(
       templateId,
       receiverEmail,
-      this.state.email,
-      this.state.name,
-      this.state.message,
-      this.state.subject
+      fields.email,
+      fields.name,
+      fields.message,
+      fields.subject,
     );
 
-    this.setState({
+    setFields({
       name: '',
       email: '',
       subject: '',
       message: '',
-      validForm: false
     });
+
+    setFormIsValid(false);
   };
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value }, this.validateForm);
+  const handleChange = e => {
+    setFields({ ...fields, [e.target.name]: e.target.value });
   };
 
-  render = () => (
+  useEffect(validateForm, [fields]);
+
+  return (
     <ContactContainer id="contact">
       <TitleContainer data-aos="fade-up">
         <p>Contact</p>
@@ -71,8 +74,8 @@ class Contact extends Component {
                 type="text"
                 placeholder="Your Name"
                 minLength="2"
-                value={this.state.name}
-                onChange={this.handleChange}
+                value={fields.name}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -81,8 +84,8 @@ class Contact extends Component {
                 type="email"
                 placeholder="Your Email"
                 name="email"
-                value={this.state.email}
-                onChange={this.handleChange}
+                value={fields.email}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -91,8 +94,8 @@ class Contact extends Component {
                 type="text"
                 placeholder="Subject"
                 name="subject"
-                value={this.state.subject}
-                onChange={this.handleChange}
+                value={fields.subject}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -102,15 +105,13 @@ class Contact extends Component {
                 rows="10"
                 cols="50"
                 name="message"
-                value={this.state.message}
-                onChange={this.handleChange}
+                value={fields.message}
+                onChange={handleChange}
                 required
               />
             </div>
             <div className="field">
-              <button
-                onClick={this.handleSubmit}
-                disabled={!this.state.validForm}>
+              <button disabled={!formIsValid} onClick={handleSubmit}>
                 Submit
               </button>
             </div>
@@ -119,6 +120,6 @@ class Contact extends Component {
       </div>
     </ContactContainer>
   );
-}
+};
 
 export default Contact;
