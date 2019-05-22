@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "99941e8731adebf35cff",
-    "url": "/portfolio/static/js/main.99941e87.chunk.js"
+    "revision": "73c4b56dcc95d7ce51b9",
+    "url": "/portfolio/static/js/main.73c4b56d.chunk.js"
   },
   {
-    "revision": "58f387f3b74fc3dc23e4",
-    "url": "/portfolio/static/css/1.53d598b6.chunk.css"
+    "revision": "03abea6a0fb146819a58",
+    "url": "/portfolio/static/css/1.07e23312.chunk.css"
   },
   {
-    "revision": "58f387f3b74fc3dc23e4",
-    "url": "/portfolio/static/js/1.58f387f3.chunk.js"
+    "revision": "03abea6a0fb146819a58",
+    "url": "/portfolio/static/js/1.03abea6a.chunk.js"
   },
   {
     "revision": "ee2a100325fd284f0097",
@@ -36,6 +36,10 @@ self.__precacheManifest = [
     "url": "/portfolio/static/media/simon.3f86ffa2.png"
   },
   {
+    "revision": "09a38ba353d82c720a39ab41264ab45d",
+    "url": "/portfolio/static/media/notpinterest.09a38ba3.jpg"
+  },
+  {
     "revision": "44967092131b2de5a9983c76372f0933",
     "url": "/portfolio/static/media/poppins-light-webfont.44967092.woff"
   },
@@ -60,7 +64,7 @@ self.__precacheManifest = [
     "url": "/portfolio/static/media/poppins-bold-webfont.13e9632b.woff2"
   },
   {
-    "revision": "8d0105faed43858ac76f78bb543db7c2",
+    "revision": "664b674fdb45699058cde290d9b8fdd9",
     "url": "/portfolio/index.html"
   }
 ];
