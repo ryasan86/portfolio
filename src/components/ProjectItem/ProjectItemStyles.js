@@ -21,7 +21,7 @@ const ProjectItemContainer = styled.li`
       grid-column: 1;
     }
     .img {
-      background: url(${props => props.img}) left center/cover no-repeat;
+      background: url(${props => props.img}) center center/contain no-repeat;
       height: 400px;
       cursor: pointer;
       transition: all 0.5s ease-in-out;
@@ -29,7 +29,6 @@ const ProjectItemContainer = styled.li`
       @media ${device.tablet} {
         display: block;
         height: 300px;
-        background-position: center center;
       }
       &:hover {
         transform: scale(1.03);
