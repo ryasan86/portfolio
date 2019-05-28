@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "73c4b56dcc95d7ce51b9",
-    "url": "/portfolio/static/js/main.73c4b56d.chunk.js"
+    "revision": "090152d4b20152f3bb4f",
+    "url": "/portfolio/static/js/main.090152d4.chunk.js"
   },
   {
-    "revision": "03abea6a0fb146819a58",
-    "url": "/portfolio/static/css/1.07e23312.chunk.css"
+    "revision": "d7fe855fca162e983bbf",
+    "url": "/portfolio/static/css/1.73cd701c.chunk.css"
   },
   {
-    "revision": "03abea6a0fb146819a58",
-    "url": "/portfolio/static/js/1.03abea6a.chunk.js"
+    "revision": "d7fe855fca162e983bbf",
+    "url": "/portfolio/static/js/1.d7fe855f.chunk.js"
   },
   {
     "revision": "ee2a100325fd284f0097",
@@ -20,24 +20,20 @@ self.__precacheManifest = [
     "url": "/portfolio/static/media/me.e8365237.jpg"
   },
   {
-    "revision": "28f5500940f03cc676e4e7bca99157a5",
-    "url": "/portfolio/static/media/sickfits.28f55009.png"
+    "revision": "37180a3a4a9bef52cd84a1c4df59d8cf",
+    "url": "/portfolio/static/media/sickfits.37180a3a.jpg"
   },
   {
-    "revision": "27916cd7f94a4d89b96441a61e7e002e",
-    "url": "/portfolio/static/media/mars_rovers.27916cd7.png"
+    "revision": "0a387cc50de8f3369d00a4fed161bc36",
+    "url": "/portfolio/static/media/mars_rovers.0a387cc5.jpg"
   },
   {
-    "revision": "7e4fdbdb64c1ce336a1c694e363adac6",
-    "url": "/portfolio/static/media/juice_showcase.7e4fdbdb.jpg"
+    "revision": "11d3767169ba2935d6b08e7cbe3b0480",
+    "url": "/portfolio/static/media/simon.11d37671.jpg"
   },
   {
-    "revision": "3f86ffa2788262650a4beb28162f90d3",
-    "url": "/portfolio/static/media/simon.3f86ffa2.png"
-  },
-  {
-    "revision": "09a38ba353d82c720a39ab41264ab45d",
-    "url": "/portfolio/static/media/notpinterest.09a38ba3.jpg"
+    "revision": "4921319d1845f3c3146e49f5102069f6",
+    "url": "/portfolio/static/media/notpinterest.4921319d.jpg"
   },
   {
     "revision": "44967092131b2de5a9983c76372f0933",
@@ -64,7 +60,7 @@ self.__precacheManifest = [
     "url": "/portfolio/static/media/poppins-bold-webfont.13e9632b.woff2"
   },
   {
-    "revision": "664b674fdb45699058cde290d9b8fdd9",
+    "revision": "48276e685a70fe386f94e98dee3c2ae6",
     "url": "/portfolio/index.html"
   }
 ];
