@@ -1,8 +1,7 @@
-import SickFitsImg from './sickfits.png';
-import MarsBrowserImg from './mars_rovers.png';
-import JuiceImg from './juice_showcase.jpg';
-import SimonImg from './simon.png';
+import SickFitsImg from './sickfits.jpg';
+import MarsBrowserImg from './mars_rovers.jpg';
+import SimonImg from './simon.jpg';
 import NotPinterest from './notpinterest.jpg';
 import Me from './me.jpg';
 
-export { SickFitsImg, MarsBrowserImg, JuiceImg, SimonImg, NotPinterest, Me };
+export { SickFitsImg, MarsBrowserImg, SimonImg, NotPinterest, Me };
