@@ -1,9 +1,9 @@
 import {
   SickFitsImg,
   MarsBrowserImg,
-  JuiceImg,
   SimonImg,
   NotPinterest,
+  CSS100Days,
 } from './assets/images';
 
 const projects = [
@@ -23,6 +23,14 @@ const projects = [
     description:
       'Ecommerce application complete with authentication, search autocomplete, and Stripe checkout',
     type: 'Full Stack',
+  },
+  {
+    title: '100 Days CSS Challenge',
+    img: CSS100Days,
+    url: 'https://ryasan86.github.io/100_days_css',
+    tools: ['React', 'Codepen Embed', 'Styled-Components'],
+    description: 'A collection of 100 CSS builds over the course of 100 days',
+    type: 'Front-End',
   },
   {
     title: 'Simon Says',
