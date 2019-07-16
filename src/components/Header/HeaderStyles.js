@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import LogoImg from './../../assets/images/me.jpg';
 import device from '../../styles/device';
 
 const HeaderContainer = styled.header`
@@ -31,7 +30,7 @@ const HeaderContainer = styled.header`
         width: 5rem;
         height: 5rem;
         border-radius: 50%;
-        background: url(${LogoImg}) center center/cover no-repeat;
+        background: url('https://i.postimg.cc/66gz504w/meCopy.jpg') center center/cover no-repeat;
         margin-right: 15px;
       }
     }

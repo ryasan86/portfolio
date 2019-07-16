@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { Me } from './../../assets/images';
 import device from '../../styles/device';
 
 const AboutContainer = styled.section`
@@ -17,7 +16,7 @@ const AboutContainer = styled.section`
 
   .about-img {
     position: relative;
-    background: url(${Me}) center center/cover no-repeat;
+    background: url('https://i.postimg.cc/66gz504w/meCopy.jpg') center center/cover no-repeat;
     height: 100%;
     margin-right: 100px;
     @media ${device.tablet} {
