@@ -1,13 +1,5 @@
 const projects = [
   {
-    title: 'NotPinterest',
-    img: 'https://i.postimg.cc/s2T4F9Ck/notpinterest.jpg',
-    url: 'https://notpinterest-next-prod.herokuapp.com',
-    tools: ['React', 'GraphQL', 'MongoDB'],
-    description: 'Pinterest-like clone',
-    type: 'Full Stack',
-  },
-  {
     title: 'Sick Fits',
     img: 'https://i.postimg.cc/BncCpfYQ/sickfits.jpg',
     url: 'https://sick-fits-next-prod-rs.herokuapp.com',
@@ -17,10 +9,18 @@ const projects = [
     type: 'Full Stack',
   },
   {
+    title: 'NotPinterest',
+    img: 'https://i.postimg.cc/s2T4F9Ck/notpinterest.jpg',
+    url: 'https://notpinterest-next-prod.herokuapp.com',
+    tools: ['React', 'GraphQL', 'MongoDB'],
+    description: 'Pinterest-like clone',
+    type: 'Full Stack',
+  },
+  {
     title: '100 Days CSS Challenge',
-    img: 'https://i.postimg.cc/BQFp8K2F/100-days-css.jpg',
+    img: 'https://i.postimg.cc/YqNVs1Fz/100_days_css.jpg',
     url: 'https://ryasan86.github.io/100_days_css',
-    tools: ['React', 'Codepen Embed', 'Styled-Components'],
+    tools: ['Codepen Embed', 'Styled-Components'],
     description: 'A collection of 100 CSS builds over the course of 100 days',
     type: 'Front-End',
   },
